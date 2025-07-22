@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { withApiAuth, type NextRequestWithUser } from '@/lib/api-utils'
+import { createServerCreditService } from '@/lib/services/credits'
 
 // 增强的翻译服务配置 - 300字符分块
 const ENHANCED_CONFIG = {
@@ -229,9 +231,18 @@ function getFallbackTranslation(text: string, sourceLang: string, targetLang: st
   return `[${targetLanguage} Translation] ${text.substring(0, 100)}${text.length > 100 ? '...' : ''} (from ${sourceLanguage})`;
 }
 
-export async function POST(request: NextRequest) {
+async function translateHandler(req: NextRequestWithUser) {
   try {
-    const { text, sourceLang, targetLang } = await request.json();
+    const { user } = req.userContext
+
+    if (!user) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      )
+    }
+
+    const { text, sourceLang, targetLang } = await req.json();
     
     if (!text || !sourceLang || !targetLang) {
       return NextResponse.json(
@@ -240,169 +251,281 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log(`\n🌍 增强翻译开始: ${text.length}字符, ${sourceLang} -> ${targetLang}, 用户: ${user.id}`);
+
+    // 计算所需积分
+    const creditService = createServerCreditService()
+    const calculation = creditService.calculateCreditsRequired(text.length)
     
-    // 长文本检测和队列重定向
-    if (text.length > 1000) { // 超过1000字符使用队列处理
-      console.log(`[Translation] 长文本检测: ${text.length}字符，重定向到队列处理`);
-      
+    console.log(`💰 积分计算: ${text.length}字符, 需要${calculation.credits_required}积分`);
+
+    // 检查并预扣积分（如果需要）
+    let transactionId: string | undefined = undefined
+    if (calculation.credits_required > 0) {
       try {
-        const queueResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/translate/queue`, {
+        // 调用积分消费API进行预扣
+        const creditResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/credits/consume`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': req.headers.get('authorization') || '',
           },
           body: JSON.stringify({
-            text,
-            sourceLanguage: sourceLang,
-            targetLanguage: targetLang
+            amount: calculation.credits_required,
+            reason: `文本翻译：${text.length}字符，${sourceLang}->${targetLang}`,
+            metadata: {
+              characterCount: text.length,
+              sourceLanguage: sourceLang,
+              targetLanguage: targetLang,
+              translationType: 'text',
+              endpoint: '/api/translate'
+            }
           })
         });
-        
-        const queueResult = await queueResponse.json();
-        
-        if (queueResult.success) {
+
+        const creditResult = await creditResponse.json();
+
+        if (!creditResponse.ok) {
+          if (creditResponse.status === 402) {
+            // 积分不足
+            return NextResponse.json({
+              error: `积分不足，需要 ${calculation.credits_required} 积分，当前余额 ${creditResult.available || 0} 积分`,
+              code: 'INSUFFICIENT_CREDITS',
+              required: calculation.credits_required,
+              available: creditResult.available || 0
+            }, { status: 402 });
+          }
+          
+          console.error('积分预扣失败:', creditResult);
           return NextResponse.json({
-            success: true,
-            useQueue: true,
-            jobId: queueResult.jobId,
-            estimatedTime: queueResult.estimatedTime,
-            totalChunks: queueResult.totalChunks,
-            message: '文本较长，已转入后台队列处理，请稍后查询结果'
-          });
+            error: '积分扣除失败，请稍后重试',
+            code: 'CREDIT_DEDUCTION_FAILED'
+          }, { status: 500 });
         }
-      } catch (queueError) {
-        console.error('[Translation] 队列处理失败，回退到直接处理:', queueError);
-        // 继续使用原有逻辑，但使用更小的分块
+
+        console.log(`✅ 积分预扣成功: ${calculation.credits_required}积分，剩余: ${creditResult.new_balance}积分`);
+      } catch (creditError) {
+        console.error('积分预扣异常:', creditError);
+        return NextResponse.json({
+          error: '积分服务不可用，请稍后重试',
+          code: 'CREDIT_SERVICE_ERROR'
+        }, { status: 503 });
       }
     }
-
-    console.log(`\n🌍 增强翻译开始: ${text.length}字符, ${sourceLang} -> ${targetLang}`);
 
     try {
-      const sourceNLLB = getNLLBLanguageCode(sourceLang);
-      const targetNLLB = getNLLBLanguageCode(targetLang);
-      
-      console.log(`🔄 语言代码转换: ${sourceLang} -> ${sourceNLLB}, ${targetLang} -> ${targetNLLB}`);
-      
-      
-// 长文本检测和队列重定向
-if (text.length > 1000) { // 超过1000字符使用队列处理
-  console.log(`[Translation] 长文本检测: ${text.length}字符，重定向到队列处理`);
-  
-  try {
-    const queueResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/translate/queue`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        text,
-        sourceLanguage,
-        targetLanguage
-      })
-    });
-    
-    const queueResult = await queueResponse.json();
-    
-    if (queueResult.success) {
-      return NextResponse.json({
-        success: true,
-        useQueue: true,
-        jobId: queueResult.jobId,
-        estimatedTime: queueResult.estimatedTime,
-        message: '文本较长，已转入后台队列处理，请稍后查询结果'
-      });
-    }
-  } catch (queueError) {
-    console.error('[Translation] 队列处理失败，回退到直接处理:', queueError);
-    // 继续使用原有逻辑
-  }
-}
-
-  // 智能分块 - 300字符
-      const chunks = smartTextChunking(text, ENHANCED_CONFIG.MAX_CHUNK_SIZE);
-      
-      if (chunks.length === 1) {
-        // 单块处理
-        console.log(`📄 单块翻译模式`);
-        const translatedText = await translateWithRetry(chunks[0], sourceNLLB, targetNLLB);
+      // 长文本检测和队列重定向
+      if (text.length > 1000) { // 超过1000字符使用队列处理
+        console.log(`[Translation] 长文本检测: ${text.length}字符，重定向到队列处理`);
         
-        return NextResponse.json({
-          translatedText: translatedText,
-          sourceLang: sourceLang,
-          targetLang: targetLang,
-          characterCount: text.length,
-          chunksProcessed: 1,
-          service: 'nllb-enhanced-300char',
-          chunkSize: ENHANCED_CONFIG.MAX_CHUNK_SIZE
-        });
-      } else {
-        // 多块处理
-        console.log(`📚 多块翻译模式: ${chunks.length}个块`);
-        const translatedChunks: string[] = [];
-        const chunkResults: any[] = [];
-        
-        for (let i = 0; i < chunks.length; i++) {
-          const chunk = chunks[i];
-          console.log(`\n📖 处理块 ${i + 1}/${chunks.length}: ${chunk.length}字符`);
+        try {
+          const queueResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/translate/queue`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': req.headers.get('authorization') || '',
+            },
+            body: JSON.stringify({
+              text,
+              sourceLanguage: sourceLang,
+              targetLanguage: targetLang
+            })
+          });
           
-          try {
-            const chunkResult = await translateWithRetry(chunk, sourceNLLB, targetNLLB);
-            translatedChunks.push(chunkResult);
-            chunkResults.push({ 
-              index: i + 1, 
-              status: 'success', 
-              originalLength: chunk.length,
-              translatedLength: chunkResult.length 
-            });
-          } catch (chunkError: any) {
-            console.log(`⚠️ 块 ${i + 1} 翻译失败，使用备用翻译`);
-            const fallbackChunk = getFallbackTranslation(chunk, sourceLang, targetLang);
-            translatedChunks.push(fallbackChunk);
-            chunkResults.push({ 
-              index: i + 1, 
-              status: 'fallback', 
-              originalLength: chunk.length,
-              error: chunkError.message 
+          const queueResult = await queueResponse.json();
+          
+          if (queueResult.success) {
+            return NextResponse.json({
+              success: true,
+              useQueue: true,
+              jobId: queueResult.jobId,
+              estimatedTime: queueResult.estimatedTime,
+              totalChunks: queueResult.totalChunks,
+              creditsDeducted: calculation.credits_required,
+              message: '文本较长，已转入后台队列处理，请稍后查询结果'
             });
           }
+        } catch (queueError) {
+          console.error('[Translation] 队列处理失败，回退到直接处理:', queueError);
+          // 继续使用原有逻辑，但使用更小的分块
+        }
+      }
+
+      try {
+        const sourceNLLB = getNLLBLanguageCode(sourceLang);
+        const targetNLLB = getNLLBLanguageCode(targetLang);
+        
+        console.log(`🔄 语言代码转换: ${sourceLang} -> ${sourceNLLB}, ${targetLang} -> ${targetNLLB}`);
+        
+        // 智能分块 - 300字符
+        const chunks = smartTextChunking(text, ENHANCED_CONFIG.MAX_CHUNK_SIZE);
+        
+        if (chunks.length === 1) {
+          // 单块处理
+          console.log(`📄 单块翻译模式`);
+          const translatedText = await translateWithRetry(chunks[0], sourceNLLB, targetNLLB);
           
-          // 块间延迟避免限流
-          if (i < chunks.length - 1) {
-            console.log(`⏳ 块间延迟 ${ENHANCED_CONFIG.CHUNK_DELAY}ms...`);
-            await new Promise(resolve => setTimeout(resolve, ENHANCED_CONFIG.CHUNK_DELAY));
+          return NextResponse.json({
+            translatedText: translatedText,
+            sourceLang: sourceLang,
+            targetLang: targetLang,
+            characterCount: text.length,
+            chunksProcessed: 1,
+            creditsUsed: calculation.credits_required,
+            service: 'nllb-enhanced-300char',
+            chunkSize: ENHANCED_CONFIG.MAX_CHUNK_SIZE
+          });
+        } else {
+          // 多块处理
+          console.log(`📚 多块翻译模式: ${chunks.length}个块`);
+          const translatedChunks: string[] = [];
+          const chunkResults: any[] = [];
+          
+          for (let i = 0; i < chunks.length; i++) {
+            const chunk = chunks[i];
+            console.log(`\n📖 处理块 ${i + 1}/${chunks.length}: ${chunk.length}字符`);
+            
+            try {
+              const chunkResult = await translateWithRetry(chunk, sourceNLLB, targetNLLB);
+              translatedChunks.push(chunkResult);
+              chunkResults.push({ 
+                index: i + 1, 
+                status: 'success', 
+                originalLength: chunk.length,
+                translatedLength: chunkResult.length 
+              });
+            } catch (chunkError: any) {
+              console.log(`⚠️ 块 ${i + 1} 翻译失败，使用备用翻译`);
+              const fallbackChunk = getFallbackTranslation(chunk, sourceLang, targetLang);
+              translatedChunks.push(fallbackChunk);
+              chunkResults.push({ 
+                index: i + 1, 
+                status: 'fallback', 
+                originalLength: chunk.length,
+                error: chunkError.message 
+              });
+            }
+            
+            // 块间延迟避免限流
+            if (i < chunks.length - 1) {
+              console.log(`⏳ 块间延迟 ${ENHANCED_CONFIG.CHUNK_DELAY}ms...`);
+              await new Promise(resolve => setTimeout(resolve, ENHANCED_CONFIG.CHUNK_DELAY));
+            }
+          }
+          
+          const finalTranslation = translatedChunks.join(' ');
+          
+          console.log(`\n✅ 多块翻译完成: ${finalTranslation.length}字符`);
+          
+          return NextResponse.json({
+            translatedText: finalTranslation,
+            sourceLang: sourceLang,
+            targetLang: targetLang,
+            characterCount: text.length,
+            chunksProcessed: chunks.length,
+            chunkResults: chunkResults,
+            creditsUsed: calculation.credits_required,
+            service: 'nllb-enhanced-300char',
+            chunkSize: ENHANCED_CONFIG.MAX_CHUNK_SIZE
+          });
+        }
+      } catch (translationError: any) {
+        console.error('Translation service error:', translationError);
+        
+        // 翻译失败，退还积分
+        if (calculation.credits_required > 0) {
+          try {
+            console.log(`🔄 翻译失败，尝试退还积分: ${calculation.credits_required}`);
+            const refundResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/credits/consume`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': req.headers.get('authorization') || '',
+              },
+              body: JSON.stringify({
+                amount: -calculation.credits_required, // 负数表示退还
+                reason: `翻译失败退款：${text.length}字符，${sourceLang}->${targetLang}`,
+                metadata: {
+                  characterCount: text.length,
+                  sourceLanguage: sourceLang,
+                  targetLanguage: targetLang,
+                  translationType: 'text',
+                  endpoint: '/api/translate',
+                  isRefund: true,
+                  originalError: translationError.message
+                }
+              })
+            });
+            
+            if (refundResponse.ok) {
+              console.log(`✅ 积分退还成功: ${calculation.credits_required}积分`);
+            } else {
+              console.error('积分退还失败:', await refundResponse.text());
+            }
+          } catch (refundError) {
+            console.error('积分退还异常:', refundError);
           }
         }
         
-        const finalTranslation = translatedChunks.join(' ');
-        
-        console.log(`\n✅ 多块翻译完成: ${finalTranslation.length}字符`);
+        // 使用备用翻译
+        const fallbackTranslation = getFallbackTranslation(text, sourceLang, targetLang);
         
         return NextResponse.json({
-          translatedText: finalTranslation,
+          translatedText: fallbackTranslation,
           sourceLang: sourceLang,
           targetLang: targetLang,
           characterCount: text.length,
-          chunksProcessed: chunks.length,
-          chunkResults: chunkResults,
-          service: 'nllb-enhanced-300char',
-          chunkSize: ENHANCED_CONFIG.MAX_CHUNK_SIZE
+          creditsRefunded: calculation.credits_required,
+          service: 'fallback-enhanced',
+          error: translationError.message
         });
       }
-    } catch (translationError: any) {
-      console.error('Translation service error:', translationError);
+    } catch (error: any) {
+      console.error('Translation processing error:', error);
       
-      // 使用备用翻译
-      const fallbackTranslation = getFallbackTranslation(text, sourceLang, targetLang);
+      // 处理失败，退还积分
+      if (calculation.credits_required > 0) {
+        try {
+          console.log(`🔄 处理失败，尝试退还积分: ${calculation.credits_required}`);
+          const refundResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/credits/consume`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': req.headers.get('authorization') || '',
+            },
+            body: JSON.stringify({
+              amount: -calculation.credits_required, // 负数表示退还
+              reason: `翻译处理失败退款：${text.length}字符，${sourceLang}->${targetLang}`,
+              metadata: {
+                characterCount: text.length,
+                sourceLanguage: sourceLang,
+                targetLanguage: targetLang,
+                translationType: 'text',
+                endpoint: '/api/translate',
+                isRefund: true,
+                originalError: error.message
+              }
+            })
+          });
+          
+          if (refundResponse.ok) {
+            console.log(`✅ 积分退还成功: ${calculation.credits_required}积分`);
+          } else {
+            console.error('积分退还失败:', await refundResponse.text());
+          }
+        } catch (refundError) {
+          console.error('积分退还异常:', refundError);
+        }
+      }
       
-      return NextResponse.json({
-        translatedText: fallbackTranslation,
-        sourceLang: sourceLang,
-        targetLang: targetLang,
-        characterCount: text.length,
-        service: 'fallback-enhanced',
-        error: translationError.message
-      });
+      return NextResponse.json(
+        { 
+          error: 'Translation processing failed', 
+          details: error.message,
+          creditsRefunded: calculation.credits_required 
+        },
+        { status: 500 }
+      );
     }
   } catch (error: any) {
     console.error('API Error:', error);
@@ -412,3 +535,5 @@ if (text.length > 1000) { // 超过1000字符使用队列处理
     );
   }
 }
+
+export const POST = withApiAuth(translateHandler, ['free_user', 'pro_user', 'admin'])

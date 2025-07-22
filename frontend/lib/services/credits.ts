@@ -10,7 +10,7 @@ import type {
 
 // 积分计费配置
 export const CREDIT_CONFIG = {
-  FREE_CHARACTERS: 1000, // 每次翻译免费字符数 - 更新为1000
+  FREE_CHARACTERS: 5000, // 每次翻译免费字符数 - 更新为5000
   RATE_PER_CHARACTER: 0.1, // 超出免费额度后每字符积分数
   REGISTRATION_BONUS: 500, // 注册奖励积分
   REFERRAL_BONUS: 200, // 推荐奖励积分
