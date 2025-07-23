@@ -59,9 +59,9 @@ jest.mock('@/lib/api-utils', () => ({
 const mockCreditService = {
   calculateCreditsRequired: jest.fn((characterCount: number) => ({
     total_characters: characterCount,
-    free_characters: Math.min(characterCount, 5000), // Updated to 5000
-    billable_characters: Math.max(0, characterCount - 5000),
-    credits_required: Math.ceil(Math.max(0, (characterCount - 5000) * 0.1)),
+    free_characters: Math.min(characterCount, 1000), // Updated to 1000
+    billable_characters: Math.max(0, characterCount - 1000),
+    credits_required: Math.ceil(Math.max(0, (characterCount - 1000) * 0.1)),
   })),
 }
 
@@ -97,7 +97,7 @@ describe('Credit Pre-deduction Logic', () => {
           amount: 100,
           reason: 'Test credit deduction',
           metadata: {
-            characterCount: 6000,
+            characterCount: 2000,
             sourceLanguage: 'en',
             targetLanguage: 'zh',
           },
@@ -163,7 +163,7 @@ describe('Credit Pre-deduction Logic', () => {
   })
 
   describe('Translation API with Credit Pre-deduction', () => {
-    it('should not require credits for text under 5000 characters', async () => {
+    it('should not require credits for text under 1000 characters', async () => {
       // Mock successful translation
       mockFetch
         .mockResolvedValueOnce({
@@ -178,7 +178,7 @@ describe('Credit Pre-deduction Logic', () => {
       const { req } = createMocks({
         method: 'POST',
         body: {
-          text: 'A'.repeat(3000), // 3000 characters, should be free
+          text: 'A'.repeat(500), // 500 characters, should be free
           sourceLang: 'en',
           targetLang: 'zh',
         },
@@ -191,15 +191,15 @@ describe('Credit Pre-deduction Logic', () => {
       const data = await response.json()
 
       expect(response.status).toBe(200)
-      expect(data.creditsUsed).toBe(0) // Should be 0 for under 5000 chars
+      expect(data.creditsUsed).toBe(0) // Should be 0 for under 1000 chars
     })
 
-    it('should require credits for text over 5000 characters', async () => {
+    it('should require credits for text over 1000 characters', async () => {
       // Mock successful credit deduction
       mockFetch
         .mockResolvedValueOnce({
           ok: true,
-          json: async () => ({ success: true, new_balance: 900 }),
+          json: async () => ({ success: true, new_balance: 950 }),
         })
         .mockResolvedValueOnce({
           ok: true,
@@ -209,7 +209,7 @@ describe('Credit Pre-deduction Logic', () => {
       const { req } = createMocks({
         method: 'POST',
         body: {
-          text: 'A'.repeat(6000), // 6000 characters, should require 100 credits
+          text: 'A'.repeat(1500), // 1500 characters, should require 50 credits
           sourceLang: 'en',
           targetLang: 'zh',
         },
@@ -222,7 +222,7 @@ describe('Credit Pre-deduction Logic', () => {
       const data = await response.json()
 
       expect(response.status).toBe(200)
-      expect(data.creditsUsed).toBe(100) // (6000 - 5000) * 0.1 = 100
+      expect(data.creditsUsed).toBe(50) // (1500 - 1000) * 0.1 = 50
     })
 
     it('should return insufficient credits error when user lacks credits', async () => {
@@ -232,15 +232,15 @@ describe('Credit Pre-deduction Logic', () => {
         status: 402,
         json: async () => ({
           error: 'Insufficient credits',
-          required: 100,
-          available: 50,
+          required: 50,
+          available: 25,
         }),
       })
 
       const { req } = createMocks({
         method: 'POST',
         body: {
-          text: 'A'.repeat(6000), // 6000 characters, requires 100 credits
+          text: 'A'.repeat(1500), // 1500 characters, requires 50 credits
           sourceLang: 'en',
           targetLang: 'zh',
         },
@@ -254,8 +254,8 @@ describe('Credit Pre-deduction Logic', () => {
 
       expect(response.status).toBe(402)
       expect(data.code).toBe('INSUFFICIENT_CREDITS')
-      expect(data.required).toBe(100)
-      expect(data.available).toBe(50)
+      expect(data.required).toBe(50)
+      expect(data.available).toBe(25)
     })
 
     it('should refund credits when translation fails', async () => {
@@ -263,7 +263,7 @@ describe('Credit Pre-deduction Logic', () => {
       mockFetch
         .mockResolvedValueOnce({
           ok: true,
-          json: async () => ({ success: true, new_balance: 900 }),
+          json: async () => ({ success: true, new_balance: 950 }),
         })
         .mockRejectedValueOnce(new Error('NLLB service error'))
         .mockResolvedValueOnce({
@@ -274,7 +274,7 @@ describe('Credit Pre-deduction Logic', () => {
       const { req } = createMocks({
         method: 'POST',
         body: {
-          text: 'A'.repeat(6000), // 6000 characters, requires 100 credits
+          text: 'A'.repeat(1500), // 1500 characters, requires 50 credits
           sourceLang: 'en',
           targetLang: 'zh',
         },
@@ -287,7 +287,7 @@ describe('Credit Pre-deduction Logic', () => {
       const data = await response.json()
 
       expect(response.status).toBe(200) // Should return fallback translation
-      expect(data.creditsRefunded).toBe(100)
+      expect(data.creditsRefunded).toBe(50)
       expect(data.service).toBe('fallback-enhanced')
     })
   })
@@ -295,11 +295,11 @@ describe('Credit Pre-deduction Logic', () => {
   describe('Credit Calculation Logic', () => {
     it('should calculate credits correctly for various text lengths', async () => {
       const testCases = [
-        { length: 1000, expected: 0 },   // Under free limit
-        { length: 5000, expected: 0 },   // At free limit
-        { length: 5001, expected: 1 },   // 1 char over = 0.1 credits, rounded up to 1
-        { length: 6000, expected: 100 }, // 1000 chars over = 100 credits
-        { length: 8000, expected: 300 }, // 3000 chars over = 300 credits
+        { length: 500, expected: 0 },    // Under free limit
+        { length: 1000, expected: 0 },   // At free limit
+        { length: 1001, expected: 1 },   // 1 char over = 0.1 credits, rounded up to 1
+        { length: 1500, expected: 50 },  // 500 chars over = 50 credits
+        { length: 2000, expected: 100 }, // 1000 chars over = 100 credits
       ]
 
       for (const testCase of testCases) {
