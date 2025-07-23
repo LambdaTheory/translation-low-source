@@ -182,57 +182,168 @@ async function translateHandler(req: NextRequestWithUser) {
       console.error('[Translation] 积分查询异常:', error)
     }
 
-    // 检查积分是否足够
-    if (calculation.credits_required > 0 && userCredits < calculation.credits_required) {
-      return NextResponse.json({
-        error: `积分不足，需要 ${calculation.credits_required} 积分，当前余额 ${userCredits} 积分`,
-        code: 'INSUFFICIENT_CREDITS',
-        required: calculation.credits_required,
-        available: userCredits
-      }, { status: 402 })
+    // 检查积分是否足够并进行预扣除
+    if (calculation.credits_required > 0) {
+      if (userCredits < calculation.credits_required) {
+        return NextResponse.json({
+          error: `积分不足，需要 ${calculation.credits_required} 积分，当前余额 ${userCredits} 积分`,
+          code: 'INSUFFICIENT_CREDITS',
+          required: calculation.credits_required,
+          available: userCredits
+        }, { status: 402 })
+      }
+
+      // 预扣除积分
+      try {
+        const creditResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/credits/consume`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': req.headers.get('authorization') || '',
+          },
+          body: JSON.stringify({
+            amount: calculation.credits_required,
+            reason: `文档翻译：${characterCount}字符，${sourceLanguage}->${targetLanguage}`,
+            metadata: {
+              characterCount: characterCount,
+              sourceLanguage: sourceLanguage,
+              targetLanguage: targetLanguage,
+              translationType: 'document',
+              fileId: fileId,
+              endpoint: '/api/document/translate'
+            }
+          })
+        });
+
+        const creditResult = await creditResponse.json();
+
+        if (!creditResponse.ok) {
+          console.error('文档翻译积分预扣失败:', creditResult);
+          return NextResponse.json({
+            error: '积分扣除失败，请稍后重试',
+            code: 'CREDIT_DEDUCTION_FAILED'
+          }, { status: 500 });
+        }
+
+        console.log(`✅ 文档翻译积分预扣成功: ${calculation.credits_required}积分，剩余: ${creditResult.new_balance}积分`);
+      } catch (creditError) {
+        console.error('文档翻译积分预扣异常:', creditError);
+        return NextResponse.json({
+          error: '积分服务不可用，请稍后重试',
+          code: 'CREDIT_SERVICE_ERROR'
+        }, { status: 503 });
+      }
     }
 
     // 执行翻译
-    const translationResult = await performTranslation(text, sourceLanguage, targetLanguage, fileId)
-
-    if (!translationResult.success) {
+    let translationResult
+    try {
+      translationResult = await performTranslation(text, sourceLanguage, targetLanguage, fileId)
+      
+      if (!translationResult.success) {
+        // 翻译失败，退还积分
+        if (calculation.credits_required > 0) {
+          try {
+            console.log(`🔄 文档翻译失败，尝试退还积分: ${calculation.credits_required}`);
+            const refundResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/credits/consume`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': req.headers.get('authorization') || '',
+              },
+              body: JSON.stringify({
+                amount: -calculation.credits_required, // 负数表示退还
+                reason: `文档翻译失败退款：${characterCount}字符，${sourceLanguage}->${targetLanguage}`,
+                metadata: {
+                  characterCount: characterCount,
+                  sourceLanguage: sourceLanguage,
+                  targetLanguage: targetLanguage,
+                  translationType: 'document',
+                  fileId: fileId,
+                  endpoint: '/api/document/translate',
+                  isRefund: true,
+                  originalError: 'error' in translationResult ? translationResult.error : '翻译失败'
+                }
+              })
+            });
+            
+            if (refundResponse.ok) {
+              console.log(`✅ 文档翻译积分退还成功: ${calculation.credits_required}积分`);
+            } else {
+              console.error('文档翻译积分退还失败:', await refundResponse.text());
+            }
+          } catch (refundError) {
+            console.error('文档翻译积分退还异常:', refundError);
+          }
+        }
+        
+        return NextResponse.json({
+          error: 'error' in translationResult ? translationResult.error : '翻译失败',
+          code: 'TRANSLATION_FAILED',
+          creditsRefunded: calculation.credits_required
+        }, { status: 500 })
+      }
+    } catch (error) {
+      console.error('[Translation] 执行翻译异常:', error)
+      
+      // 翻译异常，退还积分
+      if (calculation.credits_required > 0) {
+        try {
+          console.log(`🔄 文档翻译异常，尝试退还积分: ${calculation.credits_required}`);
+          const refundResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/credits/consume`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': req.headers.get('authorization') || '',
+            },
+            body: JSON.stringify({
+              amount: -calculation.credits_required, // 负数表示退还
+              reason: `文档翻译异常退款：${characterCount}字符，${sourceLanguage}->${targetLanguage}`,
+              metadata: {
+                characterCount: characterCount,
+                sourceLanguage: sourceLanguage,
+                targetLanguage: targetLanguage,
+                translationType: 'document',
+                fileId: fileId,
+                endpoint: '/api/document/translate',
+                isRefund: true,
+                originalError: error instanceof Error ? error.message : '翻译异常'
+              }
+            })
+          });
+          
+          if (refundResponse.ok) {
+            console.log(`✅ 文档翻译积分退还成功: ${calculation.credits_required}积分`);
+          } else {
+            console.error('文档翻译积分退还失败:', await refundResponse.text());
+          }
+        } catch (refundError) {
+          console.error('文档翻译积分退还异常:', refundError);
+        }
+      }
+      
       return NextResponse.json({
-        error: 'error' in translationResult ? translationResult.error : '翻译失败',
-        code: 'TRANSLATION_FAILED'
+        error: '翻译处理异常',
+        code: 'TRANSLATION_EXCEPTION',
+        creditsRefunded: calculation.credits_required
       }, { status: 500 })
     }
 
     // 检查是否是异步任务
     if ('jobId' in translationResult && translationResult.jobId) {
-      // 异步任务 - 返回任务信息，不扣除积分（任务完成后再扣除）
+      // 异步任务 - 返回任务信息，积分已预扣除
       return NextResponse.json({
         success: true,
         message: 'message' in translationResult ? translationResult.message : '异步任务已创建',
         jobId: translationResult.jobId,
         totalChunks: 'totalChunks' in translationResult ? translationResult.totalChunks : 0,
         estimatedTime: 'estimatedTime' in translationResult ? translationResult.estimatedTime : 0,
+        creditsDeducted: calculation.credits_required,
         isAsync: true
       })
     }
 
-    // 同步任务 - 立即扣除积分并返回结果
-    if (calculation.credits_required > 0) {
-      try {
-        const supabase = createSupabaseAdminClient()
-        const { error: deductError } = await supabase
-          .from('users')
-          .update({ credits: userCredits - calculation.credits_required })
-          .eq('id', user.id)
-
-        if (deductError) {
-          console.error('[Translation] 扣除积分失败:', deductError)
-        }
-      } catch (error) {
-        console.error('[Translation] 积分扣除异常:', error)
-      }
-    }
-
-    // 同步任务返回结果
+    // 同步任务 - 返回结果，积分已预扣除
     const translatedText = 'translatedText' in translationResult ? translationResult.translatedText : ''
     return NextResponse.json({
       success: true,
@@ -240,8 +351,7 @@ async function translateHandler(req: NextRequestWithUser) {
       originalLength: characterCount,
       translatedLength: translatedText.length,
       creditsUsed: calculation.credits_required,
-      isAsync: false,
-      remainingCredits: userCredits - calculation.credits_required
+      isAsync: false
     })
 
   } catch (error) {

@@ -30,9 +30,9 @@ async function consumeHandler(req: NextRequestWithUser) {
     const { amount, reason, metadata = {} } = body
 
     // 验证输入
-    if (!amount || amount <= 0) {
+    if (amount === 0) {
       return NextResponse.json(
-        { error: 'Invalid credit amount' },
+        { error: 'Credit amount cannot be zero' },
         { status: 400 }
       )
     }
@@ -109,17 +109,19 @@ async function consumeHandler(req: NextRequestWithUser) {
     
     const currentCredits = userData?.credits || 0
     
-    console.log(`[Credits Debug] User ${user.id} credit check:`, {
+    console.log(`[Credits Debug] User ${user.id} credit operation:`, {
       userId: user.id,
       userEmail: user.email,
       requestedAmount: amount,
       currentCredits,
-      sufficient: currentCredits >= amount,
+      isRefund: amount < 0,
+      sufficient: amount < 0 || currentCredits >= amount,
       reason,
       timestamp: new Date().toISOString()
     })
     
-    if (currentCredits < amount) {
+    // 如果是扣除积分（正数），检查余额是否足够
+    if (amount > 0 && currentCredits < amount) {
       console.log(`[Credits Debug] Insufficient credits for user ${user.id}: ${currentCredits} < ${amount}`)
       return NextResponse.json(
         { 
@@ -132,8 +134,26 @@ async function consumeHandler(req: NextRequestWithUser) {
       )
     }
 
-    // 直接更新用户积分（简化版本）
+    // 计算新余额（扣除用正数，退还用负数）
     const newBalance = currentCredits - amount
+    
+    // 确保退还后的余额不会变成负数（虽然这种情况很少见）
+    if (newBalance < 0 && amount < 0) {
+      console.warn(`[Credits Debug] Refund would result in negative balance, adjusting`, {
+        currentCredits,
+        refundAmount: Math.abs(amount),
+        newBalance
+      })
+      // 不允许余额变成负数，将余额设为当前值（不进行退还）
+      return NextResponse.json(
+        { 
+          error: 'Invalid refund amount',
+          details: 'Refund amount exceeds deducted amount',
+          available: currentCredits
+        },
+        { status: 400 }
+      )
+    }
     
     const { error: updateError } = await supabase
       .from('users')
@@ -144,26 +164,28 @@ async function consumeHandler(req: NextRequestWithUser) {
       console.error(`[Credits Debug] Failed to update user credits:`, updateError)
       return NextResponse.json(
         { 
-          error: 'Failed to consume credits',
+          error: 'Failed to update credits',
           details: updateError.message
         },
         { status: 500 }
       )
     }
 
-    // 记录交易（可选）
+    // 记录交易
+    const transactionType = amount > 0 ? 'consume' : 'refund'
     const { error: transactionError } = await supabase
       .from('credit_transactions')
       .insert({
         user_id: user.id,
-        type: 'consume',
-        amount: -amount,
+        type: transactionType,
+        amount: -amount, // 数据库中存储：消费为负数，退还为正数
         balance: newBalance,
         description: reason,
         metadata: {
           ...metadata,
-          consumed_at: new Date().toISOString(),
-          user_agent: req.headers.get('user-agent') || 'unknown'
+          timestamp: new Date().toISOString(),
+          user_agent: req.headers.get('user-agent') || 'unknown',
+          operation_type: amount > 0 ? 'deduction' : 'refund'
         }
       })
     
@@ -172,11 +194,13 @@ async function consumeHandler(req: NextRequestWithUser) {
       // 不影响主流程，只是记录警告
     }
 
-    console.log(`[Credits] User ${user.id} consumed ${amount} credits for ${reason}. Balance: ${currentCredits} -> ${newBalance}`)
+    const operationType = amount > 0 ? 'consumed' : 'refunded'
+    console.log(`[Credits] User ${user.id} ${operationType} ${Math.abs(amount)} credits for ${reason}. Balance: ${currentCredits} -> ${newBalance}`)
 
     return NextResponse.json({
       success: true,
-      consumed: amount,
+      amount: Math.abs(amount),
+      operation: operationType,
       reason,
       previous_balance: currentCredits,
       new_balance: newBalance,
