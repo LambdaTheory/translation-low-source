@@ -1,6 +1,7 @@
 'use client'
 
-import { useAuth, useCredits } from '@/lib/hooks/useAuth'
+import { useAuth } from '@/lib/hooks/useAuth'
+import { useGlobalCredits } from '@/lib/contexts/credits-context'
 import { AuthGuard, ConditionalRender } from '@/components/auth/auth-guard'
 import { UserMenu } from '@/components/auth/user-menu'
 import { CreditBalance, CreditEstimate, FreeQuotaProgress } from '@/components/credits/credit-balance'
@@ -15,7 +16,7 @@ import { useState } from 'react'
  */
 export default function TestAuthComponent() {
   const { user, signOut, loading } = useAuth()
-  const { credits, hasEnoughCredits, estimateCredits } = useCredits()
+  const { credits, hasEnoughCredits, estimateCredits } = useGlobalCredits()
   const [testText, setTestText] = useState('')
 
   const handleSignOut = async () => {

@@ -19,7 +19,8 @@ import {
   Languages,
   Loader2
 } from 'lucide-react'
-import { useAuth, useCredits } from '@/lib/hooks/useAuth'
+import { useAuth } from '@/lib/hooks/useAuth'
+import { useGlobalCredits } from '@/lib/contexts/credits-context'
 import { ConditionalRender } from '@/components/auth/auth-guard'
 import { CreditEstimate, FreeQuotaProgress } from '@/components/credits/credit-balance'
 import { useRouter } from 'next/navigation'
@@ -80,7 +81,7 @@ interface TranslationState {
 
 export function EnhancedDocumentTranslator({ className }: EnhancedDocumentTranslatorProps) {
   const { user } = useAuth()
-  const { credits, loading: creditsLoading, refreshCredits } = useCredits()
+  const { credits, isLoading: creditsLoading, refreshCredits } = useGlobalCredits()
   const router = useRouter()
   const t = useTranslations('document')
   

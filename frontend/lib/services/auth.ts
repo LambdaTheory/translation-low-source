@@ -51,7 +51,19 @@ class AuthService {
   private checkSupabaseConfig(): boolean {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    return !!(url && key && !url.includes('placeholder') && key !== 'placeholder-anon-key')
+    
+    if (!url || !key) {
+      console.warn('[AuthService] Missing Supabase environment variables. Please check your .env.local file.')
+      return false
+    }
+    
+    if (url.includes('placeholder') || url.includes('your_supabase') || 
+        key === 'placeholder-anon-key' || key.includes('your_supabase')) {
+      console.warn('[AuthService] Supabase environment variables contain placeholder values. Please update your .env.local file with actual Supabase credentials.')
+      return false
+    }
+    
+    return true
   }
 
   private isReady(): boolean {
@@ -66,7 +78,7 @@ class AuthService {
       return {
         data: null,
         error: {
-          message: '身份验证服务暂未配置',
+          message: '身份验证服务暂未配置。请检查 .env.local 文件中的 Supabase 配置项是否正确填写。',
         },
       }
     }
@@ -170,7 +182,7 @@ class AuthService {
       return {
         data: null,
         error: {
-          message: '身份验证服务暂未配置',
+          message: '身份验证服务暂未配置。请检查 .env.local 文件中的 Supabase 配置项是否正确填写。',
         },
       }
     }
@@ -233,7 +245,7 @@ class AuthService {
       return {
         data: null,
         error: {
-          message: '身份验证服务暂未配置',
+          message: '身份验证服务暂未配置。请检查 .env.local 文件中的 Supabase 配置项是否正确填写。',
         },
       }
     }

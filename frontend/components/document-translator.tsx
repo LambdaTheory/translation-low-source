@@ -507,6 +507,27 @@ export function DocumentTranslator({ className }: DocumentTranslatorProps) {
         error: null
       })
 
+      // Save to translation history
+      try {
+        const { translationHistoryService } = await import('@/lib/services/translation-history')
+        await translationHistoryService.saveTranslation({
+          userId: user?.id,
+          sessionId: `doc_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+          sourceText: uploadState.uploadResult?.extractedText || '',
+          translatedText: translatedText,
+          sourceLanguage: sourceLanguage,
+          targetLanguage: 'en',
+          hasFormatting: true,
+          type: 'document',
+          characterCount: uploadState.uploadResult?.characterCount || 0,
+          creditsUsed: data.creditsConsumed || 0,
+          fileName: uploadState.uploadResult?.fileName,
+          fileSize: uploadState.uploadResult?.fileSize
+        })
+      } catch (error) {
+        console.warn('Failed to save translation to history:', error)
+      }
+
       // 刷新积分余额
       const updatedCredits = await refreshCredits()
       if (typeof updatedCredits === 'number') {
@@ -628,7 +649,7 @@ export function DocumentTranslator({ className }: DocumentTranslatorProps) {
           const completeData = await completeResponse.json()
           
           if (completeResponse.ok && completeData.success) {
-            // 设置翻译完成状态
+            // Set translation completion state
             setTranslationState({
               isTranslating: false,
               result: {
@@ -640,6 +661,27 @@ export function DocumentTranslator({ className }: DocumentTranslatorProps) {
               progress: 100,
               error: null
             })
+            
+            // Save to translation history
+            try {
+              const { translationHistoryService } = await import('@/lib/services/translation-history')
+              await translationHistoryService.saveTranslation({
+                userId: user?.id,
+                sessionId: `doc_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+                sourceText: uploadState.uploadResult?.extractedText || '',
+                translatedText: job.result,
+                sourceLanguage: sourceLanguage,
+                targetLanguage: 'en',
+                hasFormatting: true,
+                type: 'document',
+                characterCount: uploadState.uploadResult?.characterCount || 0,
+                creditsUsed: completeData.creditsUsed || 0,
+                fileName: uploadState.uploadResult?.fileName,
+                fileSize: uploadState.uploadResult?.fileSize
+              })
+            } catch (error) {
+              console.warn('Failed to save translation to history:', error)
+            }
             
             // 刷新积分余额
             const updatedCredits = await refreshCredits()
@@ -762,6 +804,58 @@ export function DocumentTranslator({ className }: DocumentTranslatorProps) {
       description: t('translation.download_description', { filename: downloadFileName }),
     })
   }, [translationState.result, uploadState.uploadResult, t])
+
+  const handleDownloadDOCX = useCallback(async () => {
+    if (!(translationState.result as any)?.translatedText) return
+    
+    const { translatedText } = translationState.result as any
+    const originalFileName = (uploadState.uploadResult as any)?.fileName || (uploadState.uploadResult as any)?.filename || 'document'
+    
+    try {
+      const { downloadDOCX } = await import('@/lib/formatting/document-export')
+      await downloadDOCX(translatedText, {
+        filename: `${originalFileName.replace(/\.[^/.]+$/, '')}_translated`,
+        title: `Translation: ${sourceLanguage} → en`,
+        author: user?.email || 'LoreTrans User'
+      })
+      toast({
+        title: 'Download started',
+        description: 'Your DOCX file is being downloaded.'
+      })
+    } catch (error) {
+      toast({
+        title: 'Download failed',
+        description: 'Could not generate DOCX file. Please try again.',
+        variant: 'destructive'
+      })
+    }
+  }, [translationState.result, uploadState.uploadResult, sourceLanguage, user])
+
+  const handleDownloadPDF = useCallback(async () => {
+    if (!(translationState.result as any)?.translatedText) return
+    
+    const { translatedText } = translationState.result as any
+    const originalFileName = (uploadState.uploadResult as any)?.fileName || (uploadState.uploadResult as any)?.filename || 'document'
+    
+    try {
+      const { downloadPDF } = await import('@/lib/formatting/document-export')
+      downloadPDF(translatedText, {
+        filename: `${originalFileName.replace(/\.[^/.]+$/, '')}_translated`,
+        title: `Translation: ${sourceLanguage} → en`,
+        author: user?.email || 'LoreTrans User'
+      })
+      toast({
+        title: 'Download started',
+        description: 'Your PDF file is being downloaded.'
+      })
+    } catch (error) {
+      toast({
+        title: 'Download failed',
+        description: 'Could not generate PDF file. Please try again.',
+        variant: 'destructive'
+      })
+    }
+  }, [translationState.result, uploadState.uploadResult, sourceLanguage, user])
 
   // 组件挂载时强制刷新积分
   useEffect(() => {
@@ -1042,10 +1136,30 @@ export function DocumentTranslator({ className }: DocumentTranslatorProps) {
                     <Button 
                       onClick={downloadTranslationResult} 
                       disabled={!(translationState.result as any)?.translatedText}
-                      className="w-auto max-w-full"
+                      className="w-auto max-w-full mr-2"
                     >
                       <Download className="h-4 w-4 mr-2" />
                       {t('translation.download_result')}
+                    </Button>
+                    
+                    <Button 
+                      variant="outline"
+                      onClick={() => handleDownloadDOCX()}
+                      disabled={!(translationState.result as any)?.translatedText}
+                      className="w-auto max-w-full mr-2"
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download DOC
+                    </Button>
+                    
+                    <Button 
+                      variant="outline"
+                      onClick={() => handleDownloadPDF()}
+                      disabled={!(translationState.result as any)?.translatedText}
+                      className="w-auto max-w-full"
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download PDF
                     </Button>
                   </div>
                 )}

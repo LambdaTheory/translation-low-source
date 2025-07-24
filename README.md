@@ -235,8 +235,19 @@ npm run dev
 ```
 
 ### 环境变量配置
+
+#### 🚀 快速设置 (.env.local)
 ```bash
-# 数据库配置
+# 1. 复制环境变量模板
+cd frontend
+cp .env.local.template .env.local
+
+# 2. 编辑 .env.local 文件，按照下面的步骤配置
+```
+
+#### 🔧 必需配置项
+```bash
+# 数据库配置 (必需 - 用户登录/注册功能)
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
@@ -246,7 +257,7 @@ NLLB_SERVICE_URL=https://wane0528-my-nllb-api.hf.space/api/v4/translator
 NLLB_SERVICE_ENABLED=true
 NLLB_SERVICE_TIMEOUT=60000
 
-# 支付服务
+# 支付服务 (可选 - 积分购买功能)
 CREEM_API_KEY=your_creem_api_key
 CREEM_WEBHOOK_SECRET=your_webhook_secret
 
@@ -254,6 +265,30 @@ CREEM_WEBHOOK_SECRET=your_webhook_secret
 NEXT_PUBLIC_APP_URL=https://your-domain.com
 NEXTAUTH_SECRET=your_nextauth_secret
 ```
+
+#### 📝 Supabase 设置步骤
+如果您看到 "身份验证服务暂未配置" 错误，请按以下步骤设置：
+
+1. **创建 Supabase 项目**
+   - 访问 [https://supabase.com](https://supabase.com)
+   - 创建新项目或使用现有项目
+
+2. **获取 API 凭据**
+   - 进入项目控制台
+   - 前往 Settings → API
+   - 复制以下值:
+     - `Project URL` → `NEXT_PUBLIC_SUPABASE_URL`
+     - `anon public` key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+     - `service_role secret` key → `SUPABASE_SERVICE_ROLE_KEY`
+
+3. **更新 .env.local**
+   - 将获取的值替换模板中的占位符
+   - 确保没有包含 `your_supabase` 或 `placeholder` 字样
+
+4. **重启开发服务器**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
