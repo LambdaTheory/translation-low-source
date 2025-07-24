@@ -93,7 +93,7 @@ interface CreditEstimateProps {
 }
 
 export function CreditEstimate({ textLength, className }: CreditEstimateProps) {
-  const { estimateCredits, hasEnoughCredits } = useCredits()
+  const { estimateCredits, hasEnoughCredits } = useGlobalCredits()
   const t = useTranslations('TranslatorWidget.credits')
   const estimatedCost = estimateCredits(textLength)
   const canAfford = hasEnoughCredits(estimatedCost)

@@ -1,8 +1,6 @@
 'use client'
 
 import { DocumentTranslator } from '@/components/document-translator'
-import { TranslationHistory } from '@/components/translation/history/translation-history'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { TranslationNavButtons } from '@/components/translation-nav-buttons'
 import { GuestLimitGuard } from '@/components/guest-limit-guard'
 import { useTranslations } from 'next-intl'
@@ -33,24 +31,11 @@ export function DocumentTranslateClient({ locale }: DocumentTranslateClientProps
         </div>
       </div>
 
-      {/* Document Translator with History */}
+      {/* Document Translator */}
       <GuestLimitGuard showStatus={false}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Tabs defaultValue="translator" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="translator">Document Translator</TabsTrigger>
-                <TabsTrigger value="history">Translation History</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="translator">
-                <DocumentTranslator />
-              </TabsContent>
-              
-              <TabsContent value="history">
-                <TranslationHistory />
-              </TabsContent>
-            </Tabs>
+            <DocumentTranslator />
           </div>
         </div>
       </GuestLimitGuard>
