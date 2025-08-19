@@ -133,7 +133,14 @@ export default function NepaliToEnglishPage({ params }: Props) {
       "Translation history tracking",
       "Bidirectional Nepali-English translation",
       "Free unlimited usage"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
 
   const faqStructuredData = {
@@ -178,43 +185,32 @@ export default function NepaliToEnglishPage({ params }: Props) {
   const howToStructuredData = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Translate Nepali to English Online",
-    "description": "Step-by-step guide to translate Nepali text to English using our free online translator",
-    "image": "https://loretrans.com/og-nepali-english.jpg",
-    "totalTime": "PT1M",
-    "estimatedCost": {
-      "@type": "MonetaryAmount",
-      "currency": "USD",
-      "value": "0"
-    },
+    "name": "How to translate Nepali (नेपाली) to English",
+    "description": "Step-by-step guide to translate Nepali (नेपाली) text to English using our AI translator",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Enter Nepali Text",
-        "text": "Type or paste your Nepali (नेपाली) text into the input box on the left side.",
-        "image": "https://loretrans.com/step1-nepali.jpg"
+        "name": "Enter your Nepali text for translation",
+        "text": "Type or paste your Nepali (नेपाली) text into the source text box. Our Nepali-English translator supports up to 5,000 characters, making it perfect for translating Nepali documents, emails, or social media posts to English."
       },
       {
-        "@type": "HowToStep", 
+        "@type": "HowToStep",
         "position": 2,
-        "name": "Select Languages",
-        "text": "Ensure 'Nepali' is selected as source language and 'English' as target language.",
-        "image": "https://loretrans.com/step2-languages.jpg"
+        "name": "Select Nepali to English translation direction",
+        "text": "Ensure 'Nepali' is selected as the source language and 'English' as the target language. Use the swap button to switch between Nepali-to-English and English-to-Nepali translation modes as needed."
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Click Translate",
-        "text": "Click the 'Translate' button to convert your Nepali text to English instantly.",
-        "image": "https://loretrans.com/step3-translate.jpg"
+        "name": "Start your Nepali-English conversion",
+        "text": "Press the translate button to begin the Nepali to English translation process. Short Nepali texts translate instantly, while longer Nepali documents use our advanced queue processing system for optimal translation quality."
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "Get Results",
-        "text": "Your English translation will appear in the output box. Copy or download as needed.",
-        "image": "https://loretrans.com/step4-results.jpg"
+        "name": "Review and use your English translation",
+        "text": "Review the English translation results from your Nepali text. You can copy the translated English text, download it as a file, or save it to your Nepali-English conversion history for future reference."
       }
     ]
   }

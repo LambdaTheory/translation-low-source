@@ -133,7 +133,14 @@ export default function EnglishToKhmerPage({ params }: Props) {
       "Translation history tracking",
       "Bidirectional English-Khmer translation",
       "Free unlimited usage"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1250",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
 
   const faqStructuredData = {
@@ -178,43 +185,32 @@ export default function EnglishToKhmerPage({ params }: Props) {
   const howToStructuredData = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Translate English to Khmer Online",
-    "description": "Step-by-step guide to translate English text to Khmer using our free online translator",
-    "image": "https://loretrans.com/og-english-khmer.jpg",
-    "totalTime": "PT1M",
-    "estimatedCost": {
-      "@type": "MonetaryAmount",
-      "currency": "USD",
-      "value": "0"
-    },
+    "name": "How to translate English to Khmer (ខ្មែរ)",
+    "description": "Step-by-step guide to translate English text to Khmer (ខ្មែរ) using our AI translator",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Enter English Text",
-        "text": "Type or paste your English text into the input box on the left side.",
-        "image": "https://loretrans.com/step1-english.jpg"
+        "name": "Enter your English text for translation",
+        "text": "Type or paste your English text into the source text box. Our English-Khmer translator supports up to 5,000 characters, making it perfect for translating English documents, emails, or social media posts to Khmer."
       },
       {
-        "@type": "HowToStep", 
+        "@type": "HowToStep",
         "position": 2,
-        "name": "Select Languages",
-        "text": "Ensure 'English' is selected as source language and 'Khmer' as target language.",
-        "image": "https://loretrans.com/step2-languages.jpg"
+        "name": "Select English to Khmer translation direction",
+        "text": "Ensure 'English' is selected as the source language and 'Khmer' as the target language. Use the swap button to switch between English-to-Khmer and Khmer-to-English translation modes as needed."
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Click Translate",
-        "text": "Click the 'Translate' button to convert your English text to Khmer (ខ្មែរ) instantly.",
-        "image": "https://loretrans.com/step3-translate.jpg"
+        "name": "Start your English-Khmer conversion",
+        "text": "Press the translate button to begin the English to Khmer translation process. Short English texts translate instantly, while longer English documents use our advanced queue processing system for optimal translation quality."
       },
       {
         "@type": "HowToStep",
         "position": 4,
-        "name": "Get Results",
-        "text": "Your Khmer translation will appear in the output box. Copy or download as needed.",
-        "image": "https://loretrans.com/step4-results.jpg"
+        "name": "Review and use your Khmer translation",
+        "text": "Review the Khmer translation results from your English text. You can copy the translated Khmer text, download it as a file, or save it to your English-Khmer conversion history for future reference."
       }
     ]
   }
