@@ -65,71 +65,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'en': `https://loretrans.com/en/english-to-khmer`,
         'km': `https://loretrans.com/km/english-to-khmer`,
       }
-    },
-    
-    // 添加结构化数据
-    other: {
-      'application/ld+json': JSON.stringify([
-        // WebPage Schema
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "English to Khmer Translator – Instant & Free Online Tool",
-          "description": "Convert English to Khmer (ខ្មែរ) text instantly with our AI-powered translator. 100% free, no signup required.",
-          "url": `https://loretrans.com/${locale}/english-to-khmer`,
-          "inLanguage": "en",
-          "isPartOf": {
-            "@type": "WebSite",
-            "name": "LoReTrans",
-            "url": "https://loretrans.com"
-          }
-        },
-        
-        // FAQ Schema
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Is the English to Khmer translation free?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, our English to Khmer translation service is completely free with no hidden costs. You can translate up to 5,000 characters at no charge."
-              }
-            },
-            {
-              "@type": "Question", 
-              "name": "Can I use it for long texts?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! You can translate up to 5,000 characters of English text to Khmer at once. For texts over 1,000 characters, you'll need to sign in for queue processing."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How accurate is the English to Khmer translation?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our AI-powered English to Khmer translator provides high-accuracy translations using advanced NLLB technology, excellent for most content types."
-              }
-            }
-          ]
-        },
-        
-        // Organization Schema
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "LoReTrans",
-          "url": "https://loretrans.com",
-          "description": "Free online translation service for low-resource languages",
-          "sameAs": [
-            "https://twitter.com/loretrans",
-            "https://facebook.com/loretrans"
-          ]
-        }
-      ])
     }
   }
 }
@@ -155,101 +90,168 @@ const englishToKhmerFAQs = [
 ]
 
 export default function EnglishToKhmerPage({ params }: Props) {
+  const { locale } = params
+  
+  // 结构化数据
+  const webPageStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "English to Khmer Translator – Instant & Free Online Tool",
+    "description": "Convert English to Khmer (ខ្មែរ) text instantly with our AI-powered translator. 100% free, no signup required.",
+    "url": `https://loretrans.com/${locale}/english-to-khmer`,
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "LoReTrans",
+      "url": "https://loretrans.com"
+    }
+  }
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the English to Khmer translation free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our English to Khmer translation service is completely free with no hidden costs. You can translate up to 5,000 characters at no charge."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Can I use it for long texts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can translate up to 5,000 characters of English text to Khmer at once. For texts over 1,000 characters, you'll need to sign in for queue processing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is the English to Khmer translation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our AI-powered English to Khmer translator provides high-accuracy translations using advanced NLLB technology, excellent for most content types."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I translate Khmer text back to English using this tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Our translator supports bidirectional translation between English and Khmer. You can easily switch between English-to-Khmer and Khmer-to-English translation."
+        }
+      }
+    ]
+  }
+
+  const translationServiceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "English to Khmer Translation",
+    "provider": {
+      "@type": "Organization",
+      "name": "LoReTrans",
+      "url": "https://loretrans.com"
+    },
+    "description": "Professional AI-powered translation from English to Khmer",
+    "serviceType": "Translation Service",
+    "areaServed": "Worldwide",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* 优化后的 H1 标题 */}
-      <h1 className="text-3xl font-bold text-center mb-8">
-        English to Khmer Translator - Free & Instant
-      </h1>
+    <>
+      {/* 结构化数据 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageStructuredData, null, 2)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData, null, 2)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(translationServiceStructuredData, null, 2)
+        }}
+      />
       
-      {/* 优化后的副标题 */}
-      <div className="text-center mb-8">
-        <h2 className="text-xl text-gray-600 mb-4">
-          Convert English to Cambodian (ខ្មែរ) Language Online
-        </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto">
-          Translate English to Khmer (ខ្មែរ) instantly with our free AI-powered translator. 
-          Perfect for business, travel, education, and learning Cambodian language.
-        </p>
-      </div>
+      <div className="container mx-auto px-4 py-8">
+        {/* 优化后的 H1 标题 */}
+        <h1 className="text-3xl font-bold text-center mb-8">
+          English to Khmer Translator - Free & Instant
+        </h1>
+        
+        {/* 优化后的副标题 */}
+        <div className="text-center mb-8">
+          <h2 className="text-xl text-gray-600 mb-4">
+            Convert English to Cambodian (ខ្មែរ) Language Online
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Translate English to Khmer (ខ្មែរ) instantly with our free AI-powered translator. 
+            Perfect for business, travel, education, and learning Cambodian language.
+          </p>
+        </div>
 
-      <EnhancedTextTranslator 
-        defaultSourceLang="en"
-        defaultTargetLang="km"
-      />
-      />
+        <EnhancedTextTranslator 
+          defaultSourceLang="en"
+          defaultTargetLang="km"
+        />
 
-      {/* FAQ 部分 */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-bold text-center mb-8">
-          Frequently Asked Questions
-        </h2>
-        <div className="max-w-4xl mx-auto space-y-6">
-          {englishToKhmerFAQs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-3 text-gray-800">
-                {faq.question}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {faq.answer}
+        {/* FAQ 部分 */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-center mb-8">
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-6">
+            {englishToKhmerFAQs.map((faq, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                <h3 className="text-lg font-semibold mb-3 text-gray-800">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 添加关键词优化的内容区块 */}
+        <div className="mt-16 bg-gray-50 rounded-lg p-8">
+          <h2 className="text-2xl font-bold mb-6">
+            Why Choose Our English to Khmer Translator?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">100% Free Online Tool</h3>
+              <p className="text-gray-600">
+                Our English to Khmer translation service is completely free. 
+                No hidden costs, no subscription required. Translate English to ខ្មែរ instantly.
               </p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 添加关键词优化的内容区块 */}
-      <div className="mt-16 bg-gray-50 rounded-lg p-8">
-        <h2 className="text-2xl font-bold mb-6">
-          Why Choose Our English Khmer Translator?
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-3">100% Free Online</h3>
-            <p className="text-gray-600">
-              Our English to Khmer translation service is completely free. 
-              No hidden costs, no subscription. Translate english to cambodian instantly.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3">AI-Powered Accuracy</h3>
-            <p className="text-gray-600">
-              Get precise English to ខ្មែរ translation with advanced AI technology. 
-              Perfect for business documents and personal communication.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3">No Signup Required</h3>
-            <p className="text-gray-600">
-              Start translating immediately without registration. 
-              Quick and easy English Khmer translation for everyone.
-            </p>
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Fast & Accurate Results</h3>
+              <p className="text-gray-600">
+                Get instant English to Khmer translation with high accuracy. 
+                Perfect for business, education, and personal use.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* 使用场景部分 */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-bold text-center mb-8">
-          Perfect for Multiple Use Cases
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-4">Business & Professional</h3>
-            <p className="text-gray-600">
-              Translate business documents, emails, and professional communications 
-              from English to Khmer for your Cambodian partners and clients.
-            </p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-4">Travel & Tourism</h3>
-            <p className="text-gray-600">
-              Essential for travelers to Cambodia. Translate phrases, directions, 
-              and conversations from English to ខ្មែរ for better communication.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   )
 }
