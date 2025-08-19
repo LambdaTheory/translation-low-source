@@ -92,19 +92,48 @@ const nepaliToEnglishFAQs = [
 export default function NepaliToEnglishPage({ params }: Props) {
   const { locale } = params
   
-  // 结构化数据
-  const webPageStructuredData = {
+  // 结构化数据 - 使用GSC更容易识别的Schema类型
+  const webApplicationStructuredData = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Free Nepali to English Translation Online",
-    "description": "Translate Nepali to English instantly with our free online translator. Fast, accurate, and easy to use.",
+    "@type": "WebApplication",
+    "name": "Nepali to English Translator - LoReTrans",
+    "alternateName": "Free Nepali to English AI Translator",
+    "description": "Free AI-powered Nepali to English translation tool with queue processing, translation history, and support for long texts up to 5,000 characters.",
     "url": `https://loretrans.com/${locale}/nepali-to-english`,
-    "inLanguage": "en",
-    "isPartOf": {
-      "@type": "WebSite",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "2.0",
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-08-19",
+    "inLanguage": ["ne", "en"],
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "LoReTrans",
+      "url": "https://loretrans.com",
+      "logo": "https://loretrans.com/logo.png"
+    },
+    "provider": {
+      "@type": "Organization", 
       "name": "LoReTrans",
       "url": "https://loretrans.com"
-    }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01"
+    },
+    "featureList": [
+      "AI-powered Nepali to English translation",
+      "Support for texts up to 5,000 characters", 
+      "Queue processing for long texts",
+      "Translation history tracking",
+      "Bidirectional Nepali-English translation",
+      "Free unlimited usage"
+    ]
   }
 
   const faqStructuredData = {
@@ -146,45 +175,61 @@ export default function NepaliToEnglishPage({ params }: Props) {
     ]
   }
 
-  const translationServiceStructuredData = {
+  const howToStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Nepali to English Translation",
-    "provider": {
-      "@type": "Organization",
-      "name": "LoReTrans",
-      "url": "https://loretrans.com"
+    "@type": "HowTo",
+    "name": "How to Translate Nepali to English Online",
+    "description": "Step-by-step guide to translate Nepali text to English using our free online translator",
+    "image": "https://loretrans.com/og-nepali-english.jpg",
+    "totalTime": "PT1M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
     },
-    "description": "Professional AI-powered translation from Nepali to English",
-    "serviceType": "Translation Service",
-    "areaServed": "Worldwide",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Enter Nepali Text",
+        "text": "Type or paste your Nepali (नेपाली) text into the input box on the left side.",
+        "image": "https://loretrans.com/step1-nepali.jpg"
+      },
+      {
+        "@type": "HowToStep", 
+        "position": 2,
+        "name": "Select Languages",
+        "text": "Ensure 'Nepali' is selected as source language and 'English' as target language.",
+        "image": "https://loretrans.com/step2-languages.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Click Translate",
+        "text": "Click the 'Translate' button to convert your Nepali text to English instantly.",
+        "image": "https://loretrans.com/step3-translate.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Get Results",
+        "text": "Your English translation will appear in the output box. Copy or download as needed.",
+        "image": "https://loretrans.com/step4-results.jpg"
+      }
+    ]
   }
 
   return (
     <>
-      {/* 结构化数据 */}
+      {/* 结构化数据 - 合并为单个脚本以提高GSC识别率 */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageStructuredData, null, 2)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqStructuredData, null, 2)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(translationServiceStructuredData, null, 2)
+          __html: JSON.stringify([
+            webApplicationStructuredData,
+            faqStructuredData,
+            howToStructuredData
+          ], null, 2)
         }}
       />
       

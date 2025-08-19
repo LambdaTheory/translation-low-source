@@ -92,19 +92,48 @@ const englishToKhmerFAQs = [
 export default function EnglishToKhmerPage({ params }: Props) {
   const { locale } = params
   
-  // 结构化数据
-  const webPageStructuredData = {
+  // 结构化数据 - 使用GSC更容易识别的Schema类型
+  const webApplicationStructuredData = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "English to Khmer Translator – Instant & Free Online Tool",
-    "description": "Convert English to Khmer (ខ្មែរ) text instantly with our AI-powered translator. 100% free, no signup required.",
+    "@type": "WebApplication",
+    "name": "English to Khmer Translator - LoReTrans",
+    "alternateName": "Free English to Khmer AI Translator",
+    "description": "Free AI-powered English to Khmer translation tool with queue processing, translation history, and support for long texts up to 5,000 characters.",
     "url": `https://loretrans.com/${locale}/english-to-khmer`,
-    "inLanguage": "en",
-    "isPartOf": {
-      "@type": "WebSite",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "2.0",
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-08-19",
+    "inLanguage": ["en", "km"],
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "LoReTrans",
+      "url": "https://loretrans.com",
+      "logo": "https://loretrans.com/logo.png"
+    },
+    "provider": {
+      "@type": "Organization", 
       "name": "LoReTrans",
       "url": "https://loretrans.com"
-    }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01"
+    },
+    "featureList": [
+      "AI-powered English to Khmer translation",
+      "Support for texts up to 5,000 characters", 
+      "Queue processing for long texts",
+      "Translation history tracking",
+      "Bidirectional English-Khmer translation",
+      "Free unlimited usage"
+    ]
   }
 
   const faqStructuredData = {
@@ -146,45 +175,61 @@ export default function EnglishToKhmerPage({ params }: Props) {
     ]
   }
 
-  const translationServiceStructuredData = {
+  const howToStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "English to Khmer Translation",
-    "provider": {
-      "@type": "Organization",
-      "name": "LoReTrans",
-      "url": "https://loretrans.com"
+    "@type": "HowTo",
+    "name": "How to Translate English to Khmer Online",
+    "description": "Step-by-step guide to translate English text to Khmer using our free online translator",
+    "image": "https://loretrans.com/og-english-khmer.jpg",
+    "totalTime": "PT1M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
     },
-    "description": "Professional AI-powered translation from English to Khmer",
-    "serviceType": "Translation Service",
-    "areaServed": "Worldwide",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Enter English Text",
+        "text": "Type or paste your English text into the input box on the left side.",
+        "image": "https://loretrans.com/step1-english.jpg"
+      },
+      {
+        "@type": "HowToStep", 
+        "position": 2,
+        "name": "Select Languages",
+        "text": "Ensure 'English' is selected as source language and 'Khmer' as target language.",
+        "image": "https://loretrans.com/step2-languages.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Click Translate",
+        "text": "Click the 'Translate' button to convert your English text to Khmer (ខ្មែរ) instantly.",
+        "image": "https://loretrans.com/step3-translate.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Get Results",
+        "text": "Your Khmer translation will appear in the output box. Copy or download as needed.",
+        "image": "https://loretrans.com/step4-results.jpg"
+      }
+    ]
   }
 
   return (
     <>
-      {/* 结构化数据 */}
+      {/* 结构化数据 - 合并为单个脚本以提高GSC识别率 */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageStructuredData, null, 2)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqStructuredData, null, 2)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(translationServiceStructuredData, null, 2)
+          __html: JSON.stringify([
+            webApplicationStructuredData,
+            faqStructuredData,
+            howToStructuredData
+          ], null, 2)
         }}
       />
       
