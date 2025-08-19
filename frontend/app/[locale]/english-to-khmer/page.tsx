@@ -219,17 +219,56 @@ export default function EnglishToKhmerPage({ params }: Props) {
     ]
   }
 
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `https://loretrans.com/${locale}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Translation Tools",
+        "item": `https://loretrans.com/${locale}/text-translate`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "English to Khmer",
+        "item": `https://loretrans.com/${locale}/english-to-khmer`
+      }
+    ]
+  };
+
   return (
     <>
-      {/* 结构化数据 - 合并为单个脚本以提高GSC识别率 */}
+      {/* 结构化数据 - 确保SSR渲染 */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            webApplicationStructuredData,
-            faqStructuredData,
-            howToStructuredData
-          ], null, 2)
+          __html: JSON.stringify(webApplicationStructuredData, null, 2)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData, null, 2)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(howToStructuredData, null, 2)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData, null, 2)
         }}
       />
       
