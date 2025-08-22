@@ -63,7 +63,11 @@
         "users": "Servis à plus de 10 000 utilisateurs"
       },
       "title_highlight": "Je comprends.",
-      "title_part1": "Faites chaque langue"
+      "title_part1": "Faites chaque langue",
+      "buttons": {
+        "text_translation": "Traduction de Texte",
+        "document_translation": "Traduction de Documents"
+      }
     },
     "languages": {
       "title": "Langues Supportées",
@@ -304,7 +308,23 @@
       "support_24_7": "24/7 Online Support",
       "contact_form": "Contact Form",
       "view_all_languages": "View All →",
-      "telugu_language": "Telugu"
+      "telugu_language": "Telugu",
+      "languages": {
+        "haitian_creole": "Créole Haïtien",
+        "lao": "Lao",
+        "swahili": "Swahili",
+        "burmese": "Birman",
+        "telugu": "Telugu",
+        "sindhi": "Sindhi",
+        "bambara": "Bambara",
+        "wolof": "Wolof",
+        "yoruba": "Yoruba",
+        "igbo": "Igbo"
+      }
+    },
+    "meta": {
+      "title": "LoReTrans - Traducteur de langue à faible ressource",
+      "description": "LoReTrans: traducteur gratuit pour plus de 20 langues à faible ressource, y compris le créole, le lao, le swahili, le birman."
     }
   },
   "PricingPage": {
@@ -513,23 +533,23 @@
       "contact_support": "Contacter le support"
     },
     "SignUpForm": {
-      "title": "Créer un compte LoReTrans",
-      "subtitle": "Créez un compte pour obtenir 500 crédits bonus",
+      "title": "Create Account",
+      "subtitle": "Enter your information to create your account",
       "name_label": "Nom",
-      "name_placeholder": "Entrez votre nom",
+      "name_placeholder": "John Doe",
       "name_required": "Veuillez entrer votre nom",
       "name_max_length": "Le nom ne peut pas dépasser 50 caractères",
       "email_label": "Votre courriel",
-      "email_placeholder": "Entrez votre email",
+      "email_placeholder": "name@example.com",
       "email_required": "Veuillez entrer votre email",
-      "email_invalid": "Format d'email invalide",
+      "email_invalid": "Please enter a valid email address",
       "email_max_length": "L'email ne peut pas dépasser 100 caractères",
       "password_label": "Mot de passe",
-      "password_placeholder": "Entrez votre mot de passe",
+      "password_placeholder": "••••••••",
       "password_min_length": "Le mot de passe doit contenir au moins 8 caractères",
       "password_max_length": "Le mot de passe ne peut pas dépasser 128 caractères",
       "confirm_password_label": "Confirmer le mot de passe",
-      "confirm_password_placeholder": "Retapez votre mot de passe",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "Veuillez confirmer votre mot de passe",
       "password_mismatch": "Les mots de passe ne correspondent pas",
       "password_strength_label": "Force du mot de passe",
@@ -540,18 +560,32 @@
       "signup_error": "Une erreur est survenue lors de l'inscription, veuillez réessayer",
       "signin_prompt": "Vous avez déjà un compte ?",
       "signin_link": "Se connecter",
-      "password_requirements": "Exigences du mot de passe",
+      "password_requirements": "Password Requirements",
       "requirement_length": "Au moins 8 caractères",
       "requirement_uppercase": "Au moins une lettre majuscule",
       "requirement_lowercase": "Au moins une lettre minuscule",
       "requirement_number": "Au moins un chiffre",
       "requirement_special": "Au moins un caractère spécial",
-      "password_strength": "Force du mot de passe",
+      "password_strength": "Password Strength",
       "strength_very_weak": "Très faible",
       "strength_weak": "Faible",
       "strength_fair": "Correct",
       "strength_good": "Bon",
-      "strength_excellent": "Excellent"
+      "strength_excellent": "Excellent",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "sign_up": "Sign Up",
+      "signing_up": "Creating Account...",
+      "signing_up_progress": "Please wait, creating your account...",
+      "sign_up_success": "Registration Successful!",
+      "sign_up_success_message": "Your account has been created successfully. Redirecting...",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "email_checking": "Checking email availability...",
+      "email_available": "Email is available",
+      "email_taken": "This email is already registered"
     },
     "SignInForm": {
       "title": "Se connecter à LoReTrans",
@@ -1129,7 +1163,7 @@
   "Common": {
     "remember_me": "Tu te souviens de moi ?",
     "sign_up": "Inscrivez-vous",
-    "sign_in": "Signez-vous",
+    "sign_in": "Vous vous connectez ?",
     "hide_password": "Cacher le mot de passe",
     "show_password": "Afficher le mot de passe",
     "no_email": "Pas de courriel",
@@ -1151,7 +1185,14 @@
     "switch_languages": "Changer de langue",
     "switch_source_target": "Changer les langues source et cible",
     "reset_translation": "Réinitialiser la traduction",
-    "clear_reset": "Effacer et réinitialiser tout le contenu"
+    "clear_reset": "Effacer et réinitialiser tout le contenu",
+    "login_required": "Connexion requise",
+    "please_sign_in_to_access_this_feature": "Veuillez vous connecter pour accéder à cette fonctionnalité",
+    "create_account": "Créez un compte",
+    "free_characters": "Les caractères libres:",
+    "credits_required": "Crédits requis:",
+    "translate_now": "Traduis maintenant",
+    "translation_will_appear_here": "La traduction apparaîtra ici..."
   },
   "translation": {
     "start_translation": "Commencer la traduction",
@@ -1261,7 +1302,9 @@
     "refunded_credits": "Crédits remboursés",
     "retry_only_failed": "Ne payez que les crédits pour les parties échouées lors de la nouvelle tentative",
     "insufficient_balance": "Crédits insuffisants : Besoin de {required}, vous avez {current}",
-    "recharge_now": "Veuillez recharger vos crédits pour continuer."
+    "recharge_now": "Veuillez recharger vos crédits pour continuer.",
+    "current_credits": "Current Credits",
+    "refresh_credits": "Refresh Credits"
   },
   "language": {
     "source_language": "Langue source",
@@ -1395,7 +1438,10 @@
       "signup_link": "Vous n'avez pas encore de compte ? Inscrivez-vous maintenant",
       "credentials_prompt": "Entrez vos identifiants pour accéder à votre compte",
       "remember_me": "Se souvenir de moi",
-      "signup_text": "S'inscrire"
+      "signup_text": "S'inscrire",
+      "signin_error": "Login failed, please try again",
+      "signin_success": "Login successful! Redirecting...",
+      "signing_in": "Signing in"
     }
   },
   "errors": {
@@ -1406,5 +1452,220 @@
     "daily_limit_title": "Limite quotidienne dépassée",
     "daily_limit_description": "Vous avez dépassé votre limite quotidienne de traduction.",
     "translation_failed": "Échec de la traduction"
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "Traducteur de texte amélioré",
+    "from": "De ",
+    "please_sign_in_to_translate_texts_over_5000_charac": "Veuillez vous connecter pour traduire des textes de plus de 5000 caractères.",
+    "sign_in": "Vous vous connectez ?",
+    "your_translation_will_be_processed_in_the_backgrou": "Votre traduction sera traitée en arrière-plan.",
+    "source_text": "Texte de la source",
+    "translation": "Traduit",
+    "copy": "Bien reçu .",
+    "download": "Télécharger",
+    "translation_cost": "Coût de la traduction",
+    "total_characters": "Total des caractères:",
+    "free_characters": "Les caractères libres:",
+    "billable_characters": "Caractéristiques à facturer:",
+    "credits_required": "Crédits requis:",
+    "translation_completed": "La traduction est terminée",
+    "your_text_has_been_successfully_translated": "Votre texte a été traduit avec succès.",
+    "translation_failed": "La traduction a échoué",
+    "an_error_occurred_during_translation": "Une erreur s'est produite lors de la traduction.",
+    "no_text_to_translate": "Aucun texte à traduire",
+    "please_enter_some_text_to_translate": "Veuillez saisir un texte à traduire.",
+    "text_too_long": "Le message est trop long",
+    "insufficient_credits": "Crédits insuffisants",
+    "translation_queued": "La traduction est en attente",
+    "your_translation_has_been_added_to_the_queue": "Votre traduction a été ajoutée à la file d'attente.",
+    "an_error_occurred_while_starting_the_translation": "Une erreur s'est produite lors du démarrage de la traduction.",
+    "copied_to_clipboard": "Copié sur le presse-papiers",
+    "translation_has_been_copied_to_your_clipboard": "La traduction a été copiée sur votre presse-papiers.",
+    "copy_failed": "La copie a échoué",
+    "failed_to_copy_translation_to_clipboard": "Ne parvient pas à copier la traduction sur le presse-papiers.",
+    "login_required": "Connexion requise",
+    "large_text_translation_requires_user_login": "La traduction de texte de grande taille nécessite un accès d'utilisateur",
+    "queue_mode": "Mode de file d' attente",
+    "large_text_will_be_processed_in_the_background": "Le texte en gros sera traité en arrière-plan",
+    "instant_mode": "Mode instantané",
+    "text_will_be_translated_immediately": "Le texte sera traduit immédiatement",
+    "enter_text_to_translate": "Entrez le texte pour traduire...",
+    "translating": "Je traduis...",
+    "translation_will_appear_here": "La traduction apparaîtra ici...",
+    "why_sign_in": "Pourquoi vous connecter ?",
+    "background_processing_leave_and_come_back_later": "Traitement des antécédents - partir et revenir plus tard",
+    "translation_history_and_task_management": "Historique de traduction et gestion des tâches",
+    "create_account": "Créez un compte",
+    "free_account_no_credit_card_required": "Compte gratuit • Pas besoin de carte de crédit",
+    "please_sign_in_to_access_this_feature": "Veuillez vous connecter pour accéder à cette fonctionnalité",
+    "email": "Votre courriel",
+    "password": "Mot de passe",
+    "signing_in": "Je signe...",
+    "enter_your_email": "Entrez votre adresse électronique",
+    "enter_your_password": "Entrez votre mot de passe",
+    "loretrans": "Je suis désolé.",
+    "haitian_creole": "Créole haïtien",
+    "lao": "Lao",
+    "swahili": "Swahili",
+    "burmese": "Birman",
+    "telugu": "Telugu",
+    "sindhi": "Sindhi ",
+    "bambara": "Bambara",
+    "wolof": "Wolof",
+    "yoruba": "Yoruba",
+    "igbo": "- Je suis igbo.",
+    "loretrans_logo": "Le logo de LoReTrans",
+    "verified": "Vérifié",
+    "unverified": "Non vérifié",
+    "profile_incomplete": "Profil incomplet"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "Traducteur d'IA gratuit",
+    "ai_translator": "Je suis un traducteur",
+    "translate": "Je traduis",
+    "to_english_instantly_with_our_aipowered_trans": "à l'anglais instantanément avec notre traducteur basé sur l'IA",
+    "convert": "Convertissez",
+    "text_to_english_with_high_accuracy": "texte en anglais avec une grande précision",
+    "perfect_for": "Parfait pour ",
+    "documents_emails_and_conversations": "documents, courriels et conversations",
+    "support_for_long": "Soutenir pour longtemps",
+    "texts_queue_processing_and_translation_histor": "les textes, le traitement des files d'attente et l'historique des traductions",
+    "free": "Gratuit",
+    "translation": "- Je suis désolé.",
+    "up_to_5000": "Jusqu'à 5 000",
+    "characters": "caractères",
+    "queue_processing": "traitement de la file d'attente",
+    "translation_history_1": "l'histoire de la traduction",
+    "frequently_asked_questions": "Questions fréquemment posées",
+    "everything_you_need_to_know_about_our": "Tout ce que vous devez savoir sur notre ",
+    "translator_and_translation_process": "traducteur et processus de traduction",
+    "how_accurate_is_the": "Quelle est la précision de la",
+    "to_english_translation_1": "à la traduction anglaise ?",
+    "our_aipowered": "Notre IA est alimentée",
+    "translator_provides_highaccuracy_translations": "Le traducteur fournit des traductions de haute précision en utilisant le NLLB avancé",
+    "no_language_left_behind": "Aucune langue n'est restée derrière",
+    "technology_the": "La technologie",
+    "to_english_translation_quality_is_excellent_f": "La qualité de la traduction vers l'anglais est excellente pour la plupart des types de contenu",
+    "including_business_documents_academic_texts_a": "y compris les documents d'affaires, les textes académiques et les conversations occasionnelles",
+    "while_our": "Pendant que notre",
+    "translator_is_very_reliable_we_recommend_huma": "Le traducteur est très fiable, nous recommandons la vérification humaine pour les documents juridiques ou médicaux critiques",
+    "can_i_translate_english_text_back_to": "Puis-je traduire le texte anglais en ",
+    "using_this_tool": "en utilisant cet outil ?",
+    "yes_our_translator_supports_bidirectional_tra": "Notre traducteur prend en charge la traduction bidirectionnelle entre ",
+    "and_english": "et anglais",
+    "you_can_easily_switch_between": "Vous pouvez facilement basculer entre",
+    "toenglish_and_englishto": "à l'anglais et à l\"anglais",
+    "translation_using_the_swap_button": "traduction à l'aide du bouton swap",
+    "this_makes_it_perfect_for": "Ça le rend parfait pour ",
+    "language_learners_and_english_speakers_who_ne": "Les apprenants de langues et les anglophones qui ont besoin de communiquer en ",
+    "is_the": "C' est le ",
+    "english_translator_completely_free_to_use": "Traducteur anglais totalement gratuit ?",
+    "yes_our": "Oui, notre",
+    "english_translation_service_is_completely_fre": "Le service de traduction en anglais est entièrement gratuit sans frais cachés",
+    "short": "- Je suis court.",
+    "texts_translate_instantly_while_longer": "Les textes sont traduits instantanément, mais plus longtemps",
+    "documents_use_our_queue_system_for_registered": "Les documents utilisent notre système de file d'attente pour les utilisateurs enregistrés",
+    "you_can_translate_up_to_5000_characters_of_1": "Vous pouvez traduire jusqu'à 5000 caractères de ",
+    "text_to_english_at_no_charge": "texte en anglais sans frais",
+    "what_is_the_maximum_length_for": "Quelle est la longueur maximale pour ",
+    "text_to_english_at_once": "texte en anglais à la fois",
+    "for_1": "Pour ",
+    "texts_over_1000_characters_youll_need_to_sign": "pour les textes de plus de 1000 caractères, vous devrez vous connecter pour le traitement de la file d'attente",
+    "shorter": "Plus court",
+    "to_english_translations_are_processed_instant": "Les traductions en anglais sont traitées instantanément, ce qui le rend idéal pour une traduction rapide",
+    "phrase_translations": "Les traductions de phrases",
+    "do_i_need_an_account_for_long": "J' ai besoin d' un compte pour longtemps",
+    "to_english_translations": "à des traductions en anglais?",
+    "texts_over_1000_characters_yes": "texte de plus de 1 000 caractères, oui",
+    "creating_a_free_account_allows_you_to_use_our": "Créer un compte gratuit vous permet d'utiliser notre système de file d'attente plus longtemps",
+    "english_conversions_and_access_your": "Les conversions en anglais et accéder à votre",
+    "this_is_especially_useful_for_translating": "Ceci est particulièrement utile pour traduire",
+    "documents_articles_or_academic_papers_to_engl": "documents, articles ou documents universitaires en anglais"
+  },
+  "debug": {
+    "skipping_locale_change": "Skipping locale change:",
+    "switching_locale": "Switching locale:"
+  },
+  "admin": {
+    "loading_dashboard": "Loading dashboard...",
+    "no_data_available": "No data available",
+    "system_health": "System Health",
+    "total_users": "Total Users",
+    "total_translations": "Total Translations",
+    "total_credits": "Total Credits",
+    "active_users": "Active Users",
+    "quick_actions": "Quick Actions",
+    "view_analytics": "View Analytics",
+    "system_settings": "System Settings",
+    "system_logs": "System Logs"
+  },
+  "auth": {
+    "why_sign_in": "Why sign in?",
+    "background_processing_benefit": "Background processing - leave and come back later",
+    "history_management_benefit": "Translation history and task management",
+    "free_account_note": "Free account • No credit card required",
+    "please_sign_in_to_access": "Please sign in to access this feature",
+    "email": "Email",
+    "password": "Password",
+    "signing_in": "Signing in...",
+    "enter_email": "Enter your email",
+    "enter_password": "Enter your password",
+    "verified": "Verified",
+    "unverified": "Unverified",
+    "profile_incomplete": "Profile incomplete"
+  },
+  "navigation": {
+    "switch_to": "Switch to",
+    "try_other_languages": "Try other languages",
+    "text_translator": "Text Translator",
+    "document_translator": "Document Translator"
+  },
+  "languages": {
+    "english": "English",
+    "haitian_creole": "Haitian Creole",
+    "creole_to_english": "Kreyòl Ayisyen to English"
+  },
+  "translator": {
+    "translation_mode": "Translation Mode:",
+    "single_mode": "Single",
+    "bidirectional_mode": "Bidirectional",
+    "enter_text_to_translate": "Enter text to translate",
+    "type_text_here": "Type your text here..."
+  },
+  "payment": {
+    "whats_next": "What's Next?"
+  },
+  "common": {
+    "error": "Error",
+    "try_again": "Try again",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "coming_soon": "Coming Soon",
+    "in_development": "In Development",
+    "ai_powered": "AI-Powered",
+    "will_be_free": "Will Be Free",
+    "get_notified": "Get Notified When Available",
+    "notify_me": "Notify Me",
+    "available_now_try_languages": "Available Now - Try These Languages",
+    "copied_to_clipboard": "Copied to clipboard"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "Aide et FAQ - Support de l'outil de traduction par IA de LoReTrans",
+      "description": "Obtenez de l'aide avec l'outil de traduction LoReTrans AI. Trouvez des réponses aux questions courantes sur l'utilisation de notre traducteur en ligne gratuit pour la traduction de texte, de documents et de voix."
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "Politique de confidentialité",
+      "description": "Politique de confidentialité de LoReTrans - Comment nous collectons, utilisons et protégeons vos données lorsque vous utilisez nos services de traduction par IA."
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "Les conditions d'utilisation",
+      "description": "Conditions d'utilisation de LoReTrans - Accord juridique régissant l'utilisation d'une plateforme de traduction par IA pour les langues à faible ressource."
+    }
   }
 }

@@ -26,76 +26,9 @@ import { cn } from '@/lib/utils'
 
 interface SignUpFormProps {
   onSuccess?: () => void
-  locale?: string
+  
 }
 
-// 多语言文本
-const translations = {
-  en: {
-    title: 'Create Account',
-    subtitle: 'Enter your information to create your account',
-    name: 'Full Name',
-    email: 'Email',
-    password: 'Password',
-    confirmPassword: 'Confirm Password',
-    signUp: 'Sign Up',
-    signingUp: 'Creating Account...',
-    signingUpProgress: 'Please wait, creating your account...',
-    signUpSuccess: 'Registration Successful!',
-    signUpSuccessMessage: 'Your account has been created successfully. Redirecting...',
-    haveAccount: 'Already have an account?',
-    signIn: 'Sign in',
-    namePlaceholder: 'John Doe',
-    emailPlaceholder: 'name@example.com',
-    passwordPlaceholder: '••••••••',
-    confirmPasswordPlaceholder: '••••••••',
-    passwordStrength: 'Password Strength',
-    passwordRequirements: 'Password Requirements',
-    emailChecking: 'Checking email availability...',
-    emailAvailable: 'Email is available',
-    emailTaken: 'This email is already registered',
-    emailInvalid: 'Please enter a valid email address',
-    passwordTips: {
-      excellent: 'Excellent! Your password is very strong.',
-      good: 'Good password strength.',
-      fair: 'Consider making your password stronger.',
-      weak: 'Your password could be stronger.',
-      veryWeak: 'Please create a stronger password.'
-    }
-  },
-  zh: {
-    title: '创建账户',
-    subtitle: '输入您的信息来创建账户',
-    name: '姓名',
-    email: '邮箱',
-    password: '密码',
-    confirmPassword: '确认密码',
-    signUp: '注册',
-    signingUp: '正在创建账户...',
-    signingUpProgress: '请稍候，正在创建您的账户...',
-    signUpSuccess: '注册成功！',
-    signUpSuccessMessage: '您的账户已成功创建，正在跳转...',
-    haveAccount: '已有账户？',
-    signIn: '登录',
-    namePlaceholder: '张三',
-    emailPlaceholder: 'name@example.com',
-    passwordPlaceholder: '••••••••',
-    confirmPasswordPlaceholder: '••••••••',
-    passwordStrength: '密码强度',
-    passwordRequirements: '密码要求',
-    emailChecking: '正在检查邮箱可用性...',
-    emailAvailable: '邮箱可以使用',
-    emailTaken: '该邮箱已被注册',
-    emailInvalid: '请输入有效的邮箱地址',
-    passwordTips: {
-      excellent: '优秀！您的密码非常强。',
-      good: '密码强度良好。',
-      fair: '考虑让您的密码更强一些。',
-      weak: '您的密码可以更强一些。',
-      veryWeak: '请创建一个更强的密码。'
-    }
-  }
-}
 
 const signUpSchema = z
   .object({
@@ -124,7 +57,7 @@ const signUpSchema = z
 // 邮箱验证状态
 type EmailValidationState = 'idle' | 'checking' | 'available' | 'taken' | 'invalid'
 
-export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
+export function SignUpForm({ onSuccess,  }: SignUpFormProps) {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [authError, setAuthError] = useState<string | null>(null)
@@ -136,8 +69,6 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
   const { showSignUpSuccess, showSignUpError } = useToastMessages()
   const tAuth = useTranslations('Auth.SignUpForm')
   const router = useRouter()
-
-  const t = translations[locale as keyof typeof translations] || translations.en
 
   const {
     register,
@@ -211,7 +142,7 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
           setEmailValidation('taken')
           setError('email', {
             type: 'manual',
-            message: result.message || t.emailTaken
+            message: result.message || tAuth('email_taken')
           })
         }
       } else {
@@ -219,7 +150,7 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
         setEmailValidation('invalid')
         setError('email', {
           type: 'manual',
-          message: result.message || t.emailInvalid
+          message: result.message || tAuth('email_invalid')
         })
       }
     } catch (error) {
@@ -269,13 +200,13 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
   const getEmailValidationMessage = () => {
     switch (emailValidation) {
       case 'checking':
-        return <span className="text-blue-600 text-xs">{t.emailChecking}</span>
+        return <span className="text-blue-600 text-xs">{tAuth('email_checking')}</span>
       case 'available':
-        return <span className="text-green-600 text-xs">{t.emailAvailable}</span>
+        return <span className="text-green-600 text-xs">{tAuth('email_available')}</span>
       case 'taken':
-        return <span className="text-red-600 text-xs">{t.emailTaken}</span>
+        return <span className="text-red-600 text-xs">{tAuth('email_taken')}</span>
       case 'invalid':
-        return <span className="text-red-600 text-xs">{t.emailInvalid}</span>
+        return <span className="text-red-600 text-xs">{tAuth('email_invalid')}</span>
       default:
         return null
     }
@@ -304,7 +235,7 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     // 检查邮箱是否可用
     if (emailValidation === 'taken') {
-      setAuthError(t.emailTaken)
+      setAuthError(tAuth('email_taken'))
       return
     }
 
@@ -354,21 +285,21 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
   return (
     <div className="w-full max-w-md space-y-6">
       <div className="space-y-2 text-center">
-        <h1 className="text-2xl font-bold">{t.title}</h1>
+        <h1 className="text-2xl font-bold">{tAuth('title')}</h1>
         <p className="text-muted-foreground">
-          {t.subtitle}
+          {tAuth('subtitle')}
         </p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="name">{t.name}</Label>
+          <Label htmlFor="name">{tAuth('name')}</Label>
           <div className="relative">
             <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               id="name"
               type="text"
-              placeholder={t.namePlaceholder}
+              placeholder={tAuth('name_placeholder')}
               className="pl-10"
               {...register('name')}
             />
@@ -379,13 +310,13 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">{t.email}</Label>
+          <Label htmlFor="email">{tAuth('email')}</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               id="email"
               type="email"
-              placeholder={t.emailPlaceholder}
+              placeholder={tAuth('email_placeholder')}
               className={cn(
                 "pl-10 pr-10",
                 emailValidation === 'available' && "border-green-500",
@@ -404,13 +335,13 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="password">{t.password}</Label>
+          <Label htmlFor="password">{tAuth('password')}</Label>
           <div className="relative">
             <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               id="password"
               type={showPassword ? 'text' : 'password'}
-              placeholder={t.passwordPlaceholder}
+              placeholder={tAuth('password_placeholder')}
               className="pl-10 pr-10"
               {...register('password')}
             />
@@ -431,7 +362,7 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
           {password && passwordStrength && (
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">{t.passwordStrength}</span>
+                <span className="text-xs text-muted-foreground">{tAuth('password_strength')}</span>
                 <span className={cn("text-xs font-medium", getStrengthColor(passwordStrength.strength))}>
                   {getStrengthText(passwordStrength.strength, locale)}
                 </span>
@@ -473,13 +404,13 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="confirmPassword">{t.confirmPassword}</Label>
+          <Label htmlFor="confirmPassword">{tAuth('confirm_password')}</Label>
           <div className="relative">
             <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               id="confirmPassword"
               type={showConfirmPassword ? 'text' : 'password'}
-              placeholder={t.confirmPasswordPlaceholder}
+              placeholder={tAuth('confirm_password_placeholder')}
               className="pl-10 pr-10"
               {...register('confirmPassword')}
             />
@@ -508,8 +439,8 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
           <div className="flex items-center space-x-2 rounded-md bg-green-50 p-4">
             <CheckCircle className="h-4 w-4 text-green-600" />
             <div>
-              <p className="text-sm font-medium text-green-800">{t.signUpSuccess}</p>
-              <p className="text-xs text-green-600">{t.signUpSuccessMessage}</p>
+              <p className="text-sm font-medium text-green-800">{tAuth('sign_up_success')}</p>
+              <p className="text-xs text-green-600">{tAuth('sign_up_success_message')}</p>
             </div>
           </div>
         )}
@@ -522,10 +453,10 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
           {isLoading ? (
             <div className="flex items-center justify-center space-x-2">
               <Loader2 className="h-4 w-4 animate-spin" />
-              <span>{t.signingUp}</span>
+              <span>{tAuth('signing_up')}</span>
             </div>
           ) : (
-            t.signUp
+            tAuth('sign_up')
           )}
         </Button>
 
@@ -533,19 +464,19 @@ export function SignUpForm({ onSuccess, locale = 'en' }: SignUpFormProps) {
         {isLoading && (
           <div className="text-center">
             <p className="text-xs text-muted-foreground animate-pulse">
-              {t.signingUpProgress}
+              {tAuth('signing_up_progress')}
             </p>
           </div>
         )}
       </form>
 
       <div className="text-center text-sm text-muted-foreground">
-        {t.haveAccount}{' '}
+        {tAuth('have_account')}{' '}
         <Link
           href="/auth/signin"
           className="font-medium text-primary hover:underline"
         >
-          {t.signIn}
+          {tAuth('sign_in')}
         </Link>
       </div>
     </div>

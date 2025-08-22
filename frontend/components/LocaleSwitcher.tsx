@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useRouter, usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,6 +20,8 @@ const locales = [
 ];
 
 export default function LocaleSwitcher() {
+  const t = useTranslations('debug');
+
   const router = useRouter();
   const pathname = usePathname();
   const [isChanging, setIsChanging] = useState(false);
@@ -33,7 +37,7 @@ export default function LocaleSwitcher() {
 
   const handleLocaleChange = useCallback(async (newLocale: Locale) => {
     if (isChanging || currentLocale === newLocale) {
-      console.log('Skipping locale change:', { isChanging, currentLocale, newLocale });
+      console.log(t('skipping_locale_change'), { isChanging, currentLocale, newLocale });
       return;
     }
     
@@ -44,7 +48,7 @@ export default function LocaleSwitcher() {
       // 确保新路径包含正确的locale前缀
       const finalPath = newPath.startsWith(`/${newLocale}`) ? newPath : `/${newLocale}${newPath}`;
       
-      console.log('Switching locale:', { 
+      console.log(t('switching_locale'), { 
         currentLocale, 
         newLocale, 
         pathname, 

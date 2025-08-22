@@ -63,7 +63,11 @@
         "users": "Sèvi 10,000+ itilizatè"
       },
       "title_highlight": "Konprann",
-      "title_part1": "Fè chak lang "
+      "title_part1": "Fè chak lang ",
+      "buttons": {
+        "text_translation": "Tradiksyon Tèks",
+        "document_translation": "Tradiksyon Dokiman"
+      }
     },
     "languages": {
       "title": "Lang ki Sipòte yo",
@@ -666,7 +670,23 @@
       "support_24_7": "24/7 Online Support",
       "contact_form": "Contact Form",
       "view_all_languages": "View All →",
-      "telugu_language": "Telugu"
+      "telugu_language": "Telugu",
+      "languages": {
+        "haitian_creole": "Haitian Creole",
+        "lao": "Lao",
+        "swahili": "Swahili",
+        "burmese": "Burmese",
+        "telugu": "Telugu",
+        "sindhi": "Sindhi",
+        "bambara": "Bambara",
+        "wolof": "Wolof",
+        "yoruba": "Yoruba",
+        "igbo": "Igbo"
+      }
+    },
+    "meta": {
+      "title": "LoReTrans - Gratis AI Low-Resource lang Tradiktè",
+      "description": "LoReTrans: Gratis AI tradiktè pou 20+ lang ki ba resous ki gen ladan kreyòl, Lao, Swahili, Burma."
     }
   },
   "DocumentTranslatePage": {
@@ -803,23 +823,23 @@
       "contact_support": "Sipò"
     },
     "SignUpForm": {
-      "title": "Tit",
-      "subtitle": "Tit",
+      "title": "Create Account",
+      "subtitle": "Enter your information to create your account",
       "name_label": "Non",
-      "name_placeholder": "Non",
+      "name_placeholder": "John Doe",
       "name_required": "Non",
       "name_max_length": "Non",
       "email_label": "Imèl",
-      "email_placeholder": "Imèl",
+      "email_placeholder": "name@example.com",
       "email_required": "Imèl",
-      "email_invalid": "Imèl",
+      "email_invalid": "Please enter a valid email address",
       "email_max_length": "Imèl",
       "password_label": "Modpas",
-      "password_placeholder": "Modpas",
+      "password_placeholder": "••••••••",
       "password_min_length": "Modpas",
       "password_max_length": "Modpas",
       "confirm_password_label": "Modpas",
-      "confirm_password_placeholder": "Modpas",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "Modpas",
       "password_mismatch": "Modpas",
       "password_strength_label": "Modpas",
@@ -829,7 +849,23 @@
       "signup_failed": "Enskri",
       "signup_error": "Erè",
       "signin_prompt": "Konekte",
-      "signin_link": "Lyen"
+      "signin_link": "Lyen",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "sign_up": "Sign Up",
+      "signing_up": "Creating Account...",
+      "signing_up_progress": "Please wait, creating your account...",
+      "sign_up_success": "Registration Successful!",
+      "sign_up_success_message": "Your account has been created successfully. Redirecting...",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "password_strength": "Password Strength",
+      "password_requirements": "Password Requirements",
+      "email_checking": "Checking email availability...",
+      "email_available": "Email is available",
+      "email_taken": "This email is already registered"
     },
     "SignInForm": {
       "title": "Tit",
@@ -1113,7 +1149,14 @@
     "switch_languages": "Chanje lang yo",
     "switch_source_target": "Chanje lang sous ak lang sib yo",
     "reset_translation": "Rekomanse tradiksyon an",
-    "clear_reset": "Efase ak rekomanse tout bagay"
+    "clear_reset": "Efase ak rekomanse tout bagay",
+    "login_required": "Login obligatwa",
+    "please_sign_in_to_access_this_feature": "Tanpri antre nan pou jwenn aksè nan karakteristik sa a",
+    "create_account": "Kreye kont",
+    "free_characters": "Karaktè gratis:",
+    "credits_required": "Kredi ki nesesè:",
+    "translate_now": "Tradui kounye a",
+    "translation_will_appear_here": "Tradiksyon ap parèt isit la..."
   },
   "translation": {
     "start_translation": "Kòmanse",
@@ -1218,7 +1261,9 @@
     "credits_processing": "Modifye",
     "consumed_credits": "Modifye",
     "refunded_credits": "Modifye",
-    "retry_only_failed": "Bezwen tradwi"
+    "retry_only_failed": "Bezwen tradwi",
+    "current_credits": "Kredi aktyèl",
+    "refresh_credits": "Refresh Credits"
   },
   "language": {
     "source_language": "Lang",
@@ -1340,6 +1385,250 @@
       "translation_quality": "Kalite tradiksyon:",
       "thanks_feedback": "Mèsi pou fidbak ou",
       "feedback_helps": "Feedback ou ede nou amelyore kalite tradiksyon"
+    }
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "Tradiktè tèks amelyore",
+    "from": "Soti nan",
+    "please_sign_in_to_translate_texts_over_5000_charac": "Tanpri antre nan pou tradui tèks ki gen plis pase 5000 karaktè.",
+    "sign_in": "Enskri",
+    "your_translation_will_be_processed_in_the_backgrou": "Tradiksyon w ap trete nan background.",
+    "source_text": "Tèks sous",
+    "translation": "Tradiksyon",
+    "copy": "Koupye",
+    "download": "Rale dosye",
+    "translation_cost": "Depans pou tradiksyon",
+    "total_characters": "Total Karaktè:",
+    "free_characters": "Karaktè gratis:",
+    "billable_characters": "Karaktè ki kapab peye:",
+    "credits_required": "Kredi ki nesesè:",
+    "translation_completed": "Tradiksyon fini",
+    "your_text_has_been_successfully_translated": "Tèks ou a te tradui avèk siksè.",
+    "translation_failed": "Tradiksyon echwe",
+    "an_error_occurred_during_translation": "Yon erè te fèt pandan tradiksyon.",
+    "no_text_to_translate": "Pa gen tèks pou tradui",
+    "please_enter_some_text_to_translate": "Tanpri antre kèk tèks pou tradui.",
+    "text_too_long": "Tèks twò long",
+    "insufficient_credits": "Kredit ki pa ase",
+    "translation_queued": "Tradiksyon nan liy",
+    "your_translation_has_been_added_to_the_queue": "Tradiksyon ou te ajoute nan ke.",
+    "an_error_occurred_while_starting_the_translation": "Yon erè te fèt pandan yo te kòmanse tradiksyon an.",
+    "copied_to_clipboard": "Kopye nan clipboard",
+    "translation_has_been_copied_to_your_clipboard": "Tradiksyon te kopye nan clipboard ou.",
+    "copy_failed": "Kopi echwe",
+    "failed_to_copy_translation_to_clipboard": "Pa t 'kapab kopye tradiksyon nan clipboard.",
+    "login_required": "Login obligatwa",
+    "large_text_translation_requires_user_login": "Tradiksyon gwo tèks mande login itilizatè",
+    "queue_mode": "Mode nan ke",
+    "large_text_will_be_processed_in_the_background": "Tèks gwo ap trete nan background",
+    "instant_mode": "Mode Enstantane",
+    "text_will_be_translated_immediately": "Tèks la pral tradui imedyatman",
+    "enter_text_to_translate": "Antre tèks pou tradui...",
+    "translating": "Tradui...",
+    "translation_will_appear_here": "Tradiksyon ap parèt isit la...",
+    "why_sign_in": "Poukisa ou siyen?",
+    "background_processing_leave_and_come_back_later": "Pwosesis background - kite epi retounen pita",
+    "translation_history_and_task_management": "Istwa tradiksyon ak jesyon travay",
+    "create_account": "Kreye kont",
+    "free_account_no_credit_card_required": "Kont gratis • Pa bezwen kat kredi",
+    "please_sign_in_to_access_this_feature": "Tanpri antre nan pou jwenn aksè nan karakteristik sa a",
+    "email": "Imèl",
+    "password": "Modpas",
+    "signing_in": "Ap siyen nan...",
+    "enter_your_email": "Antre e-mail ou",
+    "enter_your_password": "Antre modpas ou",
+    "loretrans": "LorTrans",
+    "haitian_creole": "Kreyòl ayisyen",
+    "lao": "Lao",
+    "swahili": "Swahili",
+    "burmese": "Birman",
+    "telugu": "Telugu",
+    "sindhi": "Sindhi",
+    "bambara": "Bambara",
+    "wolof": "Wolof",
+    "yoruba": "Yoruba",
+    "igbo": "Igbo",
+    "loretrans_logo": "Logo LoReTrans",
+    "verified": "Verifye",
+    "unverified": "Pa verifye",
+    "profile_incomplete": "Pwofil enkonplè"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "Gratis AI Tradiktè",
+    "ai_translator": "Tradiktè AI",
+    "translate": "Tradui",
+    "to_english_instantly_with_our_aipowered_trans": "nan lang angle imedyatman ak tradiktè AI-powered nou an",
+    "convert": "Konvèti",
+    "text_to_english_with_high_accuracy": "tèks nan lang angle ak gwo presizyon",
+    "perfect_for": "Pafè pou",
+    "documents_emails_and_conversations": "dokiman, imèl, ak konvèsasyon",
+    "support_for_long": "Sipò pou long",
+    "texts_queue_processing_and_translation_histor": "tèks, pwosesis antrav, ak istwa tradiksyon",
+    "free": "Gratis",
+    "translation": "tradiksyon",
+    "up_to_5000": "jiska 5,000",
+    "characters": "karaktè",
+    "queue_processing": "pwosesis ke",
+    "translation_history_1": "istwa tradiksyon",
+    "frequently_asked_questions": "Kesyon yo poze souvan",
+    "everything_you_need_to_know_about_our": "Tout sa ou bezwen konnen sou nou",
+    "translator_and_translation_process": "tradiktè ak pwosesis tradiksyon",
+    "how_accurate_is_the": "Ki jan egzat se",
+    "to_english_translation_1": "nan tradiksyon angle?",
+    "our_aipowered": "AI-powered nou an",
+    "translator_provides_highaccuracy_translations": "tradiktè bay tradiksyon gwo-presizyon lè l sèvi avèk avanse NLLB",
+    "no_language_left_behind": "Pa gen okenn lang ki rete dèyè",
+    "technology_the": "teknoloji.",
+    "to_english_translation_quality_is_excellent_f": "pou lang angle tradiksyon kalite se ekselan pou pifò kalite kontni",
+    "including_business_documents_academic_texts_a": "ki gen ladan dokiman biznis, tèks akademik, ak konvèsasyon aksidantèl",
+    "while_our": "Pandan ke nou ",
+    "translator_is_very_reliable_we_recommend_huma": "tradiktè a trè serye, nou rekòmande pou moun revize pou kritik dokiman legal oswa medikal",
+    "can_i_translate_english_text_back_to": "Èske mwen ka tradui tèks angle tounen nan",
+    "using_this_tool": "lè w ap itilize zouti sa a?",
+    "yes_our_translator_supports_bidirectional_tra": "Wi! tradiktè nou an sipòte tradiksyon bidirectionnel ant",
+    "and_english": "ak angle",
+    "you_can_easily_switch_between": "Ou ka fasilman chanje ant",
+    "toenglish_and_englishto": "to-English ak English-to",
+    "translation_using_the_swap_button": "tradiksyon lè l sèvi avèk bouton an swap",
+    "this_makes_it_perfect_for": "Sa fè li pafè pou ",
+    "language_learners_and_english_speakers_who_ne": "elèv k ap aprann lang ak moun ki pale angle ki bezwen kominike nan",
+    "is_the": "se ",
+    "english_translator_completely_free_to_use": "Tradiktè angle konplètman gratis yo sèvi ak?",
+    "yes_our": "Wi, nou ",
+    "english_translation_service_is_completely_fre": "Sèvis tradiksyon angle a konplètman gratis san okenn depans kache",
+    "short": "Ti",
+    "texts_translate_instantly_while_longer": "tèks tradui imedyatman, pandan y ap pi long",
+    "documents_use_our_queue_system_for_registered": "dokiman itilize sistèm ke nou pou itilizatè ki anrejistre",
+    "you_can_translate_up_to_5000_characters_of_1": "Ou ka tradui jiska 5,000 karaktè nan ",
+    "text_to_english_at_no_charge": "tèks nan lang angle gratis",
+    "what_is_the_maximum_length_for": "Ki sa ki longè maksimòm pou",
+    "text_to_english_at_once": "tèks nan lang angle nan yon fwa",
+    "for_1": "Pou",
+    "texts_over_1000_characters_youll_need_to_sign": "tèks plis pase 1,000 karaktè, ou pral bezwen siyen nan pou pwosesis ke",
+    "shorter": "Pi kout",
+    "to_english_translations_are_processed_instant": "nan lang angle tradiksyon yo trete imedyatman, fè li ideyal pou rapid",
+    "phrase_translations": "tradiksyon fraz",
+    "do_i_need_an_account_for_long": "Èske mwen bezwen yon kont pou lontan",
+    "to_english_translations": "nan tradiksyon angle?",
+    "texts_over_1000_characters_yes": "tèks plis pase 1000 karaktè, wi",
+    "creating_a_free_account_allows_you_to_use_our": "Kreye yon kont gratis pèmèt ou itilize sistèm ke nou pou pi lontan",
+    "english_conversions_and_access_your": "angle konvèsyon ak aksè ou",
+    "this_is_especially_useful_for_translating": "Sa itil sitou pou tradui",
+    "documents_articles_or_academic_papers_to_engl": "dokiman, atik, oswa papye akademik nan lang angle"
+  },
+  "debug": {
+    "skipping_locale_change": "Skip chanjman lokal:",
+    "switching_locale": "Chanje kote:"
+  },
+  "admin": {
+    "loading_dashboard": "Chaje tablodbò...",
+    "no_data_available": "Pa gen okenn done ki disponib",
+    "system_health": "Sante Sistèm",
+    "total_users": "Total Itilizatè",
+    "total_translations": "Total tradiksyon",
+    "total_credits": "Total kredi",
+    "active_users": "Itilizatè aktif",
+    "quick_actions": "Aksyon rapid",
+    "view_analytics": "Gade Analytics",
+    "system_settings": "Anviwònman Sistèm",
+    "system_logs": "Jounal Sistèm"
+  },
+  "auth": {
+    "why_sign_in": "Poukisa ou siyen?",
+    "background_processing_benefit": "Pwosesis background - kite epi retounen pita",
+    "history_management_benefit": "Istwa tradiksyon ak jesyon travay",
+    "free_account_note": "Kont gratis • Pa bezwen kat kredi",
+    "please_sign_in_to_access": "Tanpri antre nan pou jwenn aksè nan karakteristik sa a",
+    "email": "Imèl",
+    "password": "Modpas",
+    "signing_in": "Ap siyen nan...",
+    "enter_email": "Antre e-mail ou",
+    "enter_password": "Antre modpas ou",
+    "verified": "Verifye",
+    "unverified": "Pa verifye",
+    "profile_incomplete": "Pwofil enkonplè"
+  },
+  "navigation": {
+    "switch_to": "Chanje pou",
+    "try_other_languages": "Eseye lòt lang",
+    "text_translator": "Tradiktè tèks",
+    "document_translator": "Tradiktè Dokiman"
+  },
+  "languages": {
+    "english": "Angle",
+    "haitian_creole": "Kreyòl ayisyen",
+    "creole_to_english": "Kreyòl Ayisyen pou lang angle"
+  },
+  "translator": {
+    "translation_mode": "Mod tradiksyon:",
+    "single_mode": "Single",
+    "bidirectional_mode": "De-fason",
+    "enter_text_to_translate": "Antre tèks pou tradui",
+    "type_text_here": "Tape mesaj ou isit la..."
+  },
+  "payment": {
+    "whats_next": "Ki sa ki pwochen?"
+  },
+  "common": {
+    "error": "Erè",
+    "try_again": "Eseye ankò",
+    "refresh": "Refresh",
+    "refreshing": "Refreskan...",
+    "coming_soon": "Vini byento",
+    "in_development": "Nan Devlopman",
+    "ai_powered": "AI-Powered",
+    "will_be_free": "Ap Lib",
+    "get_notified": "Fè w konnen lè li disponib",
+    "notify_me": "Avize m",
+    "available_now_try_languages": "Li disponib kounye a - Eseye lang sa yo",
+    "copied_to_clipboard": "Kopye nan clipboard"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "Ede & FAQ - LoReTrans AI Tradiksyon Zouti Sipò",
+      "description": "Jwenn èd ak zouti tradiksyon LoReTrans AI. Jwenn repons pou kesyon komen sou lè l sèvi avèk tradiktè gratis sou entènèt nou an pou tèks, dokiman, ak tradiksyon vwa."
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "Règleman sou enfòmasyon prive.",
+      "description": "Règleman sou enfòmasyon prive LoReTrans - Ki jan nou kolekte, itilize, ak pwoteje done ou lè w ap itilize sèvis tradiksyon AI nou yo."
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "Tèm Sèvis.",
+      "description": "LoReTrans Tèm Sèvis - Akò legal ki gouvène itilizasyon platfòm tradiksyon AI nou an pou lang ki gen ti resous."
+    }
+  },
+  "AuthPage": {
+    "signin": {
+      "signin_error": "Login failed, please try again",
+      "signin_success": "Login successful! Redirecting...",
+      "signing_in": "Signing in",
+      "title": "Konekte nan LoReTrans",
+      "email": "Imèl",
+      "password": "Mo de pase",
+      "forgot_password": "Ou bliye mo de pase a?",
+      "signin_button": "Konekte",
+      "signup_link": "Ou pa gen yon kont ankò? Enskri Kounye a",
+      "credentials_prompt": "Antre enfòmasyon ou yo pou aksè kont ou an",
+      "remember_me": "Sonje mwen",
+      "signup_text": "Enskri"
+    },
+    "signup": {
+      "title": "Kreye yon kont LoReTrans",
+      "email": "Imèl",
+      "password": "Mo de pase",
+      "confirm_password": "Konfime mo de pase a",
+      "signup_button": "Kreye kont",
+      "signin_link": "Ou gen yon kont deja? Konekte",
+      "credentials_prompt": "Kreye kont ou an pou kòmanse tradui",
+      "signin_text": "Konekte",
+      "password_requirements": "Mo de pase a dwe gen omwen 8 karaktè",
+      "signup_success": "Kont ou an kreye ak siksè! W ap redirije...",
+      "signing_up": "K ap kreye kont..."
     }
   }
 }

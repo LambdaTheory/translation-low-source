@@ -63,7 +63,11 @@
         "users": "ບໍລິການໃຫ້ຜູ້ໃຊ້ 10,000+"
       },
       "title_highlight": "ເຂົ້າໃຈແລ້ວ",
-      "title_part1": "ສ້າງທຸກພາສາ"
+      "title_part1": "ສ້າງທຸກພາສາ",
+      "buttons": {
+        "text_translation": "ການແປຂໍ້ຄວາມ",
+        "document_translation": "ການແປເອກະສານ"
+      }
     },
     "languages": {
       "title": "ພາສາທີ່ຮອງຮັບ",
@@ -698,7 +702,23 @@
       "support_24_7": "24/7 Online Support",
       "contact_form": "Contact Form",
       "view_all_languages": "View All →",
-      "telugu_language": "Telugu"
+      "telugu_language": "Telugu",
+      "languages": {
+        "haitian_creole": "Haitian Creole",
+        "lao": "Lao",
+        "swahili": "Swahili",
+        "burmese": "Burmese",
+        "telugu": "Telugu",
+        "sindhi": "Sindhi",
+        "bambara": "Bambara",
+        "wolof": "Wolof",
+        "yoruba": "Yoruba",
+        "igbo": "Igbo"
+      }
+    },
+    "meta": {
+      "title": "LoReTrans - AI ຟຣີ-ແຫຼ່ງທີ່ໃຊ້ຫນ້ອຍພາສາແປພາສາ",
+      "description": "LoReTrans: ຜູ້ແປ AI ຟຣີສໍາລັບ 20+ ພາສາທີ່ມີຊັບພະຍາກອນຕ່ໍາລວມທັງພາສາ Creole, Lao, Swahili, Burmese. ການແປທັນທີເປັນພາສາອັງກິດດ້ວຍເຕັກໂນໂລຢີ NLLB ທີ່ກ້າວຫນ້າ."
     }
   },
   "DocumentTranslatePage": {
@@ -835,23 +855,23 @@
       "contact_support": "ການຕິດຕໍ່ສະຫນັບສະຫນູນ"
     },
     "SignUpForm": {
-      "title": "ສ້າງບັນຊີ LoReTrans",
-      "subtitle": "ສ້າງບັນຊີເພື່ອໄດ້ຮັບເງິນບອນ 500 ກີບ",
+      "title": "Create Account",
+      "subtitle": "Enter your information to create your account",
       "name_label": "ຊື່",
-      "name_placeholder": "ໃສ່ຊື່ຂອງທ່ານ",
+      "name_placeholder": "John Doe",
       "name_required": "ກະລຸນາໃສ່ຊື່ຂອງທ່ານ",
       "name_max_length": "ຊື່ບໍ່ໃຫ້ເກີນ 50 ຕົວອັກສອນ",
       "email_label": "ອີເມວ",
-      "email_placeholder": "ໃສ່ອີເມວຂອງທ່ານ",
+      "email_placeholder": "name@example.com",
       "email_required": "ກະລຸນາໃສ່ອີເມວຂອງທ່ານ",
-      "email_invalid": "ຮູບແບບອີເມວທີ່ບໍ່ຖືກຕ້ອງ",
+      "email_invalid": "Please enter a valid email address",
       "email_max_length": "ອີເມວບໍ່ໃຫ້ເກີນ 100 ຕົວອັກສອນ",
       "password_label": "ລະຫັດຜ່ານ",
-      "password_placeholder": "ໃສ່ລະຫັດຜ່ານຂອງທ່ານ",
+      "password_placeholder": "••••••••",
       "password_min_length": "ລະຫັດຜ່ານຕ້ອງມີຢ່າງຫນ້ອຍ 8 ຕົວອັກສອນ",
       "password_max_length": "ລະຫັດຜ່ານບໍ່ໃຫ້ເກີນ 128 ຕົວອັກສອນ",
       "confirm_password_label": "ຢືນຢັນລະຫັດຜ່ານ",
-      "confirm_password_placeholder": "ໃສ່ລະຫັດຜ່ານຂອງທ່ານອີກຄັ້ງ",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "ກະລຸນາຢືນຢັນລະຫັດຜ່ານຂອງທ່ານ",
       "password_mismatch": "ລະຫັດຜ່ານບໍ່ເຫມາະສົມ",
       "password_strength_label": "ຄວາມເຂັ້ມແຂງຂອງລະຫັດຜ່ານ",
@@ -861,7 +881,23 @@
       "signup_failed": "ການລົງທະບຽນລົ້ມເຫຼວ, ກະລຸນາລອງອີກຄັ້ງ",
       "signup_error": "ມີຂໍ້ຜິດພາດໃນລະຫວ່າງການລົງທະບຽນ, ກະລຸນາລອງອີກຄັ້ງ",
       "signin_prompt": "ມີບັນຊີແລ້ວບໍ?",
-      "signin_link": "ເຂົ້າສູ່ລະບົບ"
+      "signin_link": "ເຂົ້າສູ່ລະບົບ",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "sign_up": "Sign Up",
+      "signing_up": "Creating Account...",
+      "signing_up_progress": "Please wait, creating your account...",
+      "sign_up_success": "Registration Successful!",
+      "sign_up_success_message": "Your account has been created successfully. Redirecting...",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "password_strength": "Password Strength",
+      "password_requirements": "Password Requirements",
+      "email_checking": "Checking email availability...",
+      "email_available": "Email is available",
+      "email_taken": "This email is already registered"
     },
     "SignInForm": {
       "title": "ເຂົ້າສູ່ລະບົບ LoReTrans",
@@ -1145,7 +1181,14 @@
     "switch_languages": "ສະຫຼັບພາສາ",
     "switch_source_target": "ສະຫຼັບພາສາຕົ້ນທາງແລະເປົ້າໝາຍ",
     "reset_translation": "ຣີເຊັດການແປ",
-    "clear_reset": "ລຶບແລະຣີເຊັດທຸກເນື້ອຫາ"
+    "clear_reset": "ລຶບແລະຣີເຊັດທຸກເນື້ອຫາ",
+    "login_required": "ຕ້ອງເຂົ້າສູ່ລະບົບ",
+    "please_sign_in_to_access_this_feature": "ກະລຸນາເຂົ້າສູ່ລະບົບເພື່ອເຂົ້າເຖິງຄຸນສົມບັດນີ້",
+    "create_account": "ສ້າງບັນຊີ",
+    "free_characters": "ຕົວອັກສອນຟຣີ:",
+    "credits_required": "ຄຣິບເດດທີ່ຕ້ອງການ:",
+    "translate_now": "ແປພາສາດຽວນີ້",
+    "translation_will_appear_here": "ການແປຈະປາກົດຢູ່ທີ່ນີ້..."
   },
   "translation": {
     "start_translation": "ຕ້ອງການແປ",
@@ -1250,7 +1293,9 @@
     "credits_processing": "ຕ້ອງການແປ",
     "consumed_credits": "ຕ້ອງການແປ",
     "refunded_credits": "ຕ້ອງການແປ",
-    "retry_only_failed": "ຕ້ອງການແປ"
+    "retry_only_failed": "ຕ້ອງການແປ",
+    "current_credits": "ການປ່ອຍສິນເຊື່ອໃນປະຈຸບັນ",
+    "refresh_credits": "ການປັບປຸງ Credit "
   },
   "language": {
     "source_language": "ຕ້ອງການແປ",
@@ -1372,6 +1417,250 @@
       "translation_quality": "ຄຸນນະພາບການແປ:",
       "thanks_feedback": "ຂອບໃຈສໍາລັບຄວາມຄິດເຫັນຂອງທ່ານ",
       "feedback_helps": "ການຕອບສະຫນອງຂອງທ່ານຊ່ວຍໃຫ້ພວກເຮົາປັບປຸງຄຸນນະພາບການແປພາສາ"
+    }
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "ເຄື່ອງແປຂໍ້ຄວາມທີ່ເພີ່ມເຕີມ",
+    "from": "ຈາກ",
+    "please_sign_in_to_translate_texts_over_5000_charac": "ກະລຸນາເຂົ້າສູ່ລະບົບເພື່ອແປຂໍ້ຄວາມຫຼາຍກວ່າ 5000 ຕົວອັກສອນ.",
+    "sign_in": "ເຂົ້າສູ່ລະບົບ",
+    "your_translation_will_be_processed_in_the_backgrou": "ການແປພາສາຂອງທ່ານຈະຖືກປະມວນຜົນໃນພື້ນຫລັງ.",
+    "source_text": "ເນື້ອໃນແຫຼ່ງ",
+    "translation": "ແປວ່າ",
+    "copy": "ໄດ້ຮັບແລ້ວ",
+    "download": "ດາວໂຫລດ",
+    "translation_cost": "ຄ່າໃຊ້ຈ່າຍໃນການແປພາສາ",
+    "total_characters": "ຈໍານວນຕົວອັກສອນທັງຫມົດ:",
+    "free_characters": "ຕົວອັກສອນຟຣີ:",
+    "billable_characters": "ຕົວອັກສອນທີ່ສາມາດຄິດໄລ່ໄດ້:",
+    "credits_required": "ຄຣິບເດດທີ່ຕ້ອງການ:",
+    "translation_completed": "ການແປພາສາສໍາເລັດ",
+    "your_text_has_been_successfully_translated": "ຂໍ້ຄວາມຂອງທ່ານໄດ້ຖືກແປດ້ວຍຜົນ ສໍາ ເລັດ.",
+    "translation_failed": "ການແປບໍ່ສໍາເລັດ",
+    "an_error_occurred_during_translation": "ມີຂໍ້ຜິດພາດໃນລະຫວ່າງການແປ.",
+    "no_text_to_translate": "ບໍ່ມີຂໍ້ຄວາມທີ່ຈະແປ",
+    "please_enter_some_text_to_translate": "ກະລຸນາໃສ່ຂໍ້ຄວາມເພື່ອແປ.",
+    "text_too_long": "ຂໍ້ຄວາມຍາວເກີນໄປ",
+    "insufficient_credits": "ການຢືມເງິນບໍ່ພຽງພໍ",
+    "translation_queued": "ການແປພາສາຢູ່ໃນແຖວ",
+    "your_translation_has_been_added_to_the_queue": "ການແປພາສາຂອງທ່ານໄດ້ຖືກເພີ່ມເຂົ້າໃນແຖວ.",
+    "an_error_occurred_while_starting_the_translation": "ມີຂໍ້ຜິດພາດໃນຂະນະທີ່ເລີ່ມຕົ້ນການແປ.",
+    "copied_to_clipboard": "ສໍາເນົາເຂົ້າໃນ clipboard",
+    "translation_has_been_copied_to_your_clipboard": "ການແປພາສາໄດ້ຖືກສໍາເນົາໃສ່ຄລິບໂອດຂອງທ່ານ.",
+    "copy_failed": "ການສໍາເນົາລົ້ມເຫລວ",
+    "failed_to_copy_translation_to_clipboard": "ບໍ່ສາມາດສໍາເນົາການແປເຂົ້າໃນຄລິບໂອດໄດ້.",
+    "login_required": "ຕ້ອງເຂົ້າສູ່ລະບົບ",
+    "large_text_translation_requires_user_login": "ການແປຂໍ້ຄວາມຂະຫນາດໃຫຍ່ຕ້ອງການການເຂົ້າສູ່ລະບົບຂອງຜູ້ໃຊ້",
+    "queue_mode": "ໂຫມດແຖວ",
+    "large_text_will_be_processed_in_the_background": "ຂໍ້ຄວາມຂະຫນາດໃຫຍ່ຈະຖືກປະມວນຜົນໃນພື້ນຫລັງ",
+    "instant_mode": "ໂຫມດທັນທີ",
+    "text_will_be_translated_immediately": "ຂໍ້ຄວາມຈະຖືກແປໂດຍທັນທີ",
+    "enter_text_to_translate": "ໃສ່ຂໍ້ຄວາມເພື່ອແປ...",
+    "translating": "ແປວ່າ...",
+    "translation_will_appear_here": "ການແປຈະປາກົດຢູ່ທີ່ນີ້...",
+    "why_sign_in": "ເປັນຫຍັງຈຶ່ງລົງທະບຽນ?",
+    "background_processing_leave_and_come_back_later": "ການປະມວນຜົນພື້ນຖານ - ອອກໄປແລະກັບມາຕໍ່ມາ",
+    "translation_history_and_task_management": "ປະຫວັດການແປພາສາ ແລະ ການຄຸ້ມຄອງວຽກງານ",
+    "create_account": "ສ້າງບັນຊີ",
+    "free_account_no_credit_card_required": "ບັນຊີຟຣີ • ບໍ່ຈໍາເປັນຕ້ອງໃຊ້ບັດເຄຣດິດ",
+    "please_sign_in_to_access_this_feature": "ກະລຸນາເຂົ້າສູ່ລະບົບເພື່ອເຂົ້າເຖິງຄຸນສົມບັດນີ້",
+    "email": "ອີເມວ",
+    "password": "ລະຫັດຜ່ານ",
+    "signing_in": "ເຊັນເຂົ້າ...",
+    "enter_your_email": "ໃສ່ອີເມວຂອງທ່ານ",
+    "enter_your_password": "ໃສ່ລະຫັດຜ່ານຂອງທ່ານ",
+    "loretrans": "LoReTrans",
+    "haitian_creole": "ພາສາເຄຣໂອເລຍໄຮຕີ",
+    "lao": "ລາວ",
+    "swahili": "ພາສາ Swahili",
+    "burmese": "ພາສາບີມານີ",
+    "telugu": "ພາສາເທລູເກີ",
+    "sindhi": "Sindhi",
+    "bambara": "Bambara",
+    "wolof": "ພາສາ Wolof",
+    "yoruba": "ພາສາຢໍຣູບາ",
+    "igbo": "ອິໂບ",
+    "loretrans_logo": "LoReTrans Logo",
+    "verified": "ຢືນຢັນ",
+    "unverified": "ບໍ່ໄດ້ຮັບການກວດສອບ",
+    "profile_incomplete": "ຮູບແບບບໍ່ຄົບຖ້ວນ"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "ຕົວແປ AI ຟຣີ",
+    "ai_translator": "ຜູ້ແປພາສາອັງກິດ",
+    "translate": "ແປວ່າ",
+    "to_english_instantly_with_our_aipowered_trans": "ເປັນພາສາອັງກິດທັນທີ ດ້ວຍຜູ້ແປທີ່ໃຊ້ AI ຂອງພວກເຮົາຍັງ",
+    "convert": "ປ່ຽນແປງ",
+    "text_to_english_with_high_accuracy": "ຂໍ້ຄວາມເປັນພາສາອັງກິດດ້ວຍຄວາມແມ່ນຍໍາສູງ",
+    "perfect_for": "ດີເລີດສໍາລັບ",
+    "documents_emails_and_conversations": "ເອກະສານ, ອີເມວ, ແລະການສົນທະນາ",
+    "support_for_long": "ສະຫນັບສະຫນູນສໍາລັບຍາວ",
+    "texts_queue_processing_and_translation_histor": "ຂໍ້ຄວາມ, ການປະມວນຜົນແຖວ, ແລະປະຫວັດການແປພາສາ",
+    "free": "ຟຣີ",
+    "translation": "ແປວ່າ",
+    "up_to_5000": "ສູງເຖິງ 5,000",
+    "characters": "ຕົວອັກສອນ",
+    "queue_processing": "ການປະມວນຜົນແຖວ",
+    "translation_history_1": "ປະຫວັດການແປພາສາ",
+    "frequently_asked_questions": "ຄໍາ ຖາມ ທີ່ ມັກ ຖາມ",
+    "everything_you_need_to_know_about_our": "ທຸກຢ່າງທີ່ທ່ານຕ້ອງການຮູ້ກ່ຽວກັບການ",
+    "translator_and_translation_process": "ຜູ້ແປແລະຂະບວນການແປພາສາ",
+    "how_accurate_is_the": " ແມ່ນມີຄວາມຖືກຕ້ອງແນວໃດ",
+    "to_english_translation_1": "ແປເປັນພາສາອັງກິດ?",
+    "our_aipowered": "AI ທີ່ໃຊ້ແຮງງານຂອງພວກເຮົາ",
+    "translator_provides_highaccuracy_translations": "ແປພາສາສະຫນອງການແປພາສາຄວາມແມ່ນຍໍາສູງໂດຍໃຊ້ NLLB ທີ່ກ້າວຫນ້າ",
+    "no_language_left_behind": "ບໍ່ມີພາສາໃດທີ່ເຫຼືອ",
+    "technology_the": "ເຕັກໂນໂລຊີ",
+    "to_english_translation_quality_is_excellent_f": "ການແປພາສາເປັນພາສາອັງກິດ ແມ່ນດີເລີດສໍາລັບປະເພດເນື້ອຫາສ່ວນໃຫຍ່",
+    "including_business_documents_academic_texts_a": "ລວມທັງເອກະສານທຸລະກິດ, ຂໍ້ຄວາມທາງວິທະຍາສາດ, ແລະການສົນທະນາແບບບໍ່ເປັນທາງການ",
+    "while_our": "ໃນຂະນະທີ່ພວກເຮົາ",
+    "translator_is_very_reliable_we_recommend_huma": "ແປພາສາແມ່ນຫນ້າເຊື່ອຖືຫຼາຍ, ພວກເຮົາແນະນໍາການກວດກາມະນຸດສໍາລັບເອກະສານກົດຫມາຍ ຫຼື ການແພດທີ່ສໍາຄັນ",
+    "can_i_translate_english_text_back_to": "ຂ້ອຍສາມາດແປຂໍ້ຄວາມພາສາອັງກິດກັບຄືນມາໄດ້ບໍ?",
+    "using_this_tool": "ໃຊ້ເຄື່ອງມືນີ້ບໍ?",
+    "yes_our_translator_supports_bidirectional_tra": "ແມ່ນແລ້ວ! ແປພາສາຂອງພວກເຮົາສະຫນັບສະຫນູນການແປພາສາສອງທິດທາງລະຫວ່າງ",
+    "and_english": "ແລະພາສາອັງກິດ",
+    "you_can_easily_switch_between": "ທ່ານສາມາດປ່ຽນລະຫວ່າງ",
+    "toenglish_and_englishto": "to-English ແລະ English-to",
+    "translation_using_the_swap_button": "ການແປພາສາໂດຍໃຊ້ປຸ່ມ swap",
+    "this_makes_it_perfect_for": "ນີ້ເຮັດໃຫ້ມັນສົມບູນແບບສໍາລັບ",
+    "language_learners_and_english_speakers_who_ne": "ນັກຮຽນພາສາ ແລະ ຜູ້ເວົ້າພາສາອັງກິດ ທີ່ຕ້ອງການສື່ສານໃນພາສາອັງກະລາກອນ",
+    "is_the": "ແມ່ນ",
+    "english_translator_completely_free_to_use": "ແປພາສາອັງກິດໂດຍບໍ່ເສຍຄ່າ?",
+    "yes_our": "ແມ່ນແລ້ວ, ຂອງພວກເຮົາຍັງ",
+    "english_translation_service_is_completely_fre": "ບໍລິການແປພາສາອັງກິດແມ່ນບໍ່ເສຍຄ່າໂດຍບໍ່ຕ້ອງເສຍຄ່າທີ່ເຊື່ອງໄວ້",
+    "short": "ສັ້ນໆ",
+    "texts_translate_instantly_while_longer": "ຂໍ້ຄວາມແປທັນທີ, ໃນຂະນະທີ່ຍາວນານ",
+    "documents_use_our_queue_system_for_registered": "ເອກະສານໃຊ້ລະບົບແຖວຂອງພວກເຮົາສໍາລັບຜູ້ໃຊ້ທີ່ລົງທະບຽນ",
+    "you_can_translate_up_to_5000_characters_of_1": "ທ່ານສາມາດແປເຖິງ 5,000 ຕົວອັກສອນຂອງ",
+    "text_to_english_at_no_charge": "ຂໍ້ຄວາມເປັນພາສາອັງກິດໂດຍບໍ່ເສຍຄ່າ",
+    "what_is_the_maximum_length_for": "ຄວາມຍາວສູງສຸດ ສໍາ ລັບ ແມ່ນຫຍັງ",
+    "text_to_english_at_once": "ຂໍ້ຄວາມເປັນພາສາອັງກິດທັນທີ",
+    "for_1": "ສໍາລັບ",
+    "texts_over_1000_characters_youll_need_to_sign": "ຂໍ້ຄວາມຫຼາຍກວ່າ 1,000 ຕົວອັກສອນ, ທ່ານຈະຕ້ອງເຂົ້າສູ່ລະບົບເພື່ອປະມວນຜົນແຖວ",
+    "shorter": "ສັ້ນກວ່າ",
+    "to_english_translations_are_processed_instant": "ການແປພາສາເປັນພາສາອັງກິດຖືກປະມວນຜົນທັນທີ, ເຮັດໃຫ້ມັນເປັນທີ່ ເຫມາະ ສົມ ສໍາ ລັບໄວ",
+    "phrase_translations": "ການແປຄໍາສັບ",
+    "do_i_need_an_account_for_long": "ຂ້ອຍຕ້ອງການບັນຊີດົນປານໃດ?",
+    "to_english_translations": "ກັບການແປພາສາອັງກິດ?",
+    "texts_over_1000_characters_yes": "ຂໍ້ຄວາມຫຼາຍກວ່າ 1,000 ຕົວອັກສອນ, ແມ່ນແລ້ວ",
+    "creating_a_free_account_allows_you_to_use_our": "ການສ້າງບັນຊີຟຣີຊ່ວຍໃຫ້ທ່ານສາມາດໃຊ້ລະບົບແຖວຂອງພວກເຮົາໄດ້ດົນກວ່າ",
+    "english_conversions_and_access_your": "ການແປງພາສາອັງກິດແລະເຂົ້າເຖິງຂອງທ່ານ",
+    "this_is_especially_useful_for_translating": "ນີ້ເປັນປະໂຫຍດໂດຍສະເພາະໃນການແປພາສາ",
+    "documents_articles_or_academic_papers_to_engl": "ເອກະສານ, ບົດຄວາມ, ຫຼືບົດຂຽນວິທະຍາສາດເປັນພາສາອັງກິດ"
+  },
+  "debug": {
+    "skipping_locale_change": "ການລາດຕະເວນການປ່ຽນແປງສະຖານທີ່:",
+    "switching_locale": "ປ່ຽນທີ່ຕັ້ງ:"
+  },
+  "admin": {
+    "loading_dashboard": "ການໂຫຼດກະດານການນໍາ...",
+    "no_data_available": "ບໍ່ມີຂໍ້ມູນທີ່ສາມາດໃຊ້ໄດ້",
+    "system_health": "ສຸຂະພາບລະບົບ",
+    "total_users": "ຈໍານວນຜູ້ໃຊ້ທັງຫມົດ",
+    "total_translations": "ການແປທັງຫມົດ",
+    "total_credits": "ການຮັບສິນເຊື່ອທັງຫມົດ",
+    "active_users": "ຜູ້ໃຊ້ທີ່ໃຊ້ງານ",
+    "quick_actions": "ການກະທໍາຢ່າງໄວວາ",
+    "view_analytics": "ເບິ່ງ Analytics",
+    "system_settings": "ການຕັ້ງຄ່າລະບົບ",
+    "system_logs": "ບັນທຶກລະບົບ"
+  },
+  "auth": {
+    "why_sign_in": "ເປັນຫຍັງຈຶ່ງລົງທະບຽນ?",
+    "background_processing_benefit": "ການປະມວນຜົນພື້ນຖານ - ອອກໄປແລະກັບມາຕໍ່ມາ",
+    "history_management_benefit": "ປະຫວັດການແປພາສາ ແລະ ການຄຸ້ມຄອງວຽກງານ",
+    "free_account_note": "ບັນຊີຟຣີ • ບໍ່ຈໍາເປັນຕ້ອງໃຊ້ບັດເຄຣດິດ",
+    "please_sign_in_to_access": "ກະລຸນາເຂົ້າສູ່ລະບົບເພື່ອເຂົ້າເຖິງຄຸນສົມບັດນີ້",
+    "email": "ອີເມວ",
+    "password": "ລະຫັດຜ່ານ",
+    "signing_in": "ເຊັນເຂົ້າ...",
+    "enter_email": "ໃສ່ອີເມວຂອງທ່ານ",
+    "enter_password": "ໃສ່ລະຫັດຜ່ານຂອງທ່ານ",
+    "verified": "ຢືນຢັນ",
+    "unverified": "ບໍ່ໄດ້ຮັບການກວດສອບ",
+    "profile_incomplete": "ຮູບແບບບໍ່ຄົບຖ້ວນ"
+  },
+  "navigation": {
+    "switch_to": "ປ່ຽນໄປຫາ",
+    "try_other_languages": "ພະຍາຍາມພາສາອື່ນໆ",
+    "text_translator": "ແປພາສາຂໍ້ຄວາມ",
+    "document_translator": "ຜູ້ແປເອກະສານ"
+  },
+  "languages": {
+    "english": "ພາສາອັງກິດ",
+    "haitian_creole": "ພາສາເຄຣໂອເລຍໄຮຕີ",
+    "creole_to_english": "Kreyòl Ayisyen ເປັນພາສາອັງກິດ"
+  },
+  "translator": {
+    "translation_mode": "ໂຫມດການແປ:",
+    "single_mode": "Single",
+    "bidirectional_mode": "ສອງທິດ",
+    "enter_text_to_translate": "ໃສ່ຂໍ້ຄວາມເພື່ອແປ",
+    "type_text_here": "ຂຽນຂໍ້ຄວາມຂອງທ່ານມາທີ່ນີ້..."
+  },
+  "payment": {
+    "whats_next": "ຕໍ່ໄປແມ່ນຫຍັງ?"
+  },
+  "common": {
+    "error": "ຂໍ້ຜິດພາດ",
+    "try_again": "ພະຍາຍາມອີກຄັ້ງ",
+    "refresh": "ຊຸກຍູ້",
+    "refreshing": "ຊື່ນຊົມ...",
+    "coming_soon": "ຈະມາໄວໆນີ້",
+    "in_development": "ໃນການພັດທະນາ",
+    "ai_powered": "AI-Powered",
+    "will_be_free": "ຈະເປັນອິດສະຫຼະ",
+    "get_notified": "ໄດ້ຮັບແຈ້ງການເມື່ອມີ",
+    "notify_me": "ແຈ້ງໃຫ້ຂ້ອຍຮູ້",
+    "available_now_try_languages": "ມີ ໃນ ເວ ລາ ນີ້ - ພະ ຍາ ຍາມ ພາ ສາ ເຫຼົ່າ ນີ້",
+    "copied_to_clipboard": "ສໍາເນົາເຂົ້າໃນ clipboard"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "ການຊ່ວຍເຫຼືອ & FAQ - LoReTrans AI Translation Tool Support",
+      "description": "ຊອກຫາຄໍາຕອບຕໍ່ຄໍາຖາມທົ່ວໄປກ່ຽວກັບການນໍາໃຊ້ຜູ້ແປອອນໄລນ໌ຟຣີຂອງພວກເຮົາສໍາລັບຂໍ້ຄວາມ, ເອກະສານ, ແລະການແປສຽງ."
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ",
+      "description": "ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ LoReTrans - ພວກເຮົາເກັບ ກໍາ, ໃຊ້ແລະປົກປ້ອງຂໍ້ມູນຂອງທ່ານແນວໃດເມື່ອໃຊ້ບໍລິການແປ AI ຂອງພວກເຮົາ."
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "ຂໍ້ກໍານົດການບໍລິການ",
+      "description": "ຂໍ້ ກໍາ ນົດການບໍລິການ LoReTrans - ຂໍ້ຕົກລົງທາງກົດ ຫມາຍ ທີ່ຄຸ້ມຄອງການ ນໍາ ໃຊ້ເວທີການແປ AI ຂອງພວກເຮົາ ສໍາ ລັບພາສາທີ່ມີແຫຼ່ງທີ່ ຫນ້ອຍ."
+    }
+  },
+  "AuthPage": {
+    "signin": {
+      "signin_error": "Login failed, please try again",
+      "signin_success": "Login successful! Redirecting...",
+      "signing_in": "Signing in",
+      "title": "ເຂົ້າສູ່ລະບົບ LoReTrans",
+      "email": "ອີເມວ",
+      "password": "ລະຫັດຜ່ານ",
+      "forgot_password": "ລືມລະຫັດຜ່ານ?",
+      "signin_button": "ເຂົ້າສູ່ລະບົບ",
+      "signup_link": "ຍັງບໍ່ມີບັນຊີ? ລົງທະບຽນດຽວນີ້",
+      "credentials_prompt": "ໃສ່ຂໍ້ມູນຂອງທ່ານເພື່ອເຂົ້າເຖິງບັນຊີ",
+      "remember_me": "ຈື່ຂ້ອຍ",
+      "signup_text": "ລົງທະບຽນ"
+    },
+    "signup": {
+      "title": "ສ້າງບັນຊີ LoReTrans",
+      "email": "ອີເມວ",
+      "password": "ລະຫັດຜ່ານ",
+      "confirm_password": "ຢືນຢັນລະຫັດຜ່ານ",
+      "signup_button": "ສ້າງບັນຊີ",
+      "signin_link": "ມີບັນຊີແລ້ວ? ເຂົ້າສູ່ລະບົບ",
+      "credentials_prompt": "ສ້າງບັນຊີຂອງທ່ານເພື່ອເລີ່ມແປ",
+      "signin_text": "ເຂົ້າສູ່ລະບົບ",
+      "password_requirements": "ລະຫັດຜ່ານຕ້ອງມີຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ",
+      "signup_success": "ສ້າງບັນຊີສຳເລັດ! ກຳລັງປ່ຽນໜ້າ...",
+      "signing_up": "ກຳລັງສ້າງບັນຊີ..."
     }
   }
 }

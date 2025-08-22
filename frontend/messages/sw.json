@@ -63,7 +63,11 @@
         "users": "Alihudumia watumiaji 10,000+"
       },
       "title_highlight": "Kuelewa",
-      "title_part1": "Fanya Kila Lugha "
+      "title_part1": "Fanya Kila Lugha ",
+      "buttons": {
+        "text_translation": "Tafsiri ya Maandishi",
+        "document_translation": "Tafsiri ya Hati"
+      }
     },
     "languages": {
       "title": "Lugha Zinazotumika",
@@ -673,7 +677,23 @@
       "support_24_7": "24/7 Online Support",
       "contact_form": "Contact Form",
       "view_all_languages": "View All →",
-      "telugu_language": "Telugu"
+      "telugu_language": "Telugu",
+      "languages": {
+        "haitian_creole": "Haitian Creole",
+        "lao": "Lao",
+        "swahili": "Swahili",
+        "burmese": "Burmese",
+        "telugu": "Telugu",
+        "sindhi": "Sindhi",
+        "bambara": "Bambara",
+        "wolof": "Wolof",
+        "yoruba": "Yoruba",
+        "igbo": "Igbo"
+      }
+    },
+    "meta": {
+      "title": "LoReTrans - bure AI Low-Resource Lugha Translator",
+      "description": "LoReTrans: bure AI translator kwa ajili ya lugha 20+ chini ya rasilimali ikiwa ni pamoja na Creole, Lao, Kiswahili, Burma. Tafsiri ya papo kwa Kiingereza na teknolojia ya juu NLLB."
     }
   },
   "DocumentTranslatePage": {
@@ -810,23 +830,23 @@
       "contact_support": "Msaada"
     },
     "SignUpForm": {
-      "title": "Kichwa",
-      "subtitle": "Kichwa",
+      "title": "Create Account",
+      "subtitle": "Enter your information to create your account",
       "name_label": "Jina",
-      "name_placeholder": "Jina",
+      "name_placeholder": "John Doe",
       "name_required": "Jina",
       "name_max_length": "Jina",
       "email_label": "Barua pepe",
-      "email_placeholder": "Barua pepe",
+      "email_placeholder": "name@example.com",
       "email_required": "Barua pepe",
-      "email_invalid": "Barua pepe",
+      "email_invalid": "Please enter a valid email address",
       "email_max_length": "Barua pepe",
       "password_label": "Nenosiri",
-      "password_placeholder": "Nenosiri",
+      "password_placeholder": "••••••••",
       "password_min_length": "Nenosiri",
       "password_max_length": "Nenosiri",
       "confirm_password_label": "Nenosiri",
-      "confirm_password_placeholder": "Nenosiri",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "Nenosiri",
       "password_mismatch": "Nenosiri",
       "password_strength_label": "Nenosiri",
@@ -836,7 +856,23 @@
       "signup_failed": "Jisajili",
       "signup_error": "Hitilafu",
       "signin_prompt": "Ingia",
-      "signin_link": "Kiungo"
+      "signin_link": "Kiungo",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "sign_up": "Sign Up",
+      "signing_up": "Creating Account...",
+      "signing_up_progress": "Please wait, creating your account...",
+      "sign_up_success": "Registration Successful!",
+      "sign_up_success_message": "Your account has been created successfully. Redirecting...",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "password_strength": "Password Strength",
+      "password_requirements": "Password Requirements",
+      "email_checking": "Checking email availability...",
+      "email_available": "Email is available",
+      "email_taken": "This email is already registered"
     },
     "SignInForm": {
       "title": "Kichwa",
@@ -1120,7 +1156,14 @@
     "switch_languages": "Badilisha lugha",
     "switch_source_target": "Badilisha lugha za chanzo na lengwa",
     "reset_translation": "Weka upya tafsiri",
-    "clear_reset": "Futa na weka upya yaliyomo yote"
+    "clear_reset": "Futa na weka upya yaliyomo yote",
+    "login_required": "Kuingia inahitajika",
+    "please_sign_in_to_access_this_feature": "Tafadhali ingia ili upate huduma hii",
+    "create_account": "Kujenga Akaunti",
+    "free_characters": "Wahusika huru:",
+    "credits_required": "Mikopo Inahitajika:",
+    "translate_now": "Tafsiri Sasa",
+    "translation_will_appear_here": "Tafsiri itaonekana hapa..."
   },
   "translation": {
     "start_translation": "Inahitajika kutafsiriwa",
@@ -1225,7 +1268,9 @@
     "credits_processing": "Inahitajika kutafsiriwa",
     "consumed_credits": "Inahitajika kutafsiriwa",
     "refunded_credits": "Inahitajika kutafsiriwa",
-    "retry_only_failed": "Inahitajika kutafsiriwa"
+    "retry_only_failed": "Inahitajika kutafsiriwa",
+    "current_credits": "Mikopo ya sasa",
+    "refresh_credits": "Fresh Credits"
   },
   "language": {
     "source_language": "Lugha",
@@ -1347,6 +1392,250 @@
       "translation_quality": "Ubora wa Tafsiri:",
       "thanks_feedback": "Asante kwa maoni yako",
       "feedback_helps": "Maoni yako yanatusaidia kuboresha ubora wa tafsiri"
+    }
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "Kuboresha Nakala Translator",
+    "from": "Kutoka",
+    "please_sign_in_to_translate_texts_over_5000_charac": "Tafadhali ingia kutafsiri maandiko zaidi ya herufi 5000.",
+    "sign_in": "Ingia",
+    "your_translation_will_be_processed_in_the_backgrou": "Tafsiri yako itachukuliwa katika background.",
+    "source_text": "Nakala ya chanzo",
+    "translation": "Tafsiri",
+    "copy": "Imepokelewa",
+    "download": "Pakua",
+    "translation_cost": "Gharama za Kutafsiri",
+    "total_characters": "Jumla ya Wahusika:",
+    "free_characters": "Wahusika huru:",
+    "billable_characters": "Wahusika Billable:",
+    "credits_required": "Mikopo Inahitajika:",
+    "translation_completed": "Tafsiri imekamilika",
+    "your_text_has_been_successfully_translated": "Nakala yako imetafsiriwa kwa mafanikio.",
+    "translation_failed": "Tafsiri alishindwa",
+    "an_error_occurred_during_translation": "Makosa yalitokea wakati wa kutafsiri.",
+    "no_text_to_translate": "Hakuna maandishi ya kutafsiri",
+    "please_enter_some_text_to_translate": "Tafadhali ingiza maandishi ya kutafsiri.",
+    "text_too_long": "Ujumbe mrefu sana",
+    "insufficient_credits": "Mikopo isiyo ya kutosha",
+    "translation_queued": "Tafsiri katika foleni",
+    "your_translation_has_been_added_to_the_queue": "Tafsiri yako imeongezwa kwenye foleni.",
+    "an_error_occurred_while_starting_the_translation": "Hitilafu ilitokea wakati wa kuanza tafsiri.",
+    "copied_to_clipboard": "Kunakiliwa kwenye clipboard",
+    "translation_has_been_copied_to_your_clipboard": "Tafsiri imekopiwa kwenye clipboard yako.",
+    "copy_failed": "Nakala imeshindwa",
+    "failed_to_copy_translation_to_clipboard": "Kushindwa kunakili tafsiri kwenye clipboard.",
+    "login_required": "Kuingia inahitajika",
+    "large_text_translation_requires_user_login": "Tafsiri kubwa ya maandishi inahitaji user login",
+    "queue_mode": "Hali ya foleni",
+    "large_text_will_be_processed_in_the_background": "Nakala kubwa itakuwa kusindika katika background",
+    "instant_mode": "Hali ya papo hapo",
+    "text_will_be_translated_immediately": "Nakala itatafsiriwa mara moja",
+    "enter_text_to_translate": "Ingiza maandishi ya kutafsiri...",
+    "translating": "Kutafsiri...",
+    "translation_will_appear_here": "Tafsiri itaonekana hapa...",
+    "why_sign_in": "Kwa nini uingie?",
+    "background_processing_leave_and_come_back_later": "Usindikaji wa background - kuondoka na kurudi baadaye",
+    "translation_history_and_task_management": "Historia ya Tafsiri na usimamizi wa kazi",
+    "create_account": "Kujenga Akaunti",
+    "free_account_no_credit_card_required": "Akaunti ya bure • Hakuna kadi ya mkopo inahitajika",
+    "please_sign_in_to_access_this_feature": "Tafadhali ingia ili upate huduma hii",
+    "email": "Barua pepe",
+    "password": "Nambari ya siri",
+    "signing_in": "Kuingia katika...",
+    "enter_your_email": "Ingiza barua pepe yako",
+    "enter_your_password": "Ingiza password yako",
+    "loretrans": "Loretrans",
+    "haitian_creole": "Kikrioli cha Haiti",
+    "lao": "Lao",
+    "swahili": "Kiswahili",
+    "burmese": "Kibirma",
+    "telugu": "Telugu",
+    "sindhi": "Sindhi",
+    "bambara": "Bambara",
+    "wolof": "Wolof",
+    "yoruba": "Kiyoruba",
+    "igbo": "Igbo",
+    "loretrans_logo": "Logo ya LoReTrans",
+    "verified": "Imethibitishwa",
+    "unverified": "Haijathibitishwa",
+    "profile_incomplete": "Profaili haijakamilika"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "Free AI Translator",
+    "ai_translator": "Mtafsiri wa AI",
+    "translate": "Tafsiri",
+    "to_english_instantly_with_our_aipowered_trans": "kwa Kiingereza papo na translator yetu AI-powered",
+    "convert": "Geuza",
+    "text_to_english_with_high_accuracy": "Nakala kwa Kiingereza kwa usahihi mkubwa",
+    "perfect_for": "Kamili kwa ajili ya ",
+    "documents_emails_and_conversations": "nyaraka, barua pepe, na mazungumzo",
+    "support_for_long": "Msaada kwa muda mrefu",
+    "texts_queue_processing_and_translation_histor": "maandiko, mstari wa usindikaji, na historia ya tafsiri",
+    "free": "Bure",
+    "translation": "Tafsiri",
+    "up_to_5000": "Hadi 5,000",
+    "characters": "wahusika",
+    "queue_processing": "mstari wa usindikaji",
+    "translation_history_1": "Historia ya tafsiri",
+    "frequently_asked_questions": "Maswali Yanayoulizwa Mara Nyingi",
+    "everything_you_need_to_know_about_our": "Kila kitu unahitaji kujua kuhusu yetu",
+    "translator_and_translation_process": "mtafsiri na mchakato wa tafsiri",
+    "how_accurate_is_the": "Ni sahihi kiasi gani?",
+    "to_english_translation_1": "kwa Kiingereza tafsiri?",
+    "our_aipowered": "AI-powered yetu",
+    "translator_provides_highaccuracy_translations": "translator hutoa tafsiri ya juu ya usahihi kwa kutumia juu NLLB",
+    "no_language_left_behind": "Hakuna Lugha Iliyosalia",
+    "technology_the": "teknolojia.",
+    "to_english_translation_quality_is_excellent_f": "kwa Kiingereza ubora wa tafsiri ni bora kwa ajili ya aina nyingi za maudhui",
+    "including_business_documents_academic_texts_a": "ikiwa ni pamoja na nyaraka za biashara, maandiko ya kitaaluma, na mazungumzo ya kawaida",
+    "while_our": "Wakati wetu",
+    "translator_is_very_reliable_we_recommend_huma": "Tafsiri ni ya kuaminika sana, tunapendekeza ukaguzi wa binadamu kwa hati muhimu za kisheria au matibabu",
+    "can_i_translate_english_text_back_to": "Je, naweza kutafsiri maandishi ya Kiingereza nyuma kwa ",
+    "using_this_tool": "kutumia zana hii?",
+    "yes_our_translator_supports_bidirectional_tra": "Ndiyo! translator yetu inasaidia tafsiri bidirectional kati ya ",
+    "and_english": "na Kiingereza",
+    "you_can_easily_switch_between": "Unaweza kubadili kwa urahisi kati ya",
+    "toenglish_and_englishto": "kwa Kiingereza na Kiingereza kwa",
+    "translation_using_the_swap_button": "Tafsiri kwa kutumia kitufe swap",
+    "this_makes_it_perfect_for": "Hii inafanya hivyo kamili kwa ",
+    "language_learners_and_english_speakers_who_ne": "wanafunzi wa lugha na wasemaji wa Kiingereza ambao wanahitaji kuwasiliana katika",
+    "is_the": "Je, ni ",
+    "english_translator_completely_free_to_use": "Kiingereza translator bure kabisa kutumia?",
+    "yes_our": "Ndiyo, yetu",
+    "english_translation_service_is_completely_fre": "Huduma ya tafsiri ya Kiingereza ni bure kabisa bila gharama yoyote siri",
+    "short": "Fupi",
+    "texts_translate_instantly_while_longer": "maandishi kutafsiri papo, wakati kwa muda mrefu",
+    "documents_use_our_queue_system_for_registered": "nyaraka kutumia foleni yetu mfumo kwa watumiaji waliosajiliwa",
+    "you_can_translate_up_to_5000_characters_of_1": "Unaweza kutafsiri hadi herufi 5,000 za ",
+    "text_to_english_at_no_charge": "maandishi kwa Kiingereza bila malipo",
+    "what_is_the_maximum_length_for": "Ni nini urefu wa juu kwa ",
+    "text_to_english_at_once": "Nakala kwa Kiingereza mara moja",
+    "for_1": "Kwa ",
+    "texts_over_1000_characters_youll_need_to_sign": "maandishi zaidi ya 1,000 wahusika, unahitaji kuingia kwa ajili ya mstari usindikaji",
+    "shorter": "Fupi zaidi",
+    "to_english_translations_are_processed_instant": "kwa Kiingereza tafsiri ni kusindika papo, na kuifanya bora kwa ajili ya haraka",
+    "phrase_translations": "tafsiri ya maneno",
+    "do_i_need_an_account_for_long": "Je, mimi haja ya akaunti kwa muda mrefu",
+    "to_english_translations": "kwa tafsiri za Kiingereza?",
+    "texts_over_1000_characters_yes": "maandishi zaidi ya herufi 1,000, ndiyo",
+    "creating_a_free_account_allows_you_to_use_our": "Kujenga akaunti bure utaweza kutumia mfumo wetu wa foleni kwa muda mrefu zaidi",
+    "english_conversions_and_access_your": "Kiingereza uongofu na kupata yako",
+    "this_is_especially_useful_for_translating": "Hii ni muhimu hasa kwa ajili ya kutafsiri",
+    "documents_articles_or_academic_papers_to_engl": "nyaraka, makala, au karatasi za kitaaluma kwa Kiingereza"
+  },
+  "debug": {
+    "skipping_locale_change": "Kupita mabadiliko ya eneo:",
+    "switching_locale": "Kubadilisha eneo:"
+  },
+  "admin": {
+    "loading_dashboard": "Loading dashibodi...",
+    "no_data_available": "Hakuna data inapatikana",
+    "system_health": "Afya ya Mfumo",
+    "total_users": "Jumla ya Watumiaji",
+    "total_translations": "Jumla ya Tafsiri",
+    "total_credits": "Jumla ya Mikopo",
+    "active_users": "Watumiaji wa kazi",
+    "quick_actions": "Hatua za Haraka",
+    "view_analytics": "Angalia Analytics",
+    "system_settings": "Mipangilio ya mfumo",
+    "system_logs": "System Logs"
+  },
+  "auth": {
+    "why_sign_in": "Kwa nini uingie?",
+    "background_processing_benefit": "Usindikaji wa background - kuondoka na kurudi baadaye",
+    "history_management_benefit": "Historia ya Tafsiri na usimamizi wa kazi",
+    "free_account_note": "Akaunti ya bure • Hakuna kadi ya mkopo inahitajika",
+    "please_sign_in_to_access": "Tafadhali ingia ili upate huduma hii",
+    "email": "Barua pepe",
+    "password": "Nambari ya siri",
+    "signing_in": "Kuingia katika...",
+    "enter_email": "Ingiza barua pepe yako",
+    "enter_password": "Ingiza password yako",
+    "verified": "Imethibitishwa",
+    "unverified": "Haijathibitishwa",
+    "profile_incomplete": "Profaili haijakamilika"
+  },
+  "navigation": {
+    "switch_to": "Badilisha kwa ",
+    "try_other_languages": "Jaribu lugha nyingine",
+    "text_translator": "Tafsiri ya Nakala",
+    "document_translator": "Tafsiri ya Hati"
+  },
+  "languages": {
+    "english": "Kiingereza",
+    "haitian_creole": "Kikrioli cha Haiti",
+    "creole_to_english": "Kreyòl Ayisyen kwa Kiingereza"
+  },
+  "translator": {
+    "translation_mode": "Njia ya Tafsiri:",
+    "single_mode": "Single",
+    "bidirectional_mode": "Njia mbili",
+    "enter_text_to_translate": "Ingiza maandishi kutafsiri",
+    "type_text_here": "Andika ujumbe wako hapa..."
+  },
+  "payment": {
+    "whats_next": "Ni Nini Kifuatacho?"
+  },
+  "common": {
+    "error": "Kosa",
+    "try_again": "Jaribu tena",
+    "refresh": "Furahia",
+    "refreshing": "Inaburudisha...",
+    "coming_soon": "Karibuni",
+    "in_development": "Katika Maendeleo",
+    "ai_powered": "AI-Powered",
+    "will_be_free": "Utakuwa Huru",
+    "get_notified": "Pata taarifa wakati inapatikana",
+    "notify_me": "Nipe taarifa",
+    "available_now_try_languages": "Sasa Inapatikana - Jaribu Lugha Hizi",
+    "copied_to_clipboard": "Kunakiliwa kwenye clipboard"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "Msaada & Maswali - LoReTrans AI Tafsiri Chombo Support",
+      "description": "Kupata msaada na LoReTrans AI tafsiri chombo. Kupata majibu ya maswali ya kawaida kuhusu kutumia yetu translator bure online kwa maandishi, hati, na sauti tafsiri."
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "Sera ya faragha.",
+      "description": "Sera ya faragha ya LoReTrans - Jinsi tunavyokusanya, kutumia, na kulinda data yako wakati wa kutumia huduma zetu za tafsiri za AI."
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "Masharti ya Huduma.",
+      "description": "Masharti ya Huduma ya LoReTrans - Mkataba wa kisheria unaodhibiti matumizi ya jukwaa letu la tafsiri ya AI kwa lugha zenye rasilimali chache."
+    }
+  },
+  "AuthPage": {
+    "signin": {
+      "signin_error": "Login failed, please try again",
+      "signin_success": "Login successful! Redirecting...",
+      "signing_in": "Signing in",
+      "title": "Ingia kwenye LoReTrans",
+      "email": "Barua pepe",
+      "password": "Nenosiri",
+      "forgot_password": "Umesahau nenosiri?",
+      "signin_button": "Ingia",
+      "signup_link": "Bado huna akaunti? Jisajili Sasa",
+      "credentials_prompt": "Ingiza taarifa zako ili kufikia akaunti yako",
+      "remember_me": "Nikumbuke",
+      "signup_text": "Jisajili"
+    },
+    "signup": {
+      "title": "Unda akaunti ya LoReTrans",
+      "email": "Barua pepe",
+      "password": "Nenosiri",
+      "confirm_password": "Thibitisha nenosiri",
+      "signup_button": "Unda akaunti",
+      "signin_link": "Una akaunti tayari? Ingia",
+      "credentials_prompt": "Unda akaunti yako ili uanze kutafsiri",
+      "signin_text": "Ingia",
+      "password_requirements": "Nenosiri lazima liwe na angalau herufi 8",
+      "signup_success": "Akaunti imeundwa kwa mafanikio! Inaelekeza...",
+      "signing_up": "Inaunda akaunti..."
     }
   }
 }

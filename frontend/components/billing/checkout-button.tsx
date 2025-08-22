@@ -56,7 +56,7 @@ export function CheckoutButton({
         throw new Error('Unable to get access token. Please log in again.');
       }
 
-      console.log('🔑 Access token obtained');
+      console.log(t('debug.access_token_obtained'));
       
       const response = await fetch('/api/checkout', {
         method: 'POST',
@@ -68,7 +68,7 @@ export function CheckoutButton({
       });
 
       const data = await response.json();
-      console.log('📋 Checkout API response:', data);
+      console.log(t('debug.checkout_api_response'), data);
 
       if (!response.ok) {
         console.error(`❌ Checkout API error: ${response.status}`, data);

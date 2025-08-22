@@ -185,14 +185,14 @@ export default async function HomePage({
                     className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg hover:shadow-xl transition-all duration-200"
                   >
                     <span className="mr-2">📝</span>
-                    Text Translation
+                    {t('hero.buttons.text_translation')}
                   </a>
                   <a
                     href={`/${locale}/document-translate`}
                     className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg hover:shadow-xl transition-all duration-200"
                   >
                     <span className="mr-2">📄</span>
-                    Document Translation
+                    {t('hero.buttons.document_translation')}
                   </a>
                 </div>
 

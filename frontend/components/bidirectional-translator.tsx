@@ -29,7 +29,7 @@ interface BidirectionalTranslatorProps {
 export function BidirectionalTranslator({
   defaultSourceLang = 'ht',
   defaultTargetLang = 'en',
-  placeholder = 'Type your text here...',
+  placeholder ={t('translator.type_text_here')},
   showNavigation = true,
   showLanguageDetection = true,
   enableBidirectionalMode = true,
@@ -204,7 +204,7 @@ export function BidirectionalTranslator({
   const handleCopy = React.useCallback(async (text: string) => {
     const success = await copyToClipboard(text)
     if (success) {
-      console.log('Copied to clipboard')
+      console.log(t('common.copied_to_clipboard'))
     }
   }, [])
 

@@ -62,6 +62,10 @@
       },
       "status": {
         "free": "注册获得500积分"
+      },
+      "buttons": {
+        "text_translation": "文本翻译",
+        "document_translation": "文档翻译"
       }
     },
     "languages": {
@@ -690,7 +694,23 @@
       "view_all_languages": "查看全部 →",
       "telugu_language": "泰卢固语",
       "copyright": "© 2025 转载所有权利保留.",
-      "powered_by": "通过Meta NLLB AI技术提供支持"
+      "powered_by": "通过Meta NLLB AI技术提供支持",
+      "languages": {
+        "haitian_creole": "海地克里奥尔语",
+        "lao": "老挝语",
+        "swahili": "斯瓦希里语",
+        "burmese": "缅甸语",
+        "telugu": "泰卢固语",
+        "sindhi": "信德语",
+        "bambara": "班巴拉语",
+        "wolof": "沃洛夫语",
+        "yoruba": "约鲁巴语",
+        "igbo": "伊博语"
+      }
+    },
+    "meta": {
+      "title": "免费人工智能低资源语言翻译",
+      "description": "洛雷转换:为20多种低资源语言提供免费人工智能翻译,包括克里奥尔语,老语,斯瓦希里语,缅甸语."
     }
   },
   "DocumentTranslatePage": {
@@ -835,23 +855,23 @@
       "contact_support": "联系支持"
     },
     "SignUpForm": {
-      "title": "创建一个LoReTrans帐户",
-      "subtitle": "创建一个帐户获得500个积分",
+      "title": "创建账户",
+      "subtitle": "输入您的信息来创建账户",
       "name_label": "姓名",
-      "name_placeholder": "输入您的姓名",
+      "name_placeholder": "张三",
       "name_required": "请输入您的姓名",
       "name_max_length": "名称不能超过50个字符",
       "email_label": "电子邮件",
-      "email_placeholder": "输入您的电子邮件",
+      "email_placeholder": "name@example.com",
       "email_required": "请输入您的电子邮件",
-      "email_invalid": "电子邮件格式不有效",
+      "email_invalid": "请输入有效的邮箱地址",
       "email_max_length": "电子邮件长度不得超过100个字符",
       "password_label": "密码",
-      "password_placeholder": "输入您的密码",
+      "password_placeholder": "••••••••",
       "password_min_length": "密码必须至少有8个字符",
       "password_max_length": "密码不能超过128个字符",
       "confirm_password_label": "确认密码",
-      "confirm_password_placeholder": "输入您的密码",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "请确认您的密码",
       "password_mismatch": "密码不一致",
       "password_strength_label": "密码强度",
@@ -873,7 +893,21 @@
       "strength_weak": "弱",
       "strength_fair": "一般",
       "strength_good": "好",
-      "strength_excellent": "优秀"
+      "strength_excellent": "优秀",
+      "name": "姓名",
+      "email": "邮箱",
+      "password": "密码",
+      "confirm_password": "确认密码",
+      "sign_up": "注册",
+      "signing_up": "正在创建账户...",
+      "signing_up_progress": "请稍候，正在创建您的账户...",
+      "sign_up_success": "注册成功！",
+      "sign_up_success_message": "您的账户已成功创建，正在跳转...",
+      "have_account": "已有账户？",
+      "sign_in": "登录",
+      "email_checking": "正在检查邮箱可用性...",
+      "email_available": "邮箱可以使用",
+      "email_taken": "该邮箱已被注册"
     },
     "SignInForm": {
       "title": "登录到LoReTrans",
@@ -1284,7 +1318,14 @@
     "switch_languages": "切换语言",
     "switch_source_target": "切换源语言和目标语言",
     "reset_translation": "重置翻译",
-    "clear_reset": "清空并重置所有内容"
+    "clear_reset": "清空并重置所有内容",
+    "login_required": "需要登录",
+    "please_sign_in_to_access_this_feature": "请登录以访问此功能",
+    "create_account": "创建帐户",
+    "free_characters": "免费字符:",
+    "credits_required": "需要学分:",
+    "translate_now": "现在翻译",
+    "translation_will_appear_here": "翻译将显示在这里..."
   },
   "translation": {
     "start_translation": "开始翻译",
@@ -1394,7 +1435,9 @@
     "refunded_credits": "已退还积分",
     "retry_only_failed": "重试时只需要为失败部分付款积分",
     "insufficient_balance": "积分不足：需要 {required}，当前 {current}",
-    "recharge_now": "请充值积分以继续。"
+    "recharge_now": "请充值积分以继续。",
+    "current_credits": "Current Credits",
+    "refresh_credits": "Refresh Credits"
   },
   "language": {
     "source_language": "源语言",
@@ -1526,7 +1569,20 @@
   "auth": {
     "register_prompt": {
       "description": "注册用户享受500积分欢迎奖励。每次翻译1000字符内免费。"
-    }
+    },
+    "why_sign_in": "Why sign in?",
+    "background_processing_benefit": "Background processing - leave and come back later",
+    "history_management_benefit": "Translation history and task management",
+    "free_account_note": "Free account • No credit card required",
+    "please_sign_in_to_access": "Please sign in to access this feature",
+    "email": "Email",
+    "password": "Password",
+    "signing_in": "Signing in...",
+    "enter_email": "Enter your email",
+    "enter_password": "Enter your password",
+    "verified": "Verified",
+    "unverified": "Unverified",
+    "profile_incomplete": "Profile incomplete"
   },
   "AuthPage": {
     "signin": {
@@ -1538,7 +1594,10 @@
       "signup_link": "还没有账户？立即注册",
       "credentials_prompt": "输入您的凭据以访问您的账户",
       "remember_me": "记住我",
-      "signup_text": "注册"
+      "signup_text": "注册",
+      "signin_error": "登录失败，请重试",
+      "signin_success": "登录成功！正在跳转...",
+      "signing_in": "正在登录"
     }
   },
   "errors": {
@@ -1558,6 +1617,206 @@
       "recharge_page": "充值页面",
       "deducted_title": "积分已扣除",
       "deducted_description": "本次翻译消耗 {consumed} 积分，剩余 {remaining} 积分"
+    }
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "增强的文本翻译",
+    "from": "来自",
+    "please_sign_in_to_translate_texts_over_5000_charac": "请登录,以便翻译超过5000个字符的文本.",
+    "sign_in": "登录",
+    "your_translation_will_be_processed_in_the_backgrou": "您的翻译将在后台进行处理.",
+    "source_text": "源文本",
+    "translation": "翻译",
+    "copy": "接收了",
+    "download": "现在我们可以下载",
+    "translation_cost": "翻译费用",
+    "total_characters": "总字符:",
+    "free_characters": "免费字符:",
+    "billable_characters": "发票字符:",
+    "credits_required": "需要学分:",
+    "translation_completed": "翻译完成",
+    "your_text_has_been_successfully_translated": "您的文本已成功翻译.",
+    "translation_failed": "翻译失败",
+    "an_error_occurred_during_translation": "翻译过程中发生了错误.",
+    "no_text_to_translate": "没有文本要翻译",
+    "please_enter_some_text_to_translate": "请输入一些文本来翻译.",
+    "text_too_long": "短信太长了",
+    "insufficient_credits": "没有足够的学分",
+    "translation_queued": "翻译队列",
+    "your_translation_has_been_added_to_the_queue": "您的翻译已被添加到排队.",
+    "an_error_occurred_while_starting_the_translation": "在开始翻译时发生错误.",
+    "copied_to_clipboard": "复制到剪贴板",
+    "translation_has_been_copied_to_your_clipboard": "翻译已经复制到您的剪贴板上.",
+    "copy_failed": "复制失败了",
+    "failed_to_copy_translation_to_clipboard": "无法将翻译复制到剪贴板.",
+    "login_required": "需要登录",
+    "large_text_translation_requires_user_login": "大文字翻译需要用户登录",
+    "queue_mode": "排队模式",
+    "large_text_will_be_processed_in_the_background": "大文字将在背景中处理",
+    "instant_mode": "快速模式",
+    "text_will_be_translated_immediately": "文本将立即翻译",
+    "enter_text_to_translate": "输入文本来翻译...",
+    "translating": "翻译:",
+    "translation_will_appear_here": "翻译将显示在这里...",
+    "why_sign_in": "为什么要登录?",
+    "background_processing_leave_and_come_back_later": "背景处理 - 离开,然后再回来",
+    "translation_history_and_task_management": "翻译历史和任务管理",
+    "create_account": "创建帐户",
+    "free_account_no_credit_card_required": "免费账户 • 无需信用卡",
+    "please_sign_in_to_access_this_feature": "请登录以访问此功能",
+    "email": "电子邮件",
+    "password": "密码",
+    "signing_in": "现在我已经登录了.",
+    "enter_your_email": "输入您的电子邮件",
+    "enter_your_password": "输入您的密码",
+    "loretrans": "没有任何其他.",
+    "haitian_creole": "海地克里奥尔语",
+    "lao": "劳斯",
+    "swahili": "斯瓦希里语",
+    "burmese": "缅甸语",
+    "telugu": "泰卢古语",
+    "sindhi": "辛迪语",
+    "bambara": "班巴拉语",
+    "wolof": "维洛普语",
+    "yoruba": "语",
+    "igbo": "伊博语",
+    "loretrans_logo": "罗尔特朗斯标志",
+    "verified": "已验证",
+    "unverified": "没有验证",
+    "profile_incomplete": "个人资料不完整"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "免费的人工智能翻译",
+    "ai_translator": "没有任何问题.",
+    "translate": "翻译",
+    "to_english_instantly_with_our_aipowered_trans": "通过人工智能翻译即时转换成英语",
+    "convert": "转换",
+    "text_to_english_with_high_accuracy": "文本以高精度转换成英语",
+    "perfect_for": "非常适合",
+    "documents_emails_and_conversations": "文件,电子邮件和对话",
+    "support_for_long": "支持长时间",
+    "texts_queue_processing_and_translation_histor": "文本,排队处理和翻译历史",
+    "free": "免费",
+    "translation": "翻译",
+    "up_to_5000": "价格最高为5000",
+    "characters": "字符",
+    "queue_processing": "排队处理",
+    "translation_history_1": "翻译历史",
+    "frequently_asked_questions": "常见问题",
+    "everything_you_need_to_know_about_our": "关于我们的一切",
+    "translator_and_translation_process": "翻译员和翻译过程",
+    "how_accurate_is_the": "是多么准确",
+    "to_english_translation_1": "没有什么好处.",
+    "our_aipowered": "我们的人工智能",
+    "translator_provides_highaccuracy_translations": "提供高精度的翻译,使用先进的NLLB",
+    "no_language_left_behind": "没有一种语言留下来",
+    "technology_the": "技术.",
+    "to_english_translation_quality_is_excellent_f": "对于大多数内容类型,英语翻译质量都很好",
+    "including_business_documents_academic_texts_a": "包括商业文件,学术文本,以及随意的对话",
+    "while_our": "在我们的",
+    "translator_is_very_reliable_we_recommend_huma": "翻译员非常可靠,我们建议对关键的法律或医疗文件进行人为审查",
+    "can_i_translate_english_text_back_to": "可以把英文文本翻译回",
+    "using_this_tool": "如何使用这个工具?",
+    "yes_our_translator_supports_bidirectional_tra": "是的!我们的翻译支持之间的双向翻译",
+    "and_english": "和英语",
+    "you_can_easily_switch_between": "您可以轻松切换到",
+    "toenglish_and_englishto": "转到英语和转到",
+    "translation_using_the_swap_button": "通过交换按进行翻译",
+    "this_makes_it_perfect_for": "这使得它非常适合",
+    "language_learners_and_english_speakers_who_ne": "语言学习者和需要用语交流的英语使用者",
+    "is_the": "是",
+    "english_translator_completely_free_to_use": "没有任何的翻译.",
+    "yes_our": "是的,我们的",
+    "english_translation_service_is_completely_fre": "英语翻译服务完全免费,无隐藏费用",
+    "short": "短",
+    "texts_translate_instantly_while_longer": "文本即时翻译,而更长",
+    "documents_use_our_queue_system_for_registered": "文件使用我们的注册用户队列系统",
+    "you_can_translate_up_to_5000_characters_of_1": "您可以翻译多达5000个字符的",
+    "text_to_english_at_no_charge": "免费翻译成英语",
+    "what_is_the_maximum_length_for": "的最大长度是多少?",
+    "text_to_english_at_once": "文本即时转换成英语",
+    "for_1": "为了",
+    "texts_over_1000_characters_youll_need_to_sign": "对于超过1000个字符的文本,您需要登录以进行排队处理",
+    "shorter": "较短",
+    "to_english_translations_are_processed_instant": "转换到英语即时处理,使其非常适合快速",
+    "phrase_translations": "语句翻译",
+    "do_i_need_an_account_for_long": "我需要一个账户很长时间",
+    "to_english_translations": "没有任何的翻译.",
+    "texts_over_1000_characters_yes": "超过1000个字符的文本,是的",
+    "creating_a_free_account_allows_you_to_use_our": "创建免费帐户可以让您使用我们的队列系统更长时间",
+    "english_conversions_and_access_your": "您可以使用",
+    "this_is_especially_useful_for_translating": "这对于翻译来说特别有用",
+    "documents_articles_or_academic_papers_to_engl": "文件,文章或学术论文转换成英语"
+  },
+  "debug": {
+    "skipping_locale_change": "Skipping locale change:",
+    "switching_locale": "Switching locale:"
+  },
+  "admin": {
+    "loading_dashboard": "Loading dashboard...",
+    "no_data_available": "No data available",
+    "system_health": "System Health",
+    "total_users": "Total Users",
+    "total_translations": "Total Translations",
+    "total_credits": "Total Credits",
+    "active_users": "Active Users",
+    "quick_actions": "Quick Actions",
+    "view_analytics": "View Analytics",
+    "system_settings": "System Settings",
+    "system_logs": "System Logs"
+  },
+  "navigation": {
+    "switch_to": "Switch to",
+    "try_other_languages": "Try other languages",
+    "text_translator": "Text Translator",
+    "document_translator": "Document Translator"
+  },
+  "languages": {
+    "english": "English",
+    "haitian_creole": "Haitian Creole",
+    "creole_to_english": "Kreyòl Ayisyen to English"
+  },
+  "translator": {
+    "translation_mode": "Translation Mode:",
+    "single_mode": "Single",
+    "bidirectional_mode": "Bidirectional",
+    "enter_text_to_translate": "Enter text to translate",
+    "type_text_here": "Type your text here..."
+  },
+  "payment": {
+    "whats_next": "What's Next?"
+  },
+  "common": {
+    "error": "Error",
+    "try_again": "Try again",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "coming_soon": "Coming Soon",
+    "in_development": "In Development",
+    "ai_powered": "AI-Powered",
+    "will_be_free": "Will Be Free",
+    "get_notified": "Get Notified When Available",
+    "notify_me": "Notify Me",
+    "available_now_try_languages": "Available Now - Try These Languages",
+    "copied_to_clipboard": "Copied to clipboard"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "帮助和常见问题 - LoReTrans人工智能翻译工具支持",
+      "description": "获取 LoReTrans AI 翻译工具的帮助. 找到使用我们的免费在线翻译器进行文本,文档和语音翻译的常见问题答案."
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "隐私政策",
+      "description": "如何收集,使用和保护您的数据,"
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "服务条款",
+      "description": "劳雷转换服务条款 - 法律协议, 管理我们AI翻译平台的使用."
     }
   }
 }

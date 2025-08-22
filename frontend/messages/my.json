@@ -63,7 +63,11 @@
         "users": "အသုံးပြုသူ ၁၀၀၀၀ ကျော်ကို ဝန်ဆောင်မှုပေးထားပါတယ်"
       },
       "title_highlight": "နားလည်တယ်",
-      "title_part1": "ဘာသာစကားတိုင်းကို ဖန်တီးပါ"
+      "title_part1": "ဘာသာစကားတိုင်းကို ဖန်တီးပါ",
+      "buttons": {
+        "text_translation": "စာသားဘာသာပြန်ခြင်း",
+        "document_translation": "စာရွက်စာတမ်းဘာသာပြန်ခြင်း"
+      }
     },
     "languages": {
       "title": "ပံ့ပိုးထားသောဘာသာစကားများ",
@@ -672,7 +676,23 @@
       "support_24_7": "24/7 Online Support",
       "contact_form": "Contact Form",
       "view_all_languages": "View All →",
-      "telugu_language": "Telugu"
+      "telugu_language": "Telugu",
+      "languages": {
+        "haitian_creole": "Haitian Creole",
+        "lao": "Lao",
+        "swahili": "Swahili",
+        "burmese": "Burmese",
+        "telugu": "Telugu",
+        "sindhi": "Sindhi",
+        "bambara": "Bambara",
+        "wolof": "Wolof",
+        "yoruba": "Yoruba",
+        "igbo": "Igbo"
+      }
+    },
+    "meta": {
+      "title": "LoReTrans - အခမဲ့ AI နည်းပါးသော အရင်းအမြစ် ဘာသာစကား ဘာသာပြန်သူ",
+      "description": "LoReTrans: Creole, Lao, Swahili, Burmese အပါအဝင် အရင်းအမြစ်နည်း ဘာသာစကား ၂၀+ အတွက် အခမဲ့ AI ဘာသာပြန်ပါ။ အဆင့်မြင့် NLLB နည်းပညာဖြင့် အင်္ဂလိပ်ဘာသာသို့ ချက်ချင်း ဘာသာပြန်ခြင်း။"
     }
   },
   "DocumentTranslatePage": {
@@ -809,23 +829,23 @@
       "contact_support": "ဘာသာပြန်ရန်လိုအပ်သည်"
     },
     "SignUpForm": {
-      "title": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "subtitle": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "title": "Create Account",
+      "subtitle": "Enter your information to create your account",
       "name_label": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "name_placeholder": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "name_placeholder": "John Doe",
       "name_required": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "name_max_length": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "email_label": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "email_placeholder": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "email_placeholder": "name@example.com",
       "email_required": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "email_invalid": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "email_invalid": "Please enter a valid email address",
       "email_max_length": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "password_label": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "password_placeholder": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "password_placeholder": "••••••••",
       "password_min_length": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "password_max_length": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "confirm_password_label": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "confirm_password_placeholder": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "password_mismatch": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "password_strength_label": "ဘာသာပြန်ရန်လိုအပ်သည်",
@@ -835,7 +855,23 @@
       "signup_failed": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "signup_error": "ဘာသာပြန်ရန်လိုအပ်သည်",
       "signin_prompt": "ဘာသာပြန်ရန်လိုအပ်သည်",
-      "signin_link": "ဘာသာပြန်ရန်လိုအပ်သည်"
+      "signin_link": "ဘာသာပြန်ရန်လိုအပ်သည်",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "sign_up": "Sign Up",
+      "signing_up": "Creating Account...",
+      "signing_up_progress": "Please wait, creating your account...",
+      "sign_up_success": "Registration Successful!",
+      "sign_up_success_message": "Your account has been created successfully. Redirecting...",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "password_strength": "Password Strength",
+      "password_requirements": "Password Requirements",
+      "email_checking": "Checking email availability...",
+      "email_available": "Email is available",
+      "email_taken": "This email is already registered"
     },
     "SignInForm": {
       "title": "ဘာသာပြန်ရန်လိုအပ်သည်",
@@ -1097,7 +1133,7 @@
   "Common": {
     "remember_me": "ကျွန်မကို မှတ်မိနေပါလား",
     "sign_up": "စာရင်းသွင်းပါ",
-    "sign_in": "မှတ်ပုံတင်ပါ",
+    "sign_in": "စာရင်းသွင်းပါ",
     "hide_password": "စကားဝှက်ကို ဝှက်ထားပါ",
     "show_password": "စကားဝှက်ကို ပြပါ",
     "no_email": "အီးမေးလ်မရှိဘူး",
@@ -1119,7 +1155,14 @@
     "switch_languages": "ဘာသာစကားများပြောင်းရန်",
     "switch_source_target": "အရင်းအမြစ်နှင့် ပစ်မှတ်ဘာသာစကားများပြောင်းရန်",
     "reset_translation": "ဘာသာပြန်ချက်ကို ပြန်လည်သတ်မှတ်ရန်",
-    "clear_reset": "အားလုံးကို ရှင်းလင်းပြီး ပြန်လည်သတ်မှတ်ရန်"
+    "clear_reset": "အားလုံးကို ရှင်းလင်းပြီး ပြန်လည်သတ်မှတ်ရန်",
+    "login_required": "ဝင်ရန်လိုအပ်သည်",
+    "please_sign_in_to_access_this_feature": "ဤ feature ကို အသုံးပြုရန် ကျေးဇူးပြု၍ ဝင်ရောက်ပါ။",
+    "create_account": "အကောင့် ဖန်တီးပါ",
+    "free_characters": "အခမဲ့ စာလုံးများ:",
+    "credits_required": "လိုအပ်တဲ့ အချိုးများ",
+    "translate_now": "အခု ဘာသာပြန်ပါ",
+    "translation_will_appear_here": "ဘာသာပြန်ချက်က ဒီမှာ ပေါ်လာမယ်။"
   },
   "translation": {
     "start_translation": "ဘာသာပြန်ရန်လိုအပ်သည်",
@@ -1224,7 +1267,9 @@
     "credits_processing": "ဘာသာပြန်ရန်လိုအပ်သည်",
     "consumed_credits": "ဘာသာပြန်ရန်လိုအပ်သည်",
     "refunded_credits": "ဘာသာပြန်ရန်လိုအပ်သည်",
-    "retry_only_failed": "ဘာသာပြန်ရန်လိုအပ်သည်"
+    "retry_only_failed": "ဘာသာပြန်ရန်လိုအပ်သည်",
+    "current_credits": "လက်ရှိငွေကြေး",
+    "refresh_credits": "ခရက်ဒစ်များ ပြန်လည်ဖြည့်စွက်ပါ"
   },
   "language": {
     "source_language": "ဘာသာပြန်ရန်လိုအပ်သည်",
@@ -1346,6 +1391,228 @@
       "translation_quality": "ဘာသာပြန် အရည်အသွေး:",
       "thanks_feedback": "သင့်ရဲ့ သုံးသပ်ချက်အတွက် ကျေးဇူးတင်ပါတယ်။",
       "feedback_helps": "သင်၏အမြင်ပြန်ကြားချက်သည် ဘာသာပြန်အရည်အသွေးတိုးတက်စေရန် ကူညီပေးသည်"
+    }
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "တိုးတက်သော စာသား ဘာသာပြန်သူ",
+    "from": " မှ",
+    "please_sign_in_to_translate_texts_over_5000_charac": "စာသားပေါင်း ၅၀၀၀ ကျော်ကို ဘာသာပြန်ရန်အတွက် ကျေးဇူးပြု၍ ဝင်ရောက်ပါ။",
+    "sign_in": "စာရင်းသွင်းပါ",
+    "your_translation_will_be_processed_in_the_backgrou": "ခင်ဗျားရဲ့ ဘာသာပြန်မှုကို နောက်ခံမှာ စီမံပေးမှာပါ။",
+    "source_text": "မူရင်းစာသား",
+    "translation": "ဘာသာပြန်ချက်",
+    "copy": "နားလည်ပါတယ်",
+    "download": "ဒေါင်းလုပ်ပါ",
+    "translation_cost": "ဘာသာပြန်မှု ကုန်ကျစရိတ်",
+    "total_characters": "စာလုံးပေါင်း:",
+    "free_characters": "အခမဲ့ စာလုံးများ:",
+    "billable_characters": "ငွေပေးချေနိုင်သော စာလုံးများ:",
+    "credits_required": "လိုအပ်တဲ့ အချိုးများ",
+    "translation_completed": "ဘာသာပြန်ပြီးစီးပြီ",
+    "your_text_has_been_successfully_translated": "ခင်ဗျားရဲ့ စာသားကို အောင်မြင်စွာ ဘာသာပြန်ပေးထားပါပြီ။",
+    "translation_failed": "ဘာသာပြန်မှု ကျရှုံးသွားတယ်",
+    "an_error_occurred_during_translation": "ဘာသာပြန်စဉ်မှာ အမှားတစ်ခု ဖြစ်ပေါ်ခဲ့တယ်။",
+    "no_text_to_translate": "ဘာသာပြန်ရန် စာသားမရှိပါ",
+    "please_enter_some_text_to_translate": "ဘာသာပြန်ရန် စာသားကို ထည့်ပါ။",
+    "text_too_long": "စာတိုရှည်လွန်းတယ်",
+    "insufficient_credits": "လုံလောက်တဲ့ ငွေကြေးမလုံလောက်ဘူး",
+    "translation_queued": "ဘာသာပြန်လိုင်းမှာ",
+    "your_translation_has_been_added_to_the_queue": "ခင်ဗျားရဲ့ ဘာသာပြန်ကို စောင့်ဆိုင်းမှုမှာ ထည့်ပေးထားပါပြီ။",
+    "an_error_occurred_while_starting_the_translation": "ဘာသာပြန်မှုကို စတင်စဉ်တွင် အမှားတစ်ခု ဖြစ်ပေါ်ခဲ့သည်။",
+    "copied_to_clipboard": "ကလစ်ဘုတ်သို့ ကူးယူထားသည်",
+    "translation_has_been_copied_to_your_clipboard": "ဘာသာပြန်ကို သင့် clipboard ထဲကို ကူးယူထားတယ်။",
+    "copy_failed": "ကူးယူမှု ပျက်ကွက်ခဲ့သည်",
+    "failed_to_copy_translation_to_clipboard": "ဘာသာပြန်ကို clipboard သို့ ကူးယူရန် ပျက်ကွက်ခဲ့သည်။",
+    "login_required": "ဝင်ရန်လိုအပ်သည်",
+    "large_text_translation_requires_user_login": "စာသားကြီးများအတွက် အသုံးပြုသူဝင်ရန် လိုအပ်သည်",
+    "queue_mode": "Queue Mode ကို ",
+    "large_text_will_be_processed_in_the_background": "စာသားကြီးတွေကို နောက်ခံမှာ စီမံပေးပါမယ်",
+    "instant_mode": "ချက်ချင်း Mode ကို",
+    "text_will_be_translated_immediately": "စာသားကို ချက်ချင်း ဘာသာပြန်ပေးပါမယ်",
+    "enter_text_to_translate": "ဘာသာပြန်ဖို့ စာသားကို ရိုက်ထည့်ပါ။",
+    "translating": "ဘာသာပြန်နေပါတယ်",
+    "translation_will_appear_here": "ဘာသာပြန်ချက်က ဒီမှာ ပေါ်လာမယ်။",
+    "why_sign_in": "ဘာလို့ စာရင်းသွင်းရတာလဲ။",
+    "background_processing_leave_and_come_back_later": "နောက်ခံ စီမံခန့်ခွဲမှု - ထွက်သွားပြီး နောက်မှ ပြန်လာပါ",
+    "translation_history_and_task_management": "ဘာသာပြန်မှု သမိုင်းနှင့် တာဝန် စီမံခန့်ခွဲမှု",
+    "create_account": "အကောင့် ဖန်တီးပါ",
+    "free_account_no_credit_card_required": "အခမဲ့စာရင်း • ခရက်ဒစ်ကဒ် မလိုပါ",
+    "please_sign_in_to_access_this_feature": "ဤ feature ကို အသုံးပြုရန် ကျေးဇူးပြု၍ ဝင်ရောက်ပါ။",
+    "email": "အီးမေးလ်",
+    "password": "စကားဝှက်",
+    "signing_in": "စာရင်းသွင်းနေပါတယ်",
+    "enter_your_email": "သင့်အီးမေးလ်ကိုထည့်ပါ",
+    "enter_your_password": "စကားဝှက်ကို ရိုက်ထည့်ပါ",
+    "loretrans": "LoReTrans ",
+    "haitian_creole": "ဟေတီကရီယိုဘာသာစကား",
+    "lao": "လာအို",
+    "swahili": "ဆွာဟီလီ",
+    "burmese": "မြန်မာဘာသာ",
+    "telugu": "တဲလူဂူဘာသာစကား",
+    "sindhi": "ဆင်ဒီဘာသာစကား",
+    "bambara": "ဘမ်ဘာရာ",
+    "wolof": "ဝေါလော်ဖ်",
+    "yoruba": "ယိုရုဘားဘာသာ",
+    "igbo": "အီဂို",
+    "loretrans_logo": "LoReTrans Logo ကို ",
+    "verified": "စစ်ဆေးထားသည်",
+    "unverified": "မစစ်ဆေးသေး",
+    "profile_incomplete": "အပြည့်အဝမဟုတ်တဲ့ အပိုင်း"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "အခမဲ့ AI ဘာသာပြန်",
+    "ai_translator": "AI ဘာသာပြန်သူ",
+    "translate": "ဘာသာပြန်ပါ",
+    "to_english_instantly_with_our_aipowered_trans": "AI အားသုံးတဲ့ ဘာသာပြန်နဲ့ ချက်ချင်း အင်္ဂလိပ်ဘာသာပြန် ",
+    "convert": "ပြောင်းပစ်ပါ",
+    "text_to_english_with_high_accuracy": "စာသားကို အင်္ဂလိပ်ဘာသာသို့ တိကျစွာ ဘာသာပြန်ပါ",
+    "perfect_for": " အတွက် အကောင်းဆုံးပါ။",
+    "documents_emails_and_conversations": "စာရွက်စာတမ်းတွေ၊ အီးမေးလ်တွေ၊ စကားပြောဆိုမှုတွေ",
+    "support_for_long": "ထောက်ပံ့မှု အကြာကြီး",
+    "texts_queue_processing_and_translation_histor": "စာသားများ၊ စောင့်ဆိုင်းမှု စီမံခန့်ခွဲမှုနှင့် ဘာသာပြန်မှု သမိုင်း",
+    "free": "အခမဲ့",
+    "translation": "ဘာသာပြန်",
+    "up_to_5000": "၅၀၀၀ အထိ",
+    "characters": "စာလုံးများ",
+    "queue_processing": "စောင့်ဆိုင်းမှု စီမံခန့်ခွဲမှု",
+    "translation_history_1": "ဘာသာပြန်မှု သမိုင်း",
+    "frequently_asked_questions": "မကြာခဏမေးမြန်းသောမေးခွန်းများ",
+    "everything_you_need_to_know_about_our": "ကျွန်တော်တို့ရဲ့  အကြောင်း သိဖို့လိုတာအားလုံး",
+    "translator_and_translation_process": "ဘာသာပြန်သူနှင့် ဘာသာပြန်မှု လုပ်ငန်းစဉ်",
+    "how_accurate_is_the": " ဘယ်လောက် တိကျလဲ။",
+    "to_english_translation_1": "အင်္ဂလိပ်ဘာသာပြန်လား။",
+    "our_aipowered": "ကျွန်ုပ်တို့ရဲ့ AI-powered",
+    "translator_provides_highaccuracy_translations": "ဘာသာပြန်သူသည် အဆင့်မြင့် NLLB ကို အသုံးပြု၍ တိကျသော ဘာသာပြန်မှုများကို ပေးသည်။",
+    "no_language_left_behind": "ဘယ်ဘာသာစကားမှ နောက်မကျန်ခဲ့",
+    "technology_the": "နည်းပညာ",
+    "to_english_translation_quality_is_excellent_f": "အင်္ဂလိပ်ဘာသာပြန် အရည်အသွေးဟာ အကြောင်းအရာအမျိုးအစားအများစုအတွက် အလွန်ကောင်းမွန်ပါတယ်",
+    "including_business_documents_academic_texts_a": "စီးပွားရေးစာရွက်စာတမ်းတွေ၊ ပညာရေးစာတမ်းတွေနဲ့ သာမန်စကားပြောဆိုမှုတွေ အပါအဝင်ပါ",
+    "while_our": "ကျွန်တော်တို့ရဲ့",
+    "translator_is_very_reliable_we_recommend_huma": "ဘာသာပြန်သူဟာ သိပ်ကို ယုံကြည်မှုရှိပါတယ်၊ အရေးပါတဲ့ ဥပဒေဆိုင်ရာ ဒါမှမဟုတ် ဆေးဘက်ဆိုင်ရာ စာရွက်စာတမ်းတွေအတွက် လူသုံး စာရွက်ကို သုံးဖို့ အကြံပြုပါတယ်။",
+    "can_i_translate_english_text_back_to": "အင်္ဂလိပ်စာကို ပြန်ဆိုနိုင်မလား",
+    "using_this_tool": "ဒီကိရိယာကို သုံးနေလား။",
+    "yes_our_translator_supports_bidirectional_tra": "ဟုတ်ကဲ့၊ ကျွန်တော်တို့ရဲ့ ဘာသာပြန်ဟာ  ကြားက နှစ်ဖက် ဘာသာပြန်မှုကို ထောက်ပံ့ပါတယ်။",
+    "and_english": "အင်္ဂလိပ်စာ",
+    "you_can_easily_switch_between": " အကြားမှာ အလွယ်တကူ ပြောင်းနိုင်ပါတယ်။",
+    "toenglish_and_englishto": "to-English နှင့် English-to",
+    "translation_using_the_swap_button": "swap ခလုတ်ကို အသုံးပြုပြီး ဘာသာပြန်ပါ",
+    "this_makes_it_perfect_for": "ဒါက ဒါကို အကောင်းဆုံး လုပ်ပေးတယ်",
+    "language_learners_and_english_speakers_who_ne": " ဘာသာစကား သင်ယူသူများနှင့် အင်္ဂလိပ်စကားပြောသူများ",
+    "is_the": " ဆိုတာ",
+    "english_translator_completely_free_to_use": "အင်္ဂလိပ်ဘာသာပြန်ကို လုံးဝ အခမဲ့ သုံးလို့ရလား။",
+    "yes_our": "ဟုတ်တယ်၊ ကျွန်တော်တို့ရဲ့",
+    "english_translation_service_is_completely_fre": "အင်္ဂလိပ်ဘာသာပြန် ဝန်ဆောင်မှုသည် လျှို့ဝှက်ကုန်ကျစရိတ်မရှိဘဲ လုံးဝ အခမဲ့ဖြစ်သည်။",
+    "short": "တိုတောင်း",
+    "texts_translate_instantly_while_longer": "စာသားတွေကို ချက်ချင်း ဘာသာပြန်ပေးပြီး ပိုကြာအောင် ပြန်ပေးတယ်",
+    "documents_use_our_queue_system_for_registered": "မှတ်ပုံတင်အသုံးပြုသူများအတွက် ကျွန်တော်တို့ရဲ့ စောင့်ဆိုင်းစနစ်ကို အသုံးပြုပါတယ်",
+    "you_can_translate_up_to_5000_characters_of_1": " ရဲ့ စာလုံး ၅၀၀၀ အထိကို ဘာသာပြန်နိုင်ပါတယ်။",
+    "text_to_english_at_no_charge": "စာသားကို အင်္ဂလိပ်ဘာသာဖြင့် အခမဲ့ ",
+    "what_is_the_maximum_length_for": " အတွက် အရှည်အရှိဆုံးက ဘယ်လောက်လဲ။",
+    "text_to_english_at_once": "စာသားကို အင်္ဂလိပ်ဘာသာဖြင့် ချက်ချင်း ပြောင်းလိုက်ပါ",
+    "for_1": " အတွက်",
+    "texts_over_1000_characters_youll_need_to_sign": "စာသားပေါင်း ၁၀၀၀ ကျော်ဆိုရင်၊ သင်ဟာ စောင့်ဆိုင်းမှုအတွက် ဝင်ရောက်ရန် လိုအပ်ပါလိမ့်မယ်",
+    "shorter": "တိုတောင်းတယ်",
+    "to_english_translations_are_processed_instant": "အင်္ဂလိပ်ဘာသာပြန်တွေကို ချက်ချင်း စီမံပေးပြီး မြန်မြန်ဆန်ဆန် ",
+    "phrase_translations": "စကားစု ဘာသာပြန်များ",
+    "do_i_need_an_account_for_long": "ကျွန်တော်က အကောင့်ကို ကြာကြာလိုအပ်နေသလား။",
+    "to_english_translations": "အင်္ဂလိပ်ဘာသာပြန်တွေလား။",
+    "texts_over_1000_characters_yes": "စာလုံး ၁၀၀၀ ကျော်၊ ဟုတ်တယ်",
+    "creating_a_free_account_allows_you_to_use_our": "အခမဲ့ အကောင့်တစ်ခု ဖန်တီးခြင်းအားဖြင့် ကျွန်ုပ်တို့ရဲ့ စောင့်ဆိုင်းမှုစနစ်ကို ပိုကြာကြာ အသုံးပြုနိုင်ပါသည်",
+    "english_conversions_and_access_your": "အင်္ဂလိပ်ဘာသာပြန်ပြီး  ကို ဝင်ရောက်နိုင်ပါတယ်",
+    "this_is_especially_useful_for_translating": "ဒါက ဘာသာပြန်ဖို့ အထူး အသုံးဝင်ပါတယ်။",
+    "documents_articles_or_academic_papers_to_engl": "စာရွက်စာတမ်းများ၊ ဆောင်းပါးများ သို့မဟုတ် ပညာရေး စာတမ်းများကို အင်္ဂလိပ်ဘာသာသို့ ပြောင်းရန်"
+  },
+  "debug": {
+    "skipping_locale_change": "ဒေသအပြောင်းအလဲကို ကျော်ဖြတ်ခြင်း:",
+    "switching_locale": "ဒေသကို ပြောင်းခြင်း:"
+  },
+  "admin": {
+    "loading_dashboard": "တင်သွင်းရေး ကိရိယာပြား...",
+    "no_data_available": "အချက်အလက်များ မရှိပါ",
+    "system_health": "စနစ် ကျန်းမာရေး",
+    "total_users": "အသုံးပြုသူ စုစုပေါင်း",
+    "total_translations": "ဘာသာပြန်မှု စုစုပေါင်း",
+    "total_credits": "စုစုပေါင်း ခရက်ဒစ်များ",
+    "active_users": "တက်ကြွသော အသုံးပြုသူများ",
+    "quick_actions": "မြန်မြန်ဆန်ဆန် လုပ်ဆောင်ချက်များ",
+    "view_analytics": "Analytics ကို ကြည့်ပါ",
+    "system_settings": "စနစ် setting များ",
+    "system_logs": "စနစ်မှတ်တမ်းများ"
+  },
+  "auth": {
+    "why_sign_in": "ဘာလို့ စာရင်းသွင်းရတာလဲ။",
+    "background_processing_benefit": "နောက်ခံ စီမံခန့်ခွဲမှု - ထွက်သွားပြီး နောက်မှ ပြန်လာပါ",
+    "history_management_benefit": "ဘာသာပြန်မှု သမိုင်းနှင့် တာဝန် စီမံခန့်ခွဲမှု",
+    "free_account_note": "အခမဲ့စာရင်း • ခရက်ဒစ်ကဒ် မလိုပါ",
+    "please_sign_in_to_access": "ဤ feature ကို အသုံးပြုရန် ကျေးဇူးပြု၍ ဝင်ရောက်ပါ။",
+    "email": "အီးမေးလ်",
+    "password": "စကားဝှက်",
+    "signing_in": "စာရင်းသွင်းနေပါတယ်",
+    "enter_email": "သင့်အီးမေးလ်ကိုထည့်ပါ",
+    "enter_password": "စကားဝှက်ကို ရိုက်ထည့်ပါ",
+    "verified": "စစ်ဆေးထားသည်",
+    "unverified": "မစစ်ဆေးသေး",
+    "profile_incomplete": "အပြည့်အဝမဟုတ်တဲ့ အပိုင်း"
+  },
+  "navigation": {
+    "switch_to": " သို့ ပြောင်းပါ",
+    "try_other_languages": "အခြားဘာသာစကားတွေကို စမ်းကြည့်ပါ",
+    "text_translator": "စာသား ဘာသာပြန်သူ",
+    "document_translator": "စာရွက်စာတမ်း ဘာသာပြန်သူ"
+  },
+  "languages": {
+    "english": "အင်္ဂလိပ်စာ",
+    "haitian_creole": "ဟေတီကရီယိုဘာသာစကား",
+    "creole_to_english": "ကရီယိုလ်အိုင်ယီယန်း မှ အင်္ဂလိပ်ဘာသာသို့"
+  },
+  "translator": {
+    "translation_mode": "ဘာသာပြန်ပုံစံ:",
+    "single_mode": "Single",
+    "bidirectional_mode": "နှစ်ဖက်လမ်းကြောင်း",
+    "enter_text_to_translate": "ဘာသာပြန်ရန် စာသားကို ရိုက်ထည့်ပါ",
+    "type_text_here": "စာသားကို ဒီမှာ ရိုက်လိုက်ပါ။"
+  },
+  "payment": {
+    "whats_next": "နောက်ဘာဆက်ဖြစ်မလဲ"
+  },
+  "common": {
+    "error": "အမှား",
+    "try_again": "ထပ်စမ်းပါ",
+    "refresh": "ပြန်လည်ဆန်းသစ်ပါ",
+    "refreshing": "စိတ်သက်သာစေတယ်",
+    "coming_soon": "မကြာခင် လာပါမယ်",
+    "in_development": "ဖွံ့ဖြိုးမှု",
+    "ai_powered": "AI အားဖြင့် ",
+    "will_be_free": "လွတ်လပ်လာမယ်",
+    "get_notified": "လက်လှမ်းမီလာရင် အသိပေးပါ",
+    "notify_me": "ကျွန်မကို အသိပေးပါ",
+    "available_now_try_languages": "ယခုရရှိနိုင်သည် - ဤဘာသာစကားများကို စမ်းကြည့်ပါ",
+    "copied_to_clipboard": "ကလစ်ဘုတ်သို့ ကူးယူထားသည်"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "Help & FAQ - LoReTrans AI ဘာသာပြန်ကိရိယာထောက်ပံ့မှု",
+      "description": "LoReTrans AI ဘာသာပြန်ကိရိယာနှင့်အတူ အကူအညီရရှိပါ။ စာသား၊ စာရွက်စာတမ်းနှင့် အသံဘာသာပြန်မှုအတွက် အခမဲ့အွန်လိုင်းဘာသာပြန်ကို အသုံးပြုခြင်းနှင့် ပတ်သက်၍ မကြာခဏမေးမြန်းရသည့်မေးခွန်းများအတွက် အဖြေများကို ရှာဖွေပါ။"
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "Privacy Policy ကို",
+      "description": "LoReTrans Privacy Policy - ကျွန်ုပ်တို့၏ AI ဘာသာပြန် ဝန်ဆောင်မှုများကို အသုံးပြုရာတွင် ကျွန်ုပ်တို့က မည်ကဲ့သို့ အချက်အလက်များကို ကောက်ယူ၊ အသုံးပြုကာ ကာကွယ်ပေးကြသနည်း။"
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "ဝန်ဆောင်မှု စည်းမျဉ်းများ",
+      "description": "LoReTrans ဝန်ဆောင်မှု စည်းမျဉ်းစည်းကမ်းများ - အရင်းအမြစ်နည်းသော ဘာသာစကားများအတွက် ကျွန်ုပ်တို့၏ AI ဘာသာပြန်ပလက်ဖောင်းကို အသုံးပြုမှုကို ထိန်းချုပ်သည့် ဥပဒေဆိုင်ရာ သဘောတူညီချက်။"
+    }
+  },
+  "AuthPage": {
+    "signin": {
+      "signin_error": "Login failed, please try again",
+      "signin_success": "Login successful! Redirecting...",
+      "signing_in": "Signing in"
     }
   }
 }

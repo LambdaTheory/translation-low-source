@@ -63,7 +63,11 @@
         "users": "10,000+ వినియోగదారులకు సేవలు అందించారు"
       },
       "title_highlight": "అర్థం చేసుకున్నాను",
-      "title_part1": "ప్రతి భాషను తయారుచేయండి "
+      "title_part1": "ప్రతి భాషను తయారుచేయండి ",
+      "buttons": {
+        "text_translation": "వచన అనువాదం",
+        "document_translation": "పత్రం అనువాదం"
+      }
     },
     "languages": {
       "title": "మద్దతు ఉన్న భాషలు",
@@ -665,7 +669,23 @@
       "support_24_7": "24/7 Online Support",
       "contact_form": "Contact Form",
       "view_all_languages": "View All →",
-      "telugu_language": "Telugu"
+      "telugu_language": "Telugu",
+      "languages": {
+        "haitian_creole": "Haitian Creole",
+        "lao": "Lao",
+        "swahili": "Swahili",
+        "burmese": "Burmese",
+        "telugu": "Telugu",
+        "sindhi": "Sindhi",
+        "bambara": "Bambara",
+        "wolof": "Wolof",
+        "yoruba": "Yoruba",
+        "igbo": "Igbo"
+      }
+    },
+    "meta": {
+      "title": "లోరెట్ ట్రాన్స్ - ఉచిత AI తక్కువ వనరుల భాషా అనువాదకుడు",
+      "description": "లోరెట్ ట్రాన్స్: క్రియోల్, లావో, స్వాహిలీ, బర్మా భాషలతో సహా 20+ తక్కువ వనరుల భాషలకు ఉచిత AI అనువాదకుడు. అధునాతన ఎన్ఎల్ఎల్బి టెక్నాలజీతో ఇంగ్లీషులోకి తక్షణ అనువాదం."
     }
   },
   "DocumentTranslatePage": {
@@ -802,23 +822,23 @@
       "contact_support": "అనువాదం అవసరం"
     },
     "SignUpForm": {
-      "title": "అనువాదం అవసరం",
-      "subtitle": "అనువాదం అవసరం",
+      "title": "Create Account",
+      "subtitle": "Enter your information to create your account",
       "name_label": "అనువాదం అవసరం",
-      "name_placeholder": "అనువాదం అవసరం",
+      "name_placeholder": "John Doe",
       "name_required": "అనువాదం అవసరం",
       "name_max_length": "అనువాదం అవసరం",
       "email_label": "అనువాదం అవసరం",
-      "email_placeholder": "అనువాదం అవసరం",
+      "email_placeholder": "name@example.com",
       "email_required": "అనువాదం అవసరం",
-      "email_invalid": "అనువాదం అవసరం",
+      "email_invalid": "Please enter a valid email address",
       "email_max_length": "అనువాదం అవసరం",
       "password_label": "అనువాదం అవసరం",
-      "password_placeholder": "అనువాదం అవసరం",
+      "password_placeholder": "••••••••",
       "password_min_length": "అనువాదం అవసరం",
       "password_max_length": "అనువాదం అవసరం",
       "confirm_password_label": "అనువాదం అవసరం",
-      "confirm_password_placeholder": "అనువాదం అవసరం",
+      "confirm_password_placeholder": "••••••••",
       "confirm_password_required": "అనువాదం అవసరం",
       "password_mismatch": "అనువాదం అవసరం",
       "password_strength_label": "అనువాదం అవసరం",
@@ -828,7 +848,23 @@
       "signup_failed": "అనువాదం అవసరం",
       "signup_error": "అనువాదం అవసరం",
       "signin_prompt": "అనువాదం అవసరం",
-      "signin_link": "అనువాదం అవసరం"
+      "signin_link": "అనువాదం అవసరం",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "sign_up": "Sign Up",
+      "signing_up": "Creating Account...",
+      "signing_up_progress": "Please wait, creating your account...",
+      "sign_up_success": "Registration Successful!",
+      "sign_up_success_message": "Your account has been created successfully. Redirecting...",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "password_strength": "Password Strength",
+      "password_requirements": "Password Requirements",
+      "email_checking": "Checking email availability...",
+      "email_available": "Email is available",
+      "email_taken": "This email is already registered"
     },
     "SignInForm": {
       "title": "అనువాదం అవసరం",
@@ -1112,7 +1148,14 @@
     "switch_languages": "భాషలను మార్చండి",
     "switch_source_target": "మూల మరియు లక్ష్య భాషలను మార్చండి",
     "reset_translation": "అనువాదాన్ని రీసెట్ చేయండి",
-    "clear_reset": "అన్ని కంటెంట్‌ను క్లియర్ చేసి రీసెట్ చేయండి"
+    "clear_reset": "అన్ని కంటెంట్‌ను క్లియర్ చేసి రీసెట్ చేయండి",
+    "login_required": "లాగిన్ అవసరం",
+    "please_sign_in_to_access_this_feature": "ఈ ఫీచర్ను యాక్సెస్ చేయడానికి దయచేసి సైన్ ఇన్ చేయండి",
+    "create_account": "ఖాతాను సృష్టించు",
+    "free_characters": "ఉచిత అక్షరాలుః",
+    "credits_required": "అవసరమయ్యే క్రెడిట్స్:",
+    "translate_now": "ఇప్పుడు అనువదించండి",
+    "translation_will_appear_here": "అనువాదం ఇక్కడ కనిపిస్తుంది."
   },
   "translation": {
     "start_translation": "అనువాదం అవసరం",
@@ -1217,7 +1260,9 @@
     "credits_processing": "అనువాదం అవసరం",
     "consumed_credits": "అనువాదం అవసరం",
     "refunded_credits": "అనువాదం అవసరం",
-    "retry_only_failed": "అనువాదం అవసరం"
+    "retry_only_failed": "అనువాదం అవసరం",
+    "current_credits": "ప్రస్తుత క్రెడిట్స్",
+    "refresh_credits": "క్రెడిట్లను పునరుద్ధరించు"
   },
   "language": {
     "source_language": "అనువాదం అవసరం",
@@ -1339,6 +1384,228 @@
       "translation_quality": "అనువాద నాణ్యత:",
       "thanks_feedback": "మీ అభిప్రాయానికి ధన్యవాదాలు",
       "feedback_helps": "మీ అభిప్రాయాల వల్ల అనువాద నాణ్యతను మెరుగుపరుచుకోవచ్చు"
+    }
+  },
+  "HardcodedTexts": {
+    "to": "To",
+    "enhanced_text_translator": "మెరుగైన టెక్స్ట్ అనువాదకుడు",
+    "from": "నుండి",
+    "please_sign_in_to_translate_texts_over_5000_charac": "5000 అక్షరాల కంటే ఎక్కువ ఉన్న పాఠాలను అనువదించడానికి దయచేసి సైన్ ఇన్ చేయండి.",
+    "sign_in": "సైన్ ఇన్ చేయండి",
+    "your_translation_will_be_processed_in_the_backgrou": "మీ అనువాదం నేపథ్యంలో ప్రాసెస్ చేయబడుతుంది.",
+    "source_text": "మూల పాఠం",
+    "translation": "అనువాదం",
+    "copy": "విన్నాను",
+    "download": "డౌన్లోడ్ చేసుకోండి",
+    "translation_cost": "అనువాద ఖర్చులు",
+    "total_characters": "మొత్తం అక్షరాలుః",
+    "free_characters": "ఉచిత అక్షరాలుః",
+    "billable_characters": "బిల్లు చేయదగిన అక్షరాలు:",
+    "credits_required": "అవసరమయ్యే క్రెడిట్స్:",
+    "translation_completed": "అనువాదం పూర్తయింది",
+    "your_text_has_been_successfully_translated": "మీ వ్యాసం విజయవంతంగా అనువదించబడింది.",
+    "translation_failed": "అనువాదం విఫలమైంది",
+    "an_error_occurred_during_translation": "అనువాద సమయంలో ఒక లోపం సంభవించింది.",
+    "no_text_to_translate": "అనువదించవలసిన వచనం లేదు",
+    "please_enter_some_text_to_translate": "దయచేసి అనువదించడానికి కొంత వచనాన్ని నమోదు చేయండి.",
+    "text_too_long": "చాలా పొడవుగా ఉన్న సందేశం",
+    "insufficient_credits": "తగినంత రుణాలు లేవు",
+    "translation_queued": "అనువాద క్యూలో",
+    "your_translation_has_been_added_to_the_queue": "మీ అనువాదం వరుసలో చేర్చబడింది.",
+    "an_error_occurred_while_starting_the_translation": "అనువాదం ప్రారంభించేటప్పుడు ఒక లోపం సంభవించింది.",
+    "copied_to_clipboard": "క్లిప్బోర్డ్కు కాపీ చేయబడింది",
+    "translation_has_been_copied_to_your_clipboard": "అనువాదం మీ క్లిప్బోర్డ్కు కాపీ చేయబడింది.",
+    "copy_failed": "కాపీ విఫలమైంది",
+    "failed_to_copy_translation_to_clipboard": "అనువాదం క్లిప్బోర్డ్కు కాపీ చేయడంలో విఫలమైంది.",
+    "login_required": "లాగిన్ అవసరం",
+    "large_text_translation_requires_user_login": "పెద్ద వచన అనువాదం కోసం వినియోగదారు లాగిన్ అవసరం",
+    "queue_mode": "క్యూ మోడ్",
+    "large_text_will_be_processed_in_the_background": "పెద్ద టెక్స్ట్ నేపథ్యంలో ప్రాసెస్ చేయబడుతుంది",
+    "instant_mode": "తక్షణ మోడ్",
+    "text_will_be_translated_immediately": "ఈ పాఠాన్ని తక్షణమే అనువదిస్తాం",
+    "enter_text_to_translate": "అనువదించడానికి టెక్స్ట్ ఎంటర్ చేయండి.",
+    "translating": "అనువదించడం.",
+    "translation_will_appear_here": "అనువాదం ఇక్కడ కనిపిస్తుంది.",
+    "why_sign_in": "ఎందుకు సైన్ ఇన్?",
+    "background_processing_leave_and_come_back_later": "నేపథ్య ప్రాసెసింగ్ - వెళ్లి తర్వాత తిరిగి రండి",
+    "translation_history_and_task_management": "అనువాద చరిత్ర మరియు పని నిర్వహణ",
+    "create_account": "ఖాతాను సృష్టించు",
+    "free_account_no_credit_card_required": "ఉచిత ఖాతా • క్రెడిట్ కార్డు అవసరం లేదు",
+    "please_sign_in_to_access_this_feature": "ఈ ఫీచర్ను యాక్సెస్ చేయడానికి దయచేసి సైన్ ఇన్ చేయండి",
+    "email": "ఇమెయిల్ ",
+    "password": "పాస్వర్డ్",
+    "signing_in": "సంతకం చేస్తోంది.",
+    "enter_your_email": "మీ ఇమెయిల్ చిరునామాను నమోదు చేయండి",
+    "enter_your_password": "మీ పాస్వర్డ్ను నమోదు చేయండి",
+    "loretrans": "లోరట్రాన్స్",
+    "haitian_creole": "హైతియన్ క్రియోల్",
+    "lao": "లావో",
+    "swahili": "స్వాహిలీ",
+    "burmese": "బర్మా భాష",
+    "telugu": "తెలుగు",
+    "sindhi": "సింధి",
+    "bambara": "బంబారా",
+    "wolof": "వోలోఫ్",
+    "yoruba": "యోరుబా",
+    "igbo": "ఇగ్బో",
+    "loretrans_logo": "లోర్రాన్స్ లోగో",
+    "verified": "ధృవీకరించబడింది",
+    "unverified": "ధృవీకరించబడలేదు",
+    "profile_incomplete": "ప్రొఫైల్ అసంపూర్ణంగా ఉంది"
+  },
+  "LanguagePages": {
+    "free_ai_translator": "ఉచిత AI అనువాదకుడు",
+    "ai_translator": "అనువాదకుడు",
+    "translate": "అనువదించండి",
+    "to_english_instantly_with_our_aipowered_trans": "మా AI ఆధారిత అనువాదకుడితో తక్షణమే ఆంగ్లంలోకి",
+    "convert": "మార్చు",
+    "text_to_english_with_high_accuracy": "అధిక ఖచ్చితత్వంతో ఆంగ్లంలోకి అనువదించండి",
+    "perfect_for": " కోసం పరిపూర్ణ",
+    "documents_emails_and_conversations": "పత్రాలు, ఇమెయిళ్ళు, సంభాషణలు",
+    "support_for_long": "దీర్ఘకాలం మద్దతు",
+    "texts_queue_processing_and_translation_histor": "పాఠాలు, క్యూ ప్రాసెసింగ్, అనువాద చరిత్ర",
+    "free": "ఉచితం",
+    "translation": "అనువాదం",
+    "up_to_5000": "5 వేల వరకు",
+    "characters": "అక్షరాలు",
+    "queue_processing": "క్యూ ప్రాసెసింగ్",
+    "translation_history_1": "అనువాద చరిత్ర",
+    "frequently_asked_questions": "తరచుగా అడిగే ప్రశ్నలు",
+    "everything_you_need_to_know_about_our": "మా గురించి మీరు తెలుసుకోవలసిన ప్రతిదీ",
+    "translator_and_translation_process": "అనువాదకుడు మరియు అనువాద ప్రక్రియ",
+    "how_accurate_is_the": "ఎంత ఖచ్చితమైనది?",
+    "to_english_translation_1": "ఆంగ్ల అనువాదం?",
+    "our_aipowered": "మా AI- శక్తితో",
+    "translator_provides_highaccuracy_translations": "అనువాదకుడు ఆధునిక NLLB ఉపయోగించి అధిక ఖచ్చితత్వంతో అనువాదాలు అందిస్తుంది",
+    "no_language_left_behind": "ఏ భాషను వదిలిపెట్టలేదు",
+    "technology_the": "సాంకేతికత.",
+    "to_english_translation_quality_is_excellent_f": "ఇంగ్లీషు అనువాద నాణ్యత చాలా కంటెంట్ రకాల్లో అద్భుతమైనది",
+    "including_business_documents_academic_texts_a": "వ్యాపార పత్రాలు, విద్యా పాఠాలు, సాధారణ సంభాషణలు సహా",
+    "while_our": "మా ",
+    "translator_is_very_reliable_we_recommend_huma": "అనువాదకుడు చాలా నమ్మదగినవాడు, క్లిష్టమైన న్యాయ లేదా వైద్య పత్రాల కోసం మానవ సమీక్షను మేము సిఫార్సు చేస్తున్నాము",
+    "can_i_translate_english_text_back_to": "నేను ఆంగ్ల పాఠాన్ని తిరిగి అనువదించవచ్చా?",
+    "using_this_tool": "ఈ సాధనాన్ని ఉపయోగించి?",
+    "yes_our_translator_supports_bidirectional_tra": "అవును! మా అనువాదకుడు  మధ్య ద్వి దిశ అనువాదానికి మద్దతు ఇస్తుంది",
+    "and_english": "మరియు ఇంగ్లీష్",
+    "you_can_easily_switch_between": "మీరు సులభంగా  మధ్య మారవచ్చు",
+    "toenglish_and_englishto": "to-English మరియు English-to",
+    "translation_using_the_swap_button": "మార్పిడి బటన్ ఉపయోగించి అనువాదం",
+    "this_makes_it_perfect_for": "ఇది  కోసం పరిపూర్ణ చేస్తుంది",
+    "language_learners_and_english_speakers_who_ne": "భాషా అభ్యాసకులు మరియు ఆంగ్ల భాష మాట్లాడేవారు",
+    "is_the": " ఉంది",
+    "english_translator_completely_free_to_use": "ఆంగ్ల అనువాదకుడు పూర్తిగా ఉచిత ఉపయోగించడానికి?",
+    "yes_our": "అవును, మా ",
+    "english_translation_service_is_completely_fre": "ఇంగ్లీష్ అనువాద సేవ పూర్తిగా ఉచితం, దాచిన ఖర్చులు లేవు",
+    "short": "చిన్నది",
+    "texts_translate_instantly_while_longer": "వచనాలు తక్షణమే అనువదిస్తాయి, అయితే ఎక్కువ కాలం",
+    "documents_use_our_queue_system_for_registered": "పత్రాలు మా క్యూ వ్యవస్థను ఉపయోగించుకుంటాయి",
+    "you_can_translate_up_to_5000_characters_of_1": "మీరు  యొక్క 5,000 అక్షరాల వరకు అనువదించవచ్చు",
+    "text_to_english_at_no_charge": "ఇంగ్లీషులో ఉచితంగా పాఠాలు రాయడం",
+    "what_is_the_maximum_length_for": " కోసం గరిష్ట పొడవు ఎంత?",
+    "text_to_english_at_once": "ఒకేసారి ఆంగ్లంలోకి టెక్స్ట్",
+    "for_1": " కోసం",
+    "texts_over_1000_characters_youll_need_to_sign": "1,000 అక్షరాల కంటే ఎక్కువ ఉన్న టెక్స్ట్ లు, మీరు క్యూ ప్రాసెసింగ్ కోసం సైన్ ఇన్ చేయాలి",
+    "shorter": "తక్కువ",
+    "to_english_translations_are_processed_instant": "ఆంగ్ల అనువాదాలు తక్షణమే ప్రాసెస్ చేయబడతాయి, ఇది శీఘ్రంగా అనువదించడానికి అనువైనది",
+    "phrase_translations": "వాక్య అనువాదాలు",
+    "do_i_need_an_account_for_long": "నేను ఒక ఖాతా అవసరం దీర్ఘ ",
+    "to_english_translations": "ఆంగ్ల అనువాదాలకు?",
+    "texts_over_1000_characters_yes": "1000 అక్షరాల కంటే ఎక్కువ ఉన్న టెక్స్ట్ లు, అవును",
+    "creating_a_free_account_allows_you_to_use_our": "ఉచిత ఖాతాను సృష్టించడం వలన మీరు మా క్యూ సిస్టమ్ను ఎక్కువ కాలం ఉపయోగించుకోవచ్చు",
+    "english_conversions_and_access_your": "ఆంగ్ల మార్పిడులు మరియు మీ  యాక్సెస్",
+    "this_is_especially_useful_for_translating": "ఇది అనువాదానికి ప్రత్యేకించి ఉపయోగపడుతుంది",
+    "documents_articles_or_academic_papers_to_engl": "పత్రాలు, వ్యాసాలు, లేదా విద్యా పత్రాలు ఆంగ్లంలోకి"
+  },
+  "debug": {
+    "skipping_locale_change": "స్థానం మార్పును దాటవేయడంః",
+    "switching_locale": "స్థానికీకరణను మార్చడంః"
+  },
+  "admin": {
+    "loading_dashboard": "లోడ్ డాష్బోర్డ్ ",
+    "no_data_available": "సమాచారం లేదు",
+    "system_health": "వ్యవస్థ ఆరోగ్యం",
+    "total_users": "మొత్తం వినియోగదారులు",
+    "total_translations": "మొత్తం అనువాదాలు",
+    "total_credits": "మొత్తం క్రెడిట్స్",
+    "active_users": "క్రియాశీల వినియోగదారులు",
+    "quick_actions": "త్వరిత చర్యలు",
+    "view_analytics": "విశ్లేషణలను చూడండి",
+    "system_settings": "వ్యవస్థ అమర్పులు",
+    "system_logs": "వ్యవస్థ లాగ్లు"
+  },
+  "auth": {
+    "why_sign_in": "ఎందుకు సైన్ ఇన్?",
+    "background_processing_benefit": "నేపథ్య ప్రాసెసింగ్ - వెళ్లి తర్వాత తిరిగి రండి",
+    "history_management_benefit": "అనువాద చరిత్ర మరియు పని నిర్వహణ",
+    "free_account_note": "ఉచిత ఖాతా • క్రెడిట్ కార్డు అవసరం లేదు",
+    "please_sign_in_to_access": "ఈ ఫీచర్ను యాక్సెస్ చేయడానికి దయచేసి సైన్ ఇన్ చేయండి",
+    "email": "ఇమెయిల్ ",
+    "password": "పాస్వర్డ్",
+    "signing_in": "సంతకం చేస్తోంది.",
+    "enter_email": "మీ ఇమెయిల్ చిరునామాను నమోదు చేయండి",
+    "enter_password": "మీ పాస్వర్డ్ను నమోదు చేయండి",
+    "verified": "ధృవీకరించబడింది",
+    "unverified": "ధృవీకరించబడలేదు",
+    "profile_incomplete": "ప్రొఫైల్ అసంపూర్ణంగా ఉంది"
+  },
+  "navigation": {
+    "switch_to": " కు మారండి",
+    "try_other_languages": "ఇతర భాషలను ప్రయత్నించండి",
+    "text_translator": "వచన అనువాదకుడు",
+    "document_translator": "పత్ర అనువాదకుడు"
+  },
+  "languages": {
+    "english": "ఇంగ్లీష్ ",
+    "haitian_creole": "హైతియన్ క్రియోల్",
+    "creole_to_english": "క్రెయోల్ ఐసియెన్ నుండి ఇంగ్లీష్ "
+  },
+  "translator": {
+    "translation_mode": "అనువాద మోడ్ః",
+    "single_mode": "ఒంటరి",
+    "bidirectional_mode": "రెండు దిశల్లో",
+    "enter_text_to_translate": "అనువదించడానికి వచనాన్ని నమోదు చేయండి",
+    "type_text_here": "మీ టెక్స్ట్ ఇక్కడ టైప్ చేయండి."
+  },
+  "payment": {
+    "whats_next": "తదుపరి ఏమిటి?"
+  },
+  "common": {
+    "error": "తప్పు",
+    "try_again": "మళ్ళీ ప్రయత్నించండి",
+    "refresh": "రిఫ్రెష్ చేయండి",
+    "refreshing": "రిఫ్రెష్ .",
+    "coming_soon": "త్వరలో వస్తుంది",
+    "in_development": "అభివృద్ధిలో",
+    "ai_powered": "AI-ఆధారిత",
+    "will_be_free": "స్వేచ్ఛగా ఉంటాము",
+    "get_notified": "అందుబాటులో ఉన్నప్పుడు తెలియజేయబడండి",
+    "notify_me": "నాకు తెలియజేయండి",
+    "available_now_try_languages": "ఇప్పుడు అందుబాటులో ఉంది - ఈ భాషలను ప్రయత్నించండి",
+    "copied_to_clipboard": "క్లిప్బోర్డ్కు కాపీ చేయబడింది"
+  },
+  "HelpPage": {
+    "meta": {
+      "title": "సహాయం & FAQ - LoReTrans AI అనువాద సాధనం మద్దతు",
+      "description": "LoReTrans AI అనువాద సాధనంతో సహాయం పొందండి. మా ఉచిత ఆన్లైన్ అనువాదకుడిని టెక్స్ట్, పత్రం మరియు వాయిస్ అనువాదానికి ఉపయోగించడం గురించి సాధారణ ప్రశ్నలకు సమాధానాలు కనుగొనండి."
+    }
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "గోప్యతా విధానం",
+      "description": "LoReTrans గోప్యతా విధానం - మా AI అనువాద సేవలను ఉపయోగించినప్పుడు మేము మీ డేటాను ఎలా సేకరిస్తాము, ఉపయోగిస్తాము మరియు రక్షిస్తాము."
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "సేవా నిబంధనలు",
+      "description": "లోరెట్ ట్రాన్స్ సేవా నిబంధనలు - తక్కువ వనరుల భాషల కోసం మా AI అనువాద వేదికను ఉపయోగించడాన్ని నియంత్రించే చట్టపరమైన ఒప్పందం."
+    }
+  },
+  "AuthPage": {
+    "signin": {
+      "signin_error": "Login failed, please try again",
+      "signin_success": "Login successful! Redirecting...",
+      "signing_in": "Signing in"
     }
   }
 }
